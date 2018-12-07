@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1BC21BABA3D0076F210 /* AppDelegate.swift */; };
+		487BE1BF21BABA3D0076F210 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1BE21BABA3D0076F210 /* ViewController.swift */; };
+		487BE1C221BABA3D0076F210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487BE1C021BABA3D0076F210 /* Main.storyboard */; };
+		487BE1C421BABA400076F210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487BE1C321BABA400076F210 /* Assets.xcassets */; };
+		487BE1C721BABA400076F210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487BE1C521BABA400076F210 /* LaunchScreen.storyboard */; };
+		487BE1D221BABA400076F210 /* ArogyamitraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1D121BABA400076F210 /* ArogyamitraTests.swift */; };
+		487BE1DD21BABA400076F210 /* ArogyamitraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1DC21BABA400076F210 /* ArogyamitraUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		487BE1CE21BABA400076F210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 487BE1B121BABA3D0076F210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 487BE1B821BABA3D0076F210;
+			remoteInfo = Arogyamitra;
+		};
+		487BE1D921BABA400076F210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 487BE1B121BABA3D0076F210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 487BE1B821BABA3D0076F210;
+			remoteInfo = Arogyamitra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		487BE1B921BABA3D0076F210 /* Arogyamitra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arogyamitra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		487BE1BC21BABA3D0076F210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		487BE1BE21BABA3D0076F210 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		487BE1C121BABA3D0076F210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		487BE1C321BABA400076F210 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		487BE1C621BABA400076F210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		487BE1C821BABA400076F210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487BE1CD21BABA400076F210 /* ArogyamitraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArogyamitraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		487BE1D121BABA400076F210 /* ArogyamitraTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamitraTests.swift; sourceTree = "<group>"; };
+		487BE1D321BABA400076F210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487BE1D821BABA400076F210 /* ArogyamitraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArogyamitraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		487BE1DC21BABA400076F210 /* ArogyamitraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamitraUITests.swift; sourceTree = "<group>"; };
+		487BE1DE21BABA400076F210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		487BE1B621BABA3D0076F210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1CA21BABA400076F210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1D521BABA400076F210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		487BE1B021BABA3D0076F210 = {
+			isa = PBXGroup;
+			children = (
+				487BE1BB21BABA3D0076F210 /* Arogyamitra */,
+				487BE1D021BABA400076F210 /* ArogyamitraTests */,
+				487BE1DB21BABA400076F210 /* ArogyamitraUITests */,
+				487BE1BA21BABA3D0076F210 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		487BE1BA21BABA3D0076F210 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1B921BABA3D0076F210 /* Arogyamitra.app */,
+				487BE1CD21BABA400076F210 /* ArogyamitraTests.xctest */,
+				487BE1D821BABA400076F210 /* ArogyamitraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		487BE1BB21BABA3D0076F210 /* Arogyamitra */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1BC21BABA3D0076F210 /* AppDelegate.swift */,
+				487BE1BE21BABA3D0076F210 /* ViewController.swift */,
+				487BE1C021BABA3D0076F210 /* Main.storyboard */,
+				487BE1C321BABA400076F210 /* Assets.xcassets */,
+				487BE1C521BABA400076F210 /* LaunchScreen.storyboard */,
+				487BE1C821BABA400076F210 /* Info.plist */,
+			);
+			path = Arogyamitra;
+			sourceTree = "<group>";
+		};
+		487BE1D021BABA400076F210 /* ArogyamitraTests */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1D121BABA400076F210 /* ArogyamitraTests.swift */,
+				487BE1D321BABA400076F210 /* Info.plist */,
+			);
+			path = ArogyamitraTests;
+			sourceTree = "<group>";
+		};
+		487BE1DB21BABA400076F210 /* ArogyamitraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1DC21BABA400076F210 /* ArogyamitraUITests.swift */,
+				487BE1DE21BABA400076F210 /* Info.plist */,
+			);
+			path = ArogyamitraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		487BE1B821BABA3D0076F210 /* Arogyamitra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487BE1E121BABA400076F210 /* Build configuration list for PBXNativeTarget "Arogyamitra" */;
+			buildPhases = (
+				487BE1B521BABA3D0076F210 /* Sources */,
+				487BE1B621BABA3D0076F210 /* Frameworks */,
+				487BE1B721BABA3D0076F210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arogyamitra;
+			productName = Arogyamitra;
+			productReference = 487BE1B921BABA3D0076F210 /* Arogyamitra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		487BE1CC21BABA400076F210 /* ArogyamitraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487BE1E421BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraTests" */;
+			buildPhases = (
+				487BE1C921BABA400076F210 /* Sources */,
+				487BE1CA21BABA400076F210 /* Frameworks */,
+				487BE1CB21BABA400076F210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				487BE1CF21BABA400076F210 /* PBXTargetDependency */,
+			);
+			name = ArogyamitraTests;
+			productName = ArogyamitraTests;
+			productReference = 487BE1CD21BABA400076F210 /* ArogyamitraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		487BE1D721BABA400076F210 /* ArogyamitraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487BE1E721BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraUITests" */;
+			buildPhases = (
+				487BE1D421BABA400076F210 /* Sources */,
+				487BE1D521BABA400076F210 /* Frameworks */,
+				487BE1D621BABA400076F210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				487BE1DA21BABA400076F210 /* PBXTargetDependency */,
+			);
+			name = ArogyamitraUITests;
+			productName = ArogyamitraUITests;
+			productReference = 487BE1D821BABA400076F210 /* ArogyamitraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		487BE1B121BABA3D0076F210 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Nitin Landge";
+				TargetAttributes = {
+					487BE1B821BABA3D0076F210 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					487BE1CC21BABA400076F210 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 487BE1B821BABA3D0076F210;
+					};
+					487BE1D721BABA400076F210 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 487BE1B821BABA3D0076F210;
+					};
+				};
+			};
+			buildConfigurationList = 487BE1B421BABA3D0076F210 /* Build configuration list for PBXProject "Arogyamitra" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 487BE1B021BABA3D0076F210;
+			productRefGroup = 487BE1BA21BABA3D0076F210 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				487BE1B821BABA3D0076F210 /* Arogyamitra */,
+				487BE1CC21BABA400076F210 /* ArogyamitraTests */,
+				487BE1D721BABA400076F210 /* ArogyamitraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		487BE1B721BABA3D0076F210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487BE1C721BABA400076F210 /* LaunchScreen.storyboard in Resources */,
+				487BE1C421BABA400076F210 /* Assets.xcassets in Resources */,
+				487BE1C221BABA3D0076F210 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1CB21BABA400076F210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1D621BABA400076F210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		487BE1B521BABA3D0076F210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487BE1BF21BABA3D0076F210 /* ViewController.swift in Sources */,
+				487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1C921BABA400076F210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487BE1D221BABA400076F210 /* ArogyamitraTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487BE1D421BABA400076F210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487BE1DD21BABA400076F210 /* ArogyamitraUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		487BE1CF21BABA400076F210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 487BE1B821BABA3D0076F210 /* Arogyamitra */;
+			targetProxy = 487BE1CE21BABA400076F210 /* PBXContainerItemProxy */;
+		};
+		487BE1DA21BABA400076F210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 487BE1B821BABA3D0076F210 /* Arogyamitra */;
+			targetProxy = 487BE1D921BABA400076F210 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		487BE1C021BABA3D0076F210 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				487BE1C121BABA3D0076F210 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		487BE1C521BABA400076F210 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				487BE1C621BABA400076F210 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		487BE1DF21BABA400076F210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		487BE1E021BABA400076F210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		487BE1E221BABA400076F210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Arogyamitra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.Arogyamitra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		487BE1E321BABA400076F210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Arogyamitra/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.Arogyamitra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		487BE1E521BABA400076F210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ArogyamitraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.ArogyamitraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arogyamitra.app/Arogyamitra";
+			};
+			name = Debug;
+		};
+		487BE1E621BABA400076F210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ArogyamitraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.ArogyamitraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arogyamitra.app/Arogyamitra";
+			};
+			name = Release;
+		};
+		487BE1E821BABA400076F210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ArogyamitraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.ArogyamitraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arogyamitra;
+			};
+			name = Debug;
+		};
+		487BE1E921BABA400076F210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ArogyamitraUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nitinlandge.ArogyamitraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Arogyamitra;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		487BE1B421BABA3D0076F210 /* Build configuration list for PBXProject "Arogyamitra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487BE1DF21BABA400076F210 /* Debug */,
+				487BE1E021BABA400076F210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487BE1E121BABA400076F210 /* Build configuration list for PBXNativeTarget "Arogyamitra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487BE1E221BABA400076F210 /* Debug */,
+				487BE1E321BABA400076F210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487BE1E421BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487BE1E521BABA400076F210 /* Debug */,
+				487BE1E621BABA400076F210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487BE1E721BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487BE1E821BABA400076F210 /* Debug */,
+				487BE1E921BABA400076F210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 487BE1B121BABA3D0076F210 /* Project object */;
+}
