@@ -7,6 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36F890CC260E5AAEC5395AFD /* Pods_ArogyamitraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */; };
+		3F15734D2AF7C8CEF3AD40B0 /* Pods_ArogyamitraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */; };
+		48272AE621C4887000B288F6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AC521C4887000B288F6 /* Toast.swift */; };
+		48272AE721C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACA21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		48272AE821C4887000B288F6 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACB21C4887000B288F6 /* TPKeyboardAvoidingTableView.m */; };
+		48272AE921C4887000B288F6 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACC21C4887000B288F6 /* TPKeyboardAvoidingScrollView.m */; };
+		48272AEA21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACE21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m */; };
+		48272AEB21C4887000B288F6 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD221C4887000B288F6 /* TaskDelegate.swift */; };
+		48272AEC21C4887000B288F6 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD321C4887000B288F6 /* MultipartFormData.swift */; };
+		48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD421C4887000B288F6 /* NetworkReachabilityManager.swift */; };
+		48272AEE21C4887000B288F6 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD521C4887000B288F6 /* Timeline.swift */; };
+		48272AEF21C4887000B288F6 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD621C4887000B288F6 /* DispatchQueue+Alamofire.swift */; };
+		48272AF021C4887000B288F6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD721C4887000B288F6 /* Result.swift */; };
+		48272AF121C4887000B288F6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD821C4887000B288F6 /* ParameterEncoding.swift */; };
+		48272AF221C4887000B288F6 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AD921C4887000B288F6 /* AFError.swift */; };
+		48272AF321C4887000B288F6 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272ADA21C4887000B288F6 /* Validation.swift */; };
+		48272AF421C4887000B288F6 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272ADB21C4887000B288F6 /* Notifications.swift */; };
+		48272AF521C4887000B288F6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272ADC21C4887000B288F6 /* Response.swift */; };
+		48272AF621C4887000B288F6 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272ADD21C4887000B288F6 /* Alamofire.swift */; };
+		48272AF821C4887000B288F6 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272ADF21C4887000B288F6 /* Request.swift */; };
+		48272AF921C4887000B288F6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AE021C4887000B288F6 /* SessionManager.swift */; };
+		48272AFA21C4887000B288F6 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AE121C4887000B288F6 /* ResponseSerialization.swift */; };
+		48272AFB21C4887000B288F6 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AE321C4887000B288F6 /* ServerTrustPolicy.swift */; };
+		48272AFD21C4887000B288F6 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AE521C4887000B288F6 /* SessionDelegate.swift */; };
+		48272B0021C48DAB00B288F6 /* DashboadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AFF21C48DAB00B288F6 /* DashboadModel.swift */; };
+		48272B0221C48F8600B288F6 /* WebserviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272B0121C48F8600B288F6 /* WebserviceHelper.swift */; };
+		48272B0421C4901700B288F6 /* CommonMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272B0321C4901700B288F6 /* CommonMethod.swift */; };
+		48272B0621C4962300B288F6 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272B0521C4962300B288F6 /* URLManager.swift */; };
+		48272B0C21C5167600B288F6 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272B0B21C5167600B288F6 /* DoctorModel.swift */; };
+		483F100621C0D5B100181AB3 /* DoctorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F100521C0D5B100181AB3 /* DoctorDetailsViewController.swift */; };
+		483F105621C1302900181AB3 /* Varialbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F105521C1302900181AB3 /* Varialbe.swift */; };
+		483F105821C1F4C300181AB3 /* HospitalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F105721C1F4C300181AB3 /* HospitalDetailsViewController.swift */; };
+		483F105C21C3406700181AB3 /* RatingAndReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483F105B21C3406700181AB3 /* RatingAndReviewViewController.swift */; };
+		48414F0321CBA82D00A49605 /* DoctorListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48414F0221CBA82D00A49605 /* DoctorListModel.swift */; };
+		48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48414F0421CBC5C500A49605 /* DoctorDetailsModel.swift */; };
+		48414F0C21CF5B1C00A49605 /* PhysicalFitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48414F0B21CF5B1C00A49605 /* PhysicalFitnessViewController.swift */; };
+		4846A27A21C7385900B47AB2 /* DoctorSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4846A27921C7385900B47AB2 /* DoctorSearchTableViewCell.swift */; };
+		4858D16121D6FA80009F5033 /* LaboratoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4858D16021D6FA7F009F5033 /* LaboratoryDetailsViewController.swift */; };
+		4858D16421D6FAAE009F5033 /* LaboratoryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4858D16321D6FAAE009F5033 /* LaboratoryDetailsModel.swift */; };
+		4858D16821D70E36009F5033 /* LabTestScanListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4858D16721D70E36009F5033 /* LabTestScanListTableViewCell.swift */; };
 		487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1BC21BABA3D0076F210 /* AppDelegate.swift */; };
 		487BE1BF21BABA3D0076F210 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1BE21BABA3D0076F210 /* ViewController.swift */; };
 		487BE1C221BABA3D0076F210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487BE1C021BABA3D0076F210 /* Main.storyboard */; };
@@ -14,6 +54,47 @@
 		487BE1C721BABA400076F210 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487BE1C521BABA400076F210 /* LaunchScreen.storyboard */; };
 		487BE1D221BABA400076F210 /* ArogyamitraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1D121BABA400076F210 /* ArogyamitraTests.swift */; };
 		487BE1DD21BABA400076F210 /* ArogyamitraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1DC21BABA400076F210 /* ArogyamitraUITests.swift */; };
+		487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1EB21BABBC10076F210 /* SlideMenuController.swift */; };
+		487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1ED21BABBC10076F210 /* MenuDrawerTableViewCell.swift */; };
+		487BE1F221BABBC10076F210 /* MenuDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1EE21BABBC10076F210 /* MenuDrawerViewController.swift */; };
+		487BE1F321BABBC10076F210 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1EF21BABBC10076F210 /* ContainerViewController.swift */; };
+		487BE1F521BABD110076F210 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F421BABD110076F210 /* LoginViewController.swift */; };
+		487BE1F721BABD250076F210 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F621BABD250076F210 /* DashboardViewController.swift */; };
+		487BE1F921BAC7320076F210 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F821BAC7320076F210 /* DashboardCollectionViewCell.swift */; };
+		487BE1FB21BCB3430076F210 /* CustomCircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */; };
+		487BE1FD21BCC46B0076F210 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FC21BCC46B0076F210 /* DoctorViewController.swift */; };
+		487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FE21BCC4980076F210 /* DoctorTableViewCell.swift */; };
+		487BE20121BCD0EF0076F210 /* DoctorListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE20021BCD0EF0076F210 /* DoctorListTableViewCell.swift */; };
+		487BE20321BCD1030076F210 /* DoctorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE20221BCD1030076F210 /* DoctorListViewController.swift */; };
+		487BE20721BCFDA50076F210 /* ic_favorite_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 487BE20421BCFDA40076F210 /* ic_favorite_2x.png */; };
+		487BE20821BCFDA50076F210 /* ic_favorite_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 487BE20521BCFDA40076F210 /* ic_favorite_3x.png */; };
+		487BE20921BCFDA50076F210 /* ic_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 487BE20621BCFDA50076F210 /* ic_favorite.png */; };
+		487BE21021BE763C0076F210 /* curve_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 487BE20E21BE763B0076F210 /* curve_green.png */; };
+		487BE21121BE763C0076F210 /* curve_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 487BE20F21BE763C0076F210 /* curve_orange.png */; };
+		487BE21321BE7C6E0076F210 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE21221BE7C6E0076F210 /* CardView.swift */; };
+		487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE21421BEB58F0076F210 /* HospitalListViewController.swift */; };
+		48A58ABC21D464CA009F8736 /* LaboratoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A58ABB21D464CA009F8736 /* LaboratoryViewController.swift */; };
+		48A58ABF21D4651C009F8736 /* LaboratoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A58ABE21D4651C009F8736 /* LaboratoryTableViewCell.swift */; };
+		48A58AC121D4652C009F8736 /* LaboratoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A58AC021D4652C009F8736 /* LaboratoryModel.swift */; };
+		48A58AC521D5AE2C009F8736 /* LocationSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A58AC421D5AE2C009F8736 /* LocationSearch.storyboard */; };
+		48A58AC721D5AEA0009F8736 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A58AC621D5AEA0009F8736 /* LocationSearchViewController.swift */; };
+		48A58AC921D5AEC0009F8736 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A58AC821D5AEC0009F8736 /* LocationSearchTable.swift */; };
+		48A58ACB21D5BAAF009F8736 /* locaion.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A58ACA21D5BAAE009F8736 /* locaion.png */; };
+		48A58ACD21D5BB32009F8736 /* icon_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A58ACC21D5BB31009F8736 /* icon_location.png */; };
+		48DCD2E721C5DA8700215B86 /* HospitalListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2E621C5DA8700215B86 /* HospitalListModel.swift */; };
+		48DCD2E921C5E32E00215B86 /* HospitalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2E821C5E32E00215B86 /* HospitalListTableViewCell.swift */; };
+		48DCD2EB21C633C200215B86 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2EA21C633C200215B86 /* ServicesViewController.swift */; };
+		48DCD2ED21C634C400215B86 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2EC21C634C400215B86 /* CustomLabel.swift */; };
+		48DCD2EF21C63AED00215B86 /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2EE21C63AED00215B86 /* ServicesCollectionViewCell.swift */; };
+		48F616CA21D1BA2A0020C32F /* HospitalDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */; };
+		48F616D221D44F460020C32F /* like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F616D121D44F450020C32F /* like_gray.png */; };
+		51FA120C21DA22E800D7E009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA120B21DA22E800D7E009 /* Constants.swift */; };
+		51FA120E21DA231900D7E009 /* Ajinkya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51FA120D21DA231900D7E009 /* Ajinkya.storyboard */; };
+		51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */; };
+		51FA121421DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */; };
+		51FA121621DA2F3200D7E009 /* GymnasiumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121521DA2F3200D7E009 /* GymnasiumList.swift */; };
+		51FA121821DA30F400D7E009 /* GymnasiumServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121721DA30F400D7E009 /* GymnasiumServices.swift */; };
+		A56CEF1ABD974263B427CC7A /* Pods_Arogyamitra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3979ECB9C807A91BC24603D0 /* Pods_Arogyamitra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +115,54 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraUITests/Pods-ArogyamitraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3979ECB9C807A91BC24603D0 /* Pods_Arogyamitra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arogyamitra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D334C37FCABAB756950AC8B /* Pods-Arogyamitra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arogyamitra.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra.release.xcconfig"; sourceTree = "<group>"; };
+		48272AC521C4887000B288F6 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		48272AC821C4887000B288F6 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		48272AC921C4887000B288F6 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		48272ACA21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		48272ACB21C4887000B288F6 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		48272ACC21C4887000B288F6 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		48272ACD21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		48272ACE21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		48272ACF21C4887000B288F6 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		48272AD221C4887000B288F6 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
+		48272AD321C4887000B288F6 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		48272AD421C4887000B288F6 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		48272AD521C4887000B288F6 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		48272AD621C4887000B288F6 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		48272AD721C4887000B288F6 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		48272AD821C4887000B288F6 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		48272AD921C4887000B288F6 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
+		48272ADA21C4887000B288F6 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		48272ADB21C4887000B288F6 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		48272ADC21C4887000B288F6 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		48272ADD21C4887000B288F6 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		48272ADE21C4887000B288F6 /* Info-tvOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		48272ADF21C4887000B288F6 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		48272AE021C4887000B288F6 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		48272AE121C4887000B288F6 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		48272AE221C4887000B288F6 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		48272AE321C4887000B288F6 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		48272AE421C4887000B288F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48272AE521C4887000B288F6 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
+		48272AFF21C48DAB00B288F6 /* DashboadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboadModel.swift; sourceTree = "<group>"; };
+		48272B0121C48F8600B288F6 /* WebserviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceHelper.swift; sourceTree = "<group>"; };
+		48272B0321C4901700B288F6 /* CommonMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMethod.swift; sourceTree = "<group>"; };
+		48272B0521C4962300B288F6 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		48272B0B21C5167600B288F6 /* DoctorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
+		483F100521C0D5B100181AB3 /* DoctorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsViewController.swift; sourceTree = "<group>"; };
+		483F105521C1302900181AB3 /* Varialbe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Varialbe.swift; sourceTree = "<group>"; };
+		483F105721C1F4C300181AB3 /* HospitalDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsViewController.swift; sourceTree = "<group>"; };
+		483F105B21C3406700181AB3 /* RatingAndReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingAndReviewViewController.swift; sourceTree = "<group>"; };
+		48414F0221CBA82D00A49605 /* DoctorListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListModel.swift; sourceTree = "<group>"; };
+		48414F0421CBC5C500A49605 /* DoctorDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetailsModel.swift; sourceTree = "<group>"; };
+		48414F0B21CF5B1C00A49605 /* PhysicalFitnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalFitnessViewController.swift; sourceTree = "<group>"; };
+		4846A27921C7385900B47AB2 /* DoctorSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorSearchTableViewCell.swift; sourceTree = "<group>"; };
+		4858D16021D6FA7F009F5033 /* LaboratoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryDetailsViewController.swift; sourceTree = "<group>"; };
+		4858D16321D6FAAE009F5033 /* LaboratoryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryDetailsModel.swift; sourceTree = "<group>"; };
+		4858D16721D70E36009F5033 /* LabTestScanListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTestScanListTableViewCell.swift; sourceTree = "<group>"; };
 		487BE1B921BABA3D0076F210 /* Arogyamitra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arogyamitra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487BE1BC21BABA3D0076F210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		487BE1BE21BABA3D0076F210 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +176,52 @@
 		487BE1D821BABA400076F210 /* ArogyamitraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArogyamitraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		487BE1DC21BABA400076F210 /* ArogyamitraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamitraUITests.swift; sourceTree = "<group>"; };
 		487BE1DE21BABA400076F210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487BE1EB21BABBC10076F210 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		487BE1ED21BABBC10076F210 /* MenuDrawerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerTableViewCell.swift; sourceTree = "<group>"; };
+		487BE1EE21BABBC10076F210 /* MenuDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDrawerViewController.swift; sourceTree = "<group>"; };
+		487BE1EF21BABBC10076F210 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		487BE1F421BABD110076F210 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		487BE1F621BABD250076F210 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		487BE1F821BAC7320076F210 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCircularImage.swift; sourceTree = "<group>"; };
+		487BE1FC21BCC46B0076F210 /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
+		487BE1FE21BCC4980076F210 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
+		487BE20021BCD0EF0076F210 /* DoctorListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListTableViewCell.swift; sourceTree = "<group>"; };
+		487BE20221BCD1030076F210 /* DoctorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListViewController.swift; sourceTree = "<group>"; };
+		487BE20421BCFDA40076F210 /* ic_favorite_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite_2x.png; sourceTree = "<group>"; };
+		487BE20521BCFDA40076F210 /* ic_favorite_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite_3x.png; sourceTree = "<group>"; };
+		487BE20621BCFDA50076F210 /* ic_favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_favorite.png; sourceTree = "<group>"; };
+		487BE20E21BE763B0076F210 /* curve_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curve_green.png; sourceTree = "<group>"; };
+		487BE20F21BE763C0076F210 /* curve_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curve_orange.png; sourceTree = "<group>"; };
+		487BE21221BE7C6E0076F210 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		487BE21421BEB58F0076F210 /* HospitalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalListViewController.swift; sourceTree = "<group>"; };
+		48A58ABB21D464CA009F8736 /* LaboratoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryViewController.swift; sourceTree = "<group>"; };
+		48A58ABE21D4651C009F8736 /* LaboratoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryTableViewCell.swift; sourceTree = "<group>"; };
+		48A58AC021D4652C009F8736 /* LaboratoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaboratoryModel.swift; sourceTree = "<group>"; };
+		48A58AC421D5AE2C009F8736 /* LocationSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationSearch.storyboard; sourceTree = "<group>"; };
+		48A58AC621D5AEA0009F8736 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		48A58AC821D5AEC0009F8736 /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		48A58ACA21D5BAAE009F8736 /* locaion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locaion.png; sourceTree = "<group>"; };
+		48A58ACC21D5BB31009F8736 /* icon_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_location.png; sourceTree = "<group>"; };
+		48DCD2E621C5DA8700215B86 /* HospitalListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalListModel.swift; sourceTree = "<group>"; };
+		48DCD2E821C5E32E00215B86 /* HospitalListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalListTableViewCell.swift; sourceTree = "<group>"; };
+		48DCD2EA21C633C200215B86 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		48DCD2EC21C634C400215B86 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		48DCD2EE21C63AED00215B86 /* ServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewCell.swift; sourceTree = "<group>"; };
+		48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsModel.swift; sourceTree = "<group>"; };
+		48F616D121D44F450020C32F /* like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_gray.png; sourceTree = "<group>"; };
+		51FA120B21DA22E800D7E009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		51FA120D21DA231900D7E009 /* Ajinkya.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ajinkya.storyboard; sourceTree = "<group>"; };
+		51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumVC.swift; sourceTree = "<group>"; };
+		51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsTableCell.swift; sourceTree = "<group>"; };
+		51FA121521DA2F3200D7E009 /* GymnasiumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumList.swift; sourceTree = "<group>"; };
+		51FA121721DA30F400D7E009 /* GymnasiumServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumServices.swift; sourceTree = "<group>"; };
+		8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraTests/Pods-ArogyamitraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraUITests/Pods-ArogyamitraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraTests/Pods-ArogyamitraTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE640C4300B061F551F9B497 /* Pods-Arogyamitra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arogyamitra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56CEF1ABD974263B427CC7A /* Pods_Arogyamitra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F890CC260E5AAEC5395AFD /* Pods_ArogyamitraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +245,160 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F15734D2AF7C8CEF3AD40B0 /* Pods_ArogyamitraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48272AC421C4887000B288F6 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				48272AC521C4887000B288F6 /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		48272AC621C4887000B288F6 /* TpKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				48272AC721C4887000B288F6 /* TPKeyboardAvoiding */,
+			);
+			path = TpKeyBoard;
+			sourceTree = "<group>";
+		};
+		48272AC721C4887000B288F6 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				48272AC821C4887000B288F6 /* TPKeyboardAvoidingScrollView.h */,
+				48272AC921C4887000B288F6 /* TPKeyboardAvoidingCollectionView.h */,
+				48272ACA21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				48272ACB21C4887000B288F6 /* TPKeyboardAvoidingTableView.m */,
+				48272ACC21C4887000B288F6 /* TPKeyboardAvoidingScrollView.m */,
+				48272ACD21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				48272ACE21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m */,
+				48272ACF21C4887000B288F6 /* TPKeyboardAvoidingTableView.h */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		48272AD021C4887000B288F6 /* Almofire */ = {
+			isa = PBXGroup;
+			children = (
+				48272AD121C4887000B288F6 /* Almofire_Source */,
+			);
+			path = Almofire;
+			sourceTree = "<group>";
+		};
+		48272AD121C4887000B288F6 /* Almofire_Source */ = {
+			isa = PBXGroup;
+			children = (
+				48272AD221C4887000B288F6 /* TaskDelegate.swift */,
+				48272AD321C4887000B288F6 /* MultipartFormData.swift */,
+				48272AD421C4887000B288F6 /* NetworkReachabilityManager.swift */,
+				48272AD521C4887000B288F6 /* Timeline.swift */,
+				48272AD621C4887000B288F6 /* DispatchQueue+Alamofire.swift */,
+				48272AD721C4887000B288F6 /* Result.swift */,
+				48272AD821C4887000B288F6 /* ParameterEncoding.swift */,
+				48272AD921C4887000B288F6 /* AFError.swift */,
+				48272ADA21C4887000B288F6 /* Validation.swift */,
+				48272ADB21C4887000B288F6 /* Notifications.swift */,
+				48272ADC21C4887000B288F6 /* Response.swift */,
+				48272ADD21C4887000B288F6 /* Alamofire.swift */,
+				48272ADE21C4887000B288F6 /* Info-tvOS.plist */,
+				48272ADF21C4887000B288F6 /* Request.swift */,
+				48272AE021C4887000B288F6 /* SessionManager.swift */,
+				48272AE121C4887000B288F6 /* ResponseSerialization.swift */,
+				48272AE221C4887000B288F6 /* Alamofire.h */,
+				48272AE321C4887000B288F6 /* ServerTrustPolicy.swift */,
+				48272AE421C4887000B288F6 /* Info.plist */,
+				48272AE521C4887000B288F6 /* SessionDelegate.swift */,
+			);
+			path = Almofire_Source;
+			sourceTree = "<group>";
+		};
+		48272AFE21C488CD00B288F6 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				48272AD021C4887000B288F6 /* Almofire */,
+				48272AC421C4887000B288F6 /* Toast */,
+				48272AC621C4887000B288F6 /* TpKeyBoard */,
+				487BE1EA21BABBC10076F210 /* SlideMenu */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		483F100721C0D8BC00181AB3 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1FC21BCC46B0076F210 /* DoctorViewController.swift */,
+				48272B0B21C5167600B288F6 /* DoctorModel.swift */,
+				487BE1FE21BCC4980076F210 /* DoctorTableViewCell.swift */,
+				487BE20221BCD1030076F210 /* DoctorListViewController.swift */,
+				48414F0221CBA82D00A49605 /* DoctorListModel.swift */,
+				487BE20021BCD0EF0076F210 /* DoctorListTableViewCell.swift */,
+				483F100521C0D5B100181AB3 /* DoctorDetailsViewController.swift */,
+				48414F0421CBC5C500A49605 /* DoctorDetailsModel.swift */,
+				4846A27921C7385900B47AB2 /* DoctorSearchTableViewCell.swift */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
+		483F100821C0D8D700181AB3 /* Hospital */ = {
+			isa = PBXGroup;
+			children = (
+				487BE21421BEB58F0076F210 /* HospitalListViewController.swift */,
+				48DCD2E821C5E32E00215B86 /* HospitalListTableViewCell.swift */,
+				48DCD2E621C5DA8700215B86 /* HospitalListModel.swift */,
+				483F105721C1F4C300181AB3 /* HospitalDetailsViewController.swift */,
+				48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */,
+				48DCD2EA21C633C200215B86 /* ServicesViewController.swift */,
+				48DCD2EE21C63AED00215B86 /* ServicesCollectionViewCell.swift */,
+			);
+			path = Hospital;
+			sourceTree = "<group>";
+		};
+		483F100921C0D8F200181AB3 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1F621BABD250076F210 /* DashboardViewController.swift */,
+				487BE1F821BAC7320076F210 /* DashboardCollectionViewCell.swift */,
+				48272AFF21C48DAB00B288F6 /* DashboadModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		483F100A21C0D92600181AB3 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */,
+				487BE21221BE7C6E0076F210 /* CardView.swift */,
+				483F105521C1302900181AB3 /* Varialbe.swift */,
+				48272B0321C4901700B288F6 /* CommonMethod.swift */,
+				48DCD2EC21C634C400215B86 /* CustomLabel.swift */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		483F105D21C3408900181AB3 /* Rating&Review */ = {
+			isa = PBXGroup;
+			children = (
+				483F105B21C3406700181AB3 /* RatingAndReviewViewController.swift */,
+				48414F0B21CF5B1C00A49605 /* PhysicalFitnessViewController.swift */,
+			);
+			path = "Rating&Review";
+			sourceTree = "<group>";
+		};
+		4858D16221D6FA8D009F5033 /* Loaction */ = {
+			isa = PBXGroup;
+			children = (
+				48A58AC621D5AEA0009F8736 /* LocationSearchViewController.swift */,
+				48A58AC821D5AEC0009F8736 /* LocationSearchTable.swift */,
+			);
+			path = Loaction;
+			sourceTree = "<group>";
+		};
 		487BE1B021BABA3D0076F210 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +406,8 @@
 				487BE1D021BABA400076F210 /* ArogyamitraTests */,
 				487BE1DB21BABA400076F210 /* ArogyamitraUITests */,
 				487BE1BA21BABA3D0076F210 /* Products */,
+				7A98C4960817FD367D8B2C0F /* Pods */,
+				62061341248A49D5F8684BFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +424,34 @@
 		487BE1BB21BABA3D0076F210 /* Arogyamitra */ = {
 			isa = PBXGroup;
 			children = (
+				51FA120921DA22CA00D7E009 /* Utils */,
+				51FA120821DA22B900D7E009 /* Services */,
+				51FA120721DA22AF00D7E009 /* Model */,
+				51FA120621DA225F00D7E009 /* Views */,
+				51FA120521DA225100D7E009 /* Controllers */,
+				48272AFE21C488CD00B288F6 /* ThirdParty */,
+				487BE1EC21BABBC10076F210 /* SideMenuVC */,
 				487BE1BC21BABA3D0076F210 /* AppDelegate.swift */,
 				487BE1BE21BABA3D0076F210 /* ViewController.swift */,
+				487BE1F421BABD110076F210 /* LoginViewController.swift */,
+				48272B0121C48F8600B288F6 /* WebserviceHelper.swift */,
+				48272B0521C4962300B288F6 /* URLManager.swift */,
+				483F100921C0D8F200181AB3 /* Dashboard */,
+				483F105D21C3408900181AB3 /* Rating&Review */,
+				483F100721C0D8BC00181AB3 /* Doctor */,
+				483F100821C0D8D700181AB3 /* Hospital */,
+				4858D16221D6FA8D009F5033 /* Loaction */,
+				48A58ABD21D464D1009F8736 /* Laboratory */,
+				483F100A21C0D92600181AB3 /* Custom Classes */,
+				487BE20421BCFDA40076F210 /* ic_favorite_2x.png */,
+				48F616D121D44F450020C32F /* like_gray.png */,
+				487BE20521BCFDA40076F210 /* ic_favorite_3x.png */,
+				487BE20621BCFDA50076F210 /* ic_favorite.png */,
+				487BE20E21BE763B0076F210 /* curve_green.png */,
+				487BE20F21BE763C0076F210 /* curve_orange.png */,
+				48A58ACC21D5BB31009F8736 /* icon_location.png */,
+				48A58ACA21D5BAAE009F8736 /* locaion.png */,
+				48A58AC421D5AE2C009F8736 /* LocationSearch.storyboard */,
 				487BE1C021BABA3D0076F210 /* Main.storyboard */,
 				487BE1C321BABA400076F210 /* Assets.xcassets */,
 				487BE1C521BABA400076F210 /* LaunchScreen.storyboard */,
@@ -125,6 +478,101 @@
 			path = ArogyamitraUITests;
 			sourceTree = "<group>";
 		};
+		487BE1EA21BABBC10076F210 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1EB21BABBC10076F210 /* SlideMenuController.swift */,
+			);
+			path = SlideMenu;
+			sourceTree = "<group>";
+		};
+		487BE1EC21BABBC10076F210 /* SideMenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				487BE1EE21BABBC10076F210 /* MenuDrawerViewController.swift */,
+				487BE1ED21BABBC10076F210 /* MenuDrawerTableViewCell.swift */,
+				487BE1EF21BABBC10076F210 /* ContainerViewController.swift */,
+			);
+			path = SideMenuVC;
+			sourceTree = "<group>";
+		};
+		48A58ABD21D464D1009F8736 /* Laboratory */ = {
+			isa = PBXGroup;
+			children = (
+				48A58ABB21D464CA009F8736 /* LaboratoryViewController.swift */,
+				48A58ABE21D4651C009F8736 /* LaboratoryTableViewCell.swift */,
+				48A58AC021D4652C009F8736 /* LaboratoryModel.swift */,
+				4858D16021D6FA7F009F5033 /* LaboratoryDetailsViewController.swift */,
+				4858D16321D6FAAE009F5033 /* LaboratoryDetailsModel.swift */,
+				4858D16721D70E36009F5033 /* LabTestScanListTableViewCell.swift */,
+			);
+			path = Laboratory;
+			sourceTree = "<group>";
+		};
+		51FA120521DA225100D7E009 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		51FA120621DA225F00D7E009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
+				51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		51FA120721DA22AF00D7E009 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121521DA2F3200D7E009 /* GymnasiumList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51FA120821DA22B900D7E009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121721DA30F400D7E009 /* GymnasiumServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		51FA120921DA22CA00D7E009 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				51FA120B21DA22E800D7E009 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		62061341248A49D5F8684BFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3979ECB9C807A91BC24603D0 /* Pods_Arogyamitra.framework */,
+				9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */,
+				B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A98C4960817FD367D8B2C0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE640C4300B061F551F9B497 /* Pods-Arogyamitra.debug.xcconfig */,
+				3D334C37FCABAB756950AC8B /* Pods-Arogyamitra.release.xcconfig */,
+				8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */,
+				D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */,
+				C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */,
+				09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +580,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 487BE1E121BABA400076F210 /* Build configuration list for PBXNativeTarget "Arogyamitra" */;
 			buildPhases = (
+				E5A1B1F84C12FF497C6793EA /* [CP] Check Pods Manifest.lock */,
 				487BE1B521BABA3D0076F210 /* Sources */,
 				487BE1B621BABA3D0076F210 /* Frameworks */,
 				487BE1B721BABA3D0076F210 /* Resources */,
+				5650854DE6720EC158ABDEF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +599,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 487BE1E421BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraTests" */;
 			buildPhases = (
+				65BAFD748944D3A77BC02D66 /* [CP] Check Pods Manifest.lock */,
 				487BE1C921BABA400076F210 /* Sources */,
 				487BE1CA21BABA400076F210 /* Frameworks */,
 				487BE1CB21BABA400076F210 /* Resources */,
@@ -167,6 +618,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 487BE1E721BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraUITests" */;
 			buildPhases = (
+				A7A15C338579AC94474BCB0B /* [CP] Check Pods Manifest.lock */,
 				487BE1D421BABA400076F210 /* Sources */,
 				487BE1D521BABA400076F210 /* Frameworks */,
 				487BE1D621BABA400076F210 /* Resources */,
@@ -229,9 +681,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487BE21021BE763C0076F210 /* curve_green.png in Resources */,
+				48A58AC521D5AE2C009F8736 /* LocationSearch.storyboard in Resources */,
 				487BE1C721BABA400076F210 /* LaunchScreen.storyboard in Resources */,
+				487BE20721BCFDA50076F210 /* ic_favorite_2x.png in Resources */,
+				487BE21121BE763C0076F210 /* curve_orange.png in Resources */,
 				487BE1C421BABA400076F210 /* Assets.xcassets in Resources */,
+				487BE20821BCFDA50076F210 /* ic_favorite_3x.png in Resources */,
+				51FA120E21DA231900D7E009 /* Ajinkya.storyboard in Resources */,
 				487BE1C221BABA3D0076F210 /* Main.storyboard in Resources */,
+				48F616D221D44F460020C32F /* like_gray.png in Resources */,
+				48A58ACD21D5BB32009F8736 /* icon_location.png in Resources */,
+				487BE20921BCFDA50076F210 /* ic_favorite.png in Resources */,
+				48A58ACB21D5BAAF009F8736 /* locaion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +713,172 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5650854DE6720EC158ABDEF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65BAFD748944D3A77BC02D66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArogyamitraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7A15C338579AC94474BCB0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ArogyamitraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5A1B1F84C12FF497C6793EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arogyamitra-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		487BE1B521BABA3D0076F210 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48272AEE21C4887000B288F6 /* Timeline.swift in Sources */,
+				48272AEA21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m in Sources */,
+				48272B0021C48DAB00B288F6 /* DashboadModel.swift in Sources */,
+				487BE1F521BABD110076F210 /* LoginViewController.swift in Sources */,
+				48272AFA21C4887000B288F6 /* ResponseSerialization.swift in Sources */,
+				48272AFB21C4887000B288F6 /* ServerTrustPolicy.swift in Sources */,
 				487BE1BF21BABA3D0076F210 /* ViewController.swift in Sources */,
+				48272AF521C4887000B288F6 /* Response.swift in Sources */,
+				48A58AC121D4652C009F8736 /* LaboratoryModel.swift in Sources */,
+				487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */,
+				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
+				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
+				48272B0621C4962300B288F6 /* URLManager.swift in Sources */,
+				4858D16421D6FAAE009F5033 /* LaboratoryDetailsModel.swift in Sources */,
+				51FA121421DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift in Sources */,
+				48272B0C21C5167600B288F6 /* DoctorModel.swift in Sources */,
+				48DCD2E921C5E32E00215B86 /* HospitalListTableViewCell.swift in Sources */,
+				48A58ABF21D4651C009F8736 /* LaboratoryTableViewCell.swift in Sources */,
+				48272AE721C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				4858D16821D70E36009F5033 /* LabTestScanListTableViewCell.swift in Sources */,
+				48272B0421C4901700B288F6 /* CommonMethod.swift in Sources */,
+				48272AF621C4887000B288F6 /* Alamofire.swift in Sources */,
+				487BE21321BE7C6E0076F210 /* CardView.swift in Sources */,
+				48F616CA21D1BA2A0020C32F /* HospitalDetailsModel.swift in Sources */,
+				51FA120C21DA22E800D7E009 /* Constants.swift in Sources */,
+				487BE1F221BABBC10076F210 /* MenuDrawerViewController.swift in Sources */,
+				48A58AC721D5AEA0009F8736 /* LocationSearchViewController.swift in Sources */,
+				487BE20121BCD0EF0076F210 /* DoctorListTableViewCell.swift in Sources */,
+				48DCD2E721C5DA8700215B86 /* HospitalListModel.swift in Sources */,
+				48272AE921C4887000B288F6 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */,
+				48A58ABC21D464CA009F8736 /* LaboratoryViewController.swift in Sources */,
+				48414F0C21CF5B1C00A49605 /* PhysicalFitnessViewController.swift in Sources */,
+				4846A27A21C7385900B47AB2 /* DoctorSearchTableViewCell.swift in Sources */,
+				48DCD2ED21C634C400215B86 /* CustomLabel.swift in Sources */,
+				48414F0321CBA82D00A49605 /* DoctorListModel.swift in Sources */,
+				48272AEF21C4887000B288F6 /* DispatchQueue+Alamofire.swift in Sources */,
+				487BE1F921BAC7320076F210 /* DashboardCollectionViewCell.swift in Sources */,
+				51FA121621DA2F3200D7E009 /* GymnasiumList.swift in Sources */,
+				483F105621C1302900181AB3 /* Varialbe.swift in Sources */,
+				48272B0221C48F8600B288F6 /* WebserviceHelper.swift in Sources */,
+				48272AF421C4887000B288F6 /* Notifications.swift in Sources */,
+				487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */,
+				48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */,
+				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,
+				483F105C21C3406700181AB3 /* RatingAndReviewViewController.swift in Sources */,
+				48272AEC21C4887000B288F6 /* MultipartFormData.swift in Sources */,
+				487BE1F321BABBC10076F210 /* ContainerViewController.swift in Sources */,
+				48272AE621C4887000B288F6 /* Toast.swift in Sources */,
+				483F105821C1F4C300181AB3 /* HospitalDetailsViewController.swift in Sources */,
+				48272AFD21C4887000B288F6 /* SessionDelegate.swift in Sources */,
+				487BE20321BCD1030076F210 /* DoctorListViewController.swift in Sources */,
+				48272AF021C4887000B288F6 /* Result.swift in Sources */,
+				487BE1FB21BCB3430076F210 /* CustomCircularImage.swift in Sources */,
+				48DCD2EB21C633C200215B86 /* ServicesViewController.swift in Sources */,
+				483F100621C0D5B100181AB3 /* DoctorDetailsViewController.swift in Sources */,
+				48272AF321C4887000B288F6 /* Validation.swift in Sources */,
+				48272AF121C4887000B288F6 /* ParameterEncoding.swift in Sources */,
+				48272AF821C4887000B288F6 /* Request.swift in Sources */,
 				487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */,
+				487BE1F721BABD250076F210 /* DashboardViewController.swift in Sources */,
+				487BE1FD21BCC46B0076F210 /* DoctorViewController.swift in Sources */,
+				48272AE821C4887000B288F6 /* TPKeyboardAvoidingTableView.m in Sources */,
+				48DCD2EF21C63AED00215B86 /* ServicesCollectionViewCell.swift in Sources */,
+				48272AEB21C4887000B288F6 /* TaskDelegate.swift in Sources */,
+				48A58AC921D5AEC0009F8736 /* LocationSearchTable.swift in Sources */,
+				4858D16121D6FA80009F5033 /* LaboratoryDetailsViewController.swift in Sources */,
+				48272AF221C4887000B288F6 /* AFError.swift in Sources */,
+				51FA121821DA30F400D7E009 /* GymnasiumServices.swift in Sources */,
+				48272AF921C4887000B288F6 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +1051,11 @@
 		};
 		487BE1E221BABA400076F210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE640C4300B061F551F9B497 /* Pods-Arogyamitra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YCPFBKZL7W;
 				INFOPLIST_FILE = Arogyamitra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,9 +1070,11 @@
 		};
 		487BE1E321BABA400076F210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D334C37FCABAB756950AC8B /* Pods-Arogyamitra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YCPFBKZL7W;
 				INFOPLIST_FILE = Arogyamitra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +1089,7 @@
 		};
 		487BE1E521BABA400076F210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +1110,7 @@
 		};
 		487BE1E621BABA400076F210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +1131,7 @@
 		};
 		487BE1E821BABA400076F210 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +1151,7 @@
 		};
 		487BE1E921BABA400076F210 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

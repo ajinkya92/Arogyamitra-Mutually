@@ -2,7 +2,7 @@
 //  ArogyamitraTests.swift
 //  ArogyamitraTests
 //
-//  Created by Sangram Powar on 07/12/18.
+//  Created by Nitin Landge on 07/12/18.
 //  Copyright © 2018 Nitin Landge. All rights reserved.
 //
 
