@@ -9,6 +9,11 @@
 import UIKit
 import Kingfisher
 
+protocol GymnasiumDetailsTableCellDelegate {
+    func didTapServiceLabel(_ tag: Int)
+
+}
+
 class GymnasiumDetailsTableCell: UITableViewCell {
     
     //Outlets
@@ -25,12 +30,16 @@ class GymnasiumDetailsTableCell: UITableViewCell {
     @IBOutlet weak var serviceLbl2: UILabel!
     @IBOutlet weak var showMoreLbl: UILabel!
     
+    var delegate: GymnasiumDetailsTableCellDelegate?
+    
     //Storage Variables
     var timingStringArray = [String]()
     var servicesStringArray = [String]()
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        settingTapGestureInstance()
+        
         
     }
 
@@ -53,6 +62,7 @@ class GymnasiumDetailsTableCell: UITableViewCell {
         for services in gymnasiumListResult.gymnasiumYogaServices {
             servicesStringArray.append(services.services)
         }
+        self.showMoreLbl.text = "+\(servicesStringArray.count - 2) More"
         
         displayingServicesResult()
     }
@@ -79,4 +89,37 @@ class GymnasiumDetailsTableCell: UITableViewCell {
         
     }
 
+}
+
+extension GymnasiumDetailsTableCell {
+    
+    //MARK: Assigning Tap Gesture to all Label
+    
+    func setTapGesture() -> UITapGestureRecognizer {
+        var tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.serviceLabelTapped(sender:)))
+        return tapRecognizer
+        
+        
+    }
+    
+    func settingTapGestureInstance() {
+        serviceLbl1.addGestureRecognizer(setTapGesture())
+        serviceLbl2.addGestureRecognizer(setTapGesture())
+        showMoreLbl.addGestureRecognizer(setTapGesture())
+        serviceLbl1.isUserInteractionEnabled = true
+        serviceLbl2.isUserInteractionEnabled = true
+        showMoreLbl.isUserInteractionEnabled = true
+    }
+    
+    //MARK: Services Label Tap Function
+    
+    @objc func serviceLabelTapped(sender: UITapGestureRecognizer) {
+        delegate?.didTapServiceLabel(self.tag)
+        print("Service Label Tap Working")
+        
+    }
+    
+    
+    
 }

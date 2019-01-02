@@ -12,6 +12,12 @@ class GymnasiumVC: UIViewController {
     
     //OUTLETS:
     @IBOutlet weak var tableview: UITableView!
+    
+    //Animation Outlets:
+    @IBOutlet weak var servicePopupViewBottonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var serviceCountLbl: UILabel!
+    @IBOutlet weak var gymnasiumNameDisplayLbl: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +29,16 @@ class GymnasiumVC: UIViewController {
     
     //Storage Variables
     var gymnasiumListArray = [GymnasiumListResult]()
+    
+    
+    //MARK: Actions for Service Popup View
+    
+    @IBAction func servicePopupCancelButtonTapped() {
+        self.servicePopupViewBottonConstraint.constant = -1000
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
 
 
 }
@@ -41,6 +57,9 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.configureGymnasiumCell(gymnasiumListResult: gymnasiumListArray[indexPath.row])
         
+        cell.delegate = self
+        cell.tag = indexPath.row
+        
         return cell
     }
     
@@ -50,6 +69,21 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250
+    }
+    
+}
+
+// MARK: Gymnasium Tableview Cell Delegate Functions written here...
+extension GymnasiumVC: GymnasiumDetailsTableCellDelegate {
+    
+    func didTapServiceLabel(_ tag: Int) {
+        self.servicePopupViewBottonConstraint.constant = 0
+        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        print(tag)
+        self.gymnasiumNameDisplayLbl.text = self.gymnasiumListArray[tag].name
+        self.serviceCountLbl.text = "Services (\(gymnasiumListArray[tag].gymnasiumYogaServices.count))"
     }
     
 }

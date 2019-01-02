@@ -61,7 +61,6 @@
 		487BE1F521BABD110076F210 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F421BABD110076F210 /* LoginViewController.swift */; };
 		487BE1F721BABD250076F210 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F621BABD250076F210 /* DashboardViewController.swift */; };
 		487BE1F921BAC7320076F210 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1F821BAC7320076F210 /* DashboardCollectionViewCell.swift */; };
-		487BE1FB21BCB3430076F210 /* CustomCircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */; };
 		487BE1FD21BCC46B0076F210 /* DoctorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FC21BCC46B0076F210 /* DoctorViewController.swift */; };
 		487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE1FE21BCC4980076F210 /* DoctorTableViewCell.swift */; };
 		487BE20121BCD0EF0076F210 /* DoctorListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487BE20021BCD0EF0076F210 /* DoctorListTableViewCell.swift */; };
@@ -94,6 +93,8 @@
 		51FA121421DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */; };
 		51FA121621DA2F3200D7E009 /* GymnasiumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121521DA2F3200D7E009 /* GymnasiumList.swift */; };
 		51FA121821DA30F400D7E009 /* GymnasiumServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121721DA30F400D7E009 /* GymnasiumServices.swift */; };
+		51FBEAE821DCEC6F00F69264 /* CustomCircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBEAE721DCEC6F00F69264 /* CustomCircularImage.swift */; };
+		51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */; };
 		A56CEF1ABD974263B427CC7A /* Pods_Arogyamitra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3979ECB9C807A91BC24603D0 /* Pods_Arogyamitra.framework */; };
 /* End PBXBuildFile section */
 
@@ -183,7 +184,6 @@
 		487BE1F421BABD110076F210 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		487BE1F621BABD250076F210 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		487BE1F821BAC7320076F210 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
-		487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCircularImage.swift; sourceTree = "<group>"; };
 		487BE1FC21BCC46B0076F210 /* DoctorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorViewController.swift; sourceTree = "<group>"; };
 		487BE1FE21BCC4980076F210 /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		487BE20021BCD0EF0076F210 /* DoctorListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorListTableViewCell.swift; sourceTree = "<group>"; };
@@ -216,6 +216,8 @@
 		51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsTableCell.swift; sourceTree = "<group>"; };
 		51FA121521DA2F3200D7E009 /* GymnasiumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumList.swift; sourceTree = "<group>"; };
 		51FA121721DA30F400D7E009 /* GymnasiumServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumServices.swift; sourceTree = "<group>"; };
+		51FBEAE721DCEC6F00F69264 /* CustomCircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCircularImage.swift; sourceTree = "<group>"; };
+		51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumServicePopupCollectionCell.swift; sourceTree = "<group>"; };
 		8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraTests/Pods-ArogyamitraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,7 +374,7 @@
 		483F100A21C0D92600181AB3 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
-				487BE1FA21BCB3430076F210 /* CustomCircularImage.swift */,
+				51FBEAE721DCEC6F00F69264 /* CustomCircularImage.swift */,
 				487BE21221BE7C6E0076F210 /* CardView.swift */,
 				483F105521C1302900181AB3 /* Varialbe.swift */,
 				48272B0321C4901700B288F6 /* CommonMethod.swift */,
@@ -522,6 +524,7 @@
 			children = (
 				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
 				51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */,
+				51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */,
 				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
 				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
+				51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */,
 				48272B0621C4962300B288F6 /* URLManager.swift in Sources */,
 				4858D16421D6FAAE009F5033 /* LaboratoryDetailsModel.swift in Sources */,
 				51FA121421DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift in Sources */,
@@ -838,6 +842,7 @@
 				48A58AC721D5AEA0009F8736 /* LocationSearchViewController.swift in Sources */,
 				487BE20121BCD0EF0076F210 /* DoctorListTableViewCell.swift in Sources */,
 				48DCD2E721C5DA8700215B86 /* HospitalListModel.swift in Sources */,
+				51FBEAE821DCEC6F00F69264 /* CustomCircularImage.swift in Sources */,
 				48272AE921C4887000B288F6 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */,
 				48A58ABC21D464CA009F8736 /* LaboratoryViewController.swift in Sources */,
@@ -862,7 +867,6 @@
 				48272AFD21C4887000B288F6 /* SessionDelegate.swift in Sources */,
 				487BE20321BCD1030076F210 /* DoctorListViewController.swift in Sources */,
 				48272AF021C4887000B288F6 /* Result.swift in Sources */,
-				487BE1FB21BCB3430076F210 /* CustomCircularImage.swift in Sources */,
 				48DCD2EB21C633C200215B86 /* ServicesViewController.swift in Sources */,
 				483F100621C0D5B100181AB3 /* DoctorDetailsViewController.swift in Sources */,
 				48272AF321C4887000B288F6 /* Validation.swift in Sources */,
