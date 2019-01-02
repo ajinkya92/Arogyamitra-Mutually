@@ -1,0 +1,6 @@
+framework module Pods_ArogyamitraUITests {
+  umbrella header "Pods-ArogyamitraUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
