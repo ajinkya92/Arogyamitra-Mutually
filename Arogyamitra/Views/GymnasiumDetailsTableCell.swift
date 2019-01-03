@@ -116,7 +116,7 @@ extension GymnasiumDetailsTableCell {
     
     @objc func serviceLabelTapped(sender: UITapGestureRecognizer) {
         delegate?.didTapServiceLabel(self.tag)
-        print("Service Label Tap Working")
+        //print("Service Label Tap Working")
         
     }
     

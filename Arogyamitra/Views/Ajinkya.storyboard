@@ -17,8 +17,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSc-GN-Frd">
+                                <rect key="frame" x="0.0" y="20" width="414" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfl-Ya-LfK">
+                                        <rect key="frame" x="12" y="20" width="390" height="40"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_white" translatesAutoresizingMaskIntoConstraints="NO" id="muI-Rf-LVs">
+                                                <rect key="frame" x="8" y="10" width="40" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="ZSO-w4-O1n"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Search by Speciality, Doctor" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALl-5X-xxJ">
+                                                <rect key="frame" x="50" y="0.0" width="340" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.56078431370000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="muI-Rf-LVs" firstAttribute="leading" secondItem="Yfl-Ya-LfK" secondAttribute="leading" constant="8" id="0qp-0g-vT8"/>
+                                            <constraint firstItem="ALl-5X-xxJ" firstAttribute="top" secondItem="Yfl-Ya-LfK" secondAttribute="top" id="5so-tK-2D4"/>
+                                            <constraint firstItem="ALl-5X-xxJ" firstAttribute="leading" secondItem="Yfl-Ya-LfK" secondAttribute="leading" constant="50" id="CFE-8s-HWo"/>
+                                            <constraint firstAttribute="bottom" secondItem="muI-Rf-LVs" secondAttribute="bottom" constant="10" id="Nhy-FA-Ik0"/>
+                                            <constraint firstAttribute="trailing" secondItem="ALl-5X-xxJ" secondAttribute="trailing" id="P9b-mi-BZp"/>
+                                            <constraint firstAttribute="height" constant="40" id="RUQ-ax-mCB"/>
+                                            <constraint firstAttribute="bottom" secondItem="ALl-5X-xxJ" secondAttribute="bottom" id="eXQ-zy-qav"/>
+                                            <constraint firstItem="muI-Rf-LVs" firstAttribute="top" secondItem="Yfl-Ya-LfK" secondAttribute="top" constant="10" id="vfH-SX-d7Z"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3vh-1p-1qw"/>
+                                    <constraint firstItem="Yfl-Ya-LfK" firstAttribute="centerY" secondItem="TSc-GN-Frd" secondAttribute="centerY" id="74Q-jP-R1n"/>
+                                    <constraint firstItem="Yfl-Ya-LfK" firstAttribute="centerX" secondItem="TSc-GN-Frd" secondAttribute="centerX" id="Udf-11-bsR"/>
+                                    <constraint firstItem="Yfl-Ya-LfK" firstAttribute="leading" secondItem="TSc-GN-Frd" secondAttribute="leading" constant="12" id="fPu-np-bCb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yfl-Ya-LfK" secondAttribute="trailing" constant="12" id="uuZ-9L-gFb"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ue4-Bh-Pra">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="626"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HospitalListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GymnasiumDetailsTableCell" rowHeight="228" id="tDS-fs-ZJG" customClass="GymnasiumDetailsTableCell" customModule="Arogyamitra" customModuleProvider="target">
@@ -248,7 +306,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E7a-eM-0Xg">
                                         <rect key="frame" x="0.0" y="80" width="414" height="220"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oEt-1m-gTu">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oEt-1m-gTu">
                                             <size key="itemSize" width="333" height="61"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -256,14 +314,14 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymnasiumServicePopupCollectionCell" id="ePW-7w-tFU" customClass="GymnasiumServicePopupCollectionCell" customModule="Arogyamitra" customModuleProvider="target">
-                                                <rect key="frame" x="40.666666666666664" y="0.0" width="333" height="61"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="61"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="61"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfn-f7-Gbf" customClass="CustomLabel" customModule="Arogyamitra" customModuleProvider="target">
-                                                            <rect key="frame" x="20" y="15" width="293" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wfn-f7-Gbf" customClass="CustomLabel" customModule="Arogyamitra" customModuleProvider="target">
+                                                            <rect key="frame" x="20" y="10" width="293" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -282,10 +340,10 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="Wfn-f7-Gbf" firstAttribute="top" secondItem="ePW-7w-tFU" secondAttribute="top" constant="15" id="DDh-QV-FLv"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Wfn-f7-Gbf" secondAttribute="bottom" constant="16" id="FYV-sg-D3I"/>
+                                                    <constraint firstItem="Wfn-f7-Gbf" firstAttribute="top" secondItem="ePW-7w-tFU" secondAttribute="top" constant="10" id="DDh-QV-FLv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wfn-f7-Gbf" secondAttribute="bottom" constant="10" id="FYV-sg-D3I"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wfn-f7-Gbf" secondAttribute="trailing" constant="20" id="au2-m3-2ri"/>
                                                     <constraint firstItem="Wfn-f7-Gbf" firstAttribute="leading" secondItem="ePW-7w-tFU" secondAttribute="leading" constant="20" id="cwa-6D-e0D"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Wfn-f7-Gbf" secondAttribute="trailing" constant="20" id="gdz-df-4cV"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="serviceNameLbl" destination="Wfn-f7-Gbf" id="jbX-8J-ghP"/>
@@ -310,11 +368,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OfA-9y-tCZ" firstAttribute="bottom" secondItem="9Am-xf-iO1" secondAttribute="bottom" constant="1000" id="8O8-e0-Fu2"/>
+                            <constraint firstItem="TSc-GN-Frd" firstAttribute="leading" secondItem="9Am-xf-iO1" secondAttribute="leading" id="AaJ-EX-Y6z"/>
+                            <constraint firstItem="ue4-Bh-Pra" firstAttribute="top" secondItem="TSc-GN-Frd" secondAttribute="bottom" constant="10" id="KCC-9X-g0u"/>
                             <constraint firstItem="ue4-Bh-Pra" firstAttribute="leading" secondItem="9Am-xf-iO1" secondAttribute="leading" id="XuN-zJ-1wA"/>
-                            <constraint firstItem="ue4-Bh-Pra" firstAttribute="top" secondItem="Dnv-a4-Y2S" secondAttribute="top" id="cPv-xf-llb"/>
                             <constraint firstItem="ue4-Bh-Pra" firstAttribute="trailing" secondItem="9Am-xf-iO1" secondAttribute="trailing" id="f0v-Hi-SbW"/>
+                            <constraint firstItem="9Am-xf-iO1" firstAttribute="trailing" secondItem="TSc-GN-Frd" secondAttribute="trailing" id="fkk-Se-BGr"/>
                             <constraint firstItem="OfA-9y-tCZ" firstAttribute="leading" secondItem="9Am-xf-iO1" secondAttribute="leading" id="iDx-GD-inX"/>
-                            <constraint firstItem="9Am-xf-iO1" firstAttribute="bottom" secondItem="OfA-9y-tCZ" secondAttribute="bottom" constant="-1000" id="qFv-Ko-lxC"/>
+                            <constraint firstItem="TSc-GN-Frd" firstAttribute="top" secondItem="9Am-xf-iO1" secondAttribute="top" id="n2V-NM-SY9"/>
                             <constraint firstItem="9Am-xf-iO1" firstAttribute="bottom" secondItem="ue4-Bh-Pra" secondAttribute="bottom" id="uu7-dH-SlI"/>
                             <constraint firstItem="OfA-9y-tCZ" firstAttribute="trailing" secondItem="9Am-xf-iO1" secondAttribute="trailing" id="zyC-dL-hdm"/>
                         </constraints>
@@ -322,18 +383,24 @@
                     </view>
                     <connections>
                         <outlet property="gymnasiumNameDisplayLbl" destination="U0y-qg-arW" id="7xC-qi-8qy"/>
+                        <outlet property="searchTextField" destination="ALl-5X-xxJ" id="HHS-tK-K0B"/>
+                        <outlet property="searchTextFieldOuterView" destination="Yfl-Ya-LfK" id="7Bl-oE-IjM"/>
                         <outlet property="serviceCountLbl" destination="dhJ-SR-4Cc" id="gwr-i1-qfB"/>
-                        <outlet property="servicePopupViewBottonConstraint" destination="qFv-Ko-lxC" id="5zJ-zf-hRX"/>
+                        <outlet property="servicePopupCollectionView" destination="E7a-eM-0Xg" id="TVT-Nn-xoe"/>
+                        <outlet property="servicePopupView" destination="OfA-9y-tCZ" id="AM7-20-N7N"/>
+                        <outlet property="servicePopupViewBottomConstraint" destination="8O8-e0-Fu2" id="oMN-HB-eOy"/>
+                        <outlet property="servicePopupViewHeightConstraint" destination="nhH-qF-ETa" id="4x4-mU-EaS"/>
                         <outlet property="tableview" destination="ue4-Bh-Pra" id="6pw-9c-Afy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dr-lc-kFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3645" y="-220"/>
+            <point key="canvasLocation" x="-3646.376811594203" y="-220.10869565217394"/>
         </scene>
     </scenes>
     <resources>
         <image name="cancel" width="40" height="40"/>
         <image name="curve_orange.png" width="722" height="159"/>
+        <image name="search_white" width="24" height="24"/>
     </resources>
 </document>

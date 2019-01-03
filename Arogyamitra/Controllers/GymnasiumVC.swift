@@ -12,32 +12,55 @@ class GymnasiumVC: UIViewController {
     
     //OUTLETS:
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var searchTextFieldOuterView: UIView!
     
     //Animation Outlets:
-    @IBOutlet weak var servicePopupViewBottonConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var servicePopupView: UIView!
+    @IBOutlet weak var servicePopupViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var servicePopupViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var serviceCountLbl: UILabel!
     @IBOutlet weak var gymnasiumNameDisplayLbl: UILabel!
     
-
+    //Service POPUP View Collection VIEW OUTLET
+    @IBOutlet weak var servicePopupCollectionView: UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadGymnasiumList()
         tableview.delegate = self
         tableview.dataSource = self
+        servicePopupCollectionView.delegate = self
+        servicePopupCollectionView.dataSource = self
         
+        
+        searchTextField.layer.borderColor = UIColor.lightGray.cgColor
+        searchTextField.layer.borderWidth = 1
+        searchTextFieldOuterView.layer.borderColor = UIColor.lightGray.cgColor
+        searchTextFieldOuterView.layer.borderWidth = 1
+        searchTextField.layer.sublayerTransform = CATransform3DMakeTranslation(12, 0, 0)
     }
     
     //Storage Variables
     var gymnasiumListArray = [GymnasiumListResult]()
+    var gymnasiumServiceListArray = [GymnasiumYogaService]()
     
+    //Search and Cell variables
+    var cellName: String?
+    var isSearching = false
+    var searchingArray = [GymnasiumListResult]()
+
     
     //MARK: Actions for Service Popup View
     
     @IBAction func servicePopupCancelButtonTapped() {
-        self.servicePopupViewBottonConstraint.constant = -1000
+        self.servicePopupViewBottomConstraint.constant = 1000
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
+        
     }
 
 
@@ -61,6 +84,7 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
         cell.tag = indexPath.row
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,17 +101,49 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
 extension GymnasiumVC: GymnasiumDetailsTableCellDelegate {
     
     func didTapServiceLabel(_ tag: Int) {
-        self.servicePopupViewBottonConstraint.constant = 0
+        //print(tag)
+        self.servicePopupCollectionView.reloadData()
+        self.gymnasiumNameDisplayLbl.text = self.gymnasiumListArray[tag].name
+        self.serviceCountLbl.text = "Services (\(gymnasiumListArray[tag].gymnasiumYogaServices.count))"
+        gymnasiumServiceListArray = gymnasiumListArray[tag].gymnasiumYogaServices
+        
+        self.servicePopupViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
-        print(tag)
-        self.gymnasiumNameDisplayLbl.text = self.gymnasiumListArray[tag].name
-        self.serviceCountLbl.text = "Services (\(gymnasiumListArray[tag].gymnasiumYogaServices.count))"
+        
+        
     }
     
 }
 
+// MARK: SERVICE POPUP COLLECTION VIEW IMPLEMENTATION
+
+extension GymnasiumVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gymnasiumServiceListArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = servicePopupCollectionView.dequeueReusableCell(withReuseIdentifier: "GymnasiumServicePopupCollectionCell", for: indexPath) as? GymnasiumServicePopupCollectionCell else {return UICollectionViewCell()}
+        
+        cell.configureServicesCell(gymnasiumServices: gymnasiumServiceListArray[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (servicePopupView.frame.width - 10)/2
+        let layout = servicePopupCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: 60)
+        return layout.itemSize
+    }
+    
+    
+}
 
 // MARK: API CALLS WRITTEN HERE
 
@@ -99,12 +155,15 @@ extension GymnasiumVC {
             
             if let returnedGymnasiumList = returnedGymnasiumList {
                 self.gymnasiumListArray = returnedGymnasiumList.results
+                
             }
             
             //print("Returned Gymnasium List Array: \(self.gymnasiumListArray)")
             
             DispatchQueue.main.async {
                 self.tableview.reloadData()
+                self.servicePopupCollectionView.reloadData()
+                
             }
         }
     }

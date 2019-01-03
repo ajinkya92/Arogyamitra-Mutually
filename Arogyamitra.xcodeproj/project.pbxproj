@@ -87,6 +87,7 @@
 		48DCD2EF21C63AED00215B86 /* ServicesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DCD2EE21C63AED00215B86 /* ServicesCollectionViewCell.swift */; };
 		48F616CA21D1BA2A0020C32F /* HospitalDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */; };
 		48F616D221D44F460020C32F /* like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F616D121D44F450020C32F /* like_gray.png */; };
+		512CF0F521DE1A89007A470A /* GymnasiumSearchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */; };
 		51FA120C21DA22E800D7E009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA120B21DA22E800D7E009 /* Constants.swift */; };
 		51FA120E21DA231900D7E009 /* Ajinkya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51FA120D21DA231900D7E009 /* Ajinkya.storyboard */; };
 		51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */; };
@@ -210,6 +211,7 @@
 		48DCD2EE21C63AED00215B86 /* ServicesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesCollectionViewCell.swift; sourceTree = "<group>"; };
 		48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsModel.swift; sourceTree = "<group>"; };
 		48F616D121D44F450020C32F /* like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_gray.png; sourceTree = "<group>"; };
+		512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumSearchTblCell.swift; sourceTree = "<group>"; };
 		51FA120B21DA22E800D7E009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51FA120D21DA231900D7E009 /* Ajinkya.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ajinkya.storyboard; sourceTree = "<group>"; };
 		51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumVC.swift; sourceTree = "<group>"; };
@@ -525,6 +527,7 @@
 				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
 				51FA121321DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift */,
 				51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */,
+				512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,
 				483F105C21C3406700181AB3 /* RatingAndReviewViewController.swift in Sources */,
 				48272AEC21C4887000B288F6 /* MultipartFormData.swift in Sources */,
+				512CF0F521DE1A89007A470A /* GymnasiumSearchTblCell.swift in Sources */,
 				487BE1F321BABBC10076F210 /* ContainerViewController.swift in Sources */,
 				48272AE621C4887000B288F6 /* Toast.swift in Sources */,
 				483F105821C1F4C300181AB3 /* HospitalDetailsViewController.swift in Sources */,
