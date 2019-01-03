@@ -34,6 +34,7 @@ class GymnasiumVC: UIViewController {
         tableview.dataSource = self
         servicePopupCollectionView.delegate = self
         servicePopupCollectionView.dataSource = self
+        searchTextField.delegate = self
         
         
         searchTextField.layer.borderColor = UIColor.lightGray.cgColor
@@ -41,6 +42,7 @@ class GymnasiumVC: UIViewController {
         searchTextFieldOuterView.layer.borderColor = UIColor.lightGray.cgColor
         searchTextFieldOuterView.layer.borderWidth = 1
         searchTextField.layer.sublayerTransform = CATransform3DMakeTranslation(12, 0, 0)
+        searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     //Storage Variables
@@ -71,24 +73,45 @@ class GymnasiumVC: UIViewController {
 extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gymnasiumListArray.count
+        if isSearching {
+            return searchingArray.count
+        }else {
+          return gymnasiumListArray.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableview.dequeueReusableCell(withIdentifier: "GymnasiumDetailsTableCell") as? GymnasiumDetailsTableCell else {return UITableViewCell()}
-        
-        cell.configureGymnasiumCell(gymnasiumListResult: gymnasiumListArray[indexPath.row])
-        
-        cell.delegate = self
-        cell.tag = indexPath.row
-        
-        return cell
+        if isSearching {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "GymnasiumSearchTblCell") as? GymnasiumSearchTblCell else {return UITableViewCell()}
+            
+            cell.configureGymnasiumSearchCell(gymnasiumListResult: searchingArray[indexPath.row])
+            
+            return cell
+        }else {
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: "GymnasiumDetailsTableCell") as? GymnasiumDetailsTableCell else {return UITableViewCell()}
+            
+            cell.configureGymnasiumCell(gymnasiumListResult: gymnasiumListArray[indexPath.row])
+            
+            cell.delegate = self
+            cell.tag = indexPath.row
+            
+            return cell
+            
+        }
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        
+        if isSearching {
+            return UITableView.automaticDimension
+        }else {
+           return 250
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,6 +165,39 @@ extension GymnasiumVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return layout.itemSize
     }
     
+    
+}
+
+//MARK: GYMNASIUM SEARCH FUNCTIONALITY IMPLEMENTATION - TEXTFIELD SEARCH BAR
+
+extension GymnasiumVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        searchTextField.resignFirstResponder()
+        searchTextField.text = ""
+        tableview.reloadData()
+        return true
+        
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        if searchTextField.text != "" {
+            
+            isSearching = true
+            searchingArray = gymnasiumListArray.filter({$0.name.lowercased().prefix((textField.text?.count)!) == textField.text!.lowercased()})
+            
+            tableview.reloadData()
+        } else {
+            isSearching = false
+            tableview.reloadData()
+            searchTextField.resignFirstResponder()
+        }
+        
+        
+        
+    }
     
 }
 
