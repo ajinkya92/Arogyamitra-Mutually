@@ -88,6 +88,8 @@
 		48F616CA21D1BA2A0020C32F /* HospitalDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */; };
 		48F616D221D44F460020C32F /* like_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F616D121D44F450020C32F /* like_gray.png */; };
 		512CF0F521DE1A89007A470A /* GymnasiumSearchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */; };
+		512CF0F721DE40F3007A470A /* GymnasiumDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */; };
+		512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F821DE4394007A470A /* GymnasiumDetails.swift */; };
 		51FA120C21DA22E800D7E009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA120B21DA22E800D7E009 /* Constants.swift */; };
 		51FA120E21DA231900D7E009 /* Ajinkya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51FA120D21DA231900D7E009 /* Ajinkya.storyboard */; };
 		51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */; };
@@ -212,6 +214,8 @@
 		48F616C921D1BA2A0020C32F /* HospitalDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalDetailsModel.swift; sourceTree = "<group>"; };
 		48F616D121D44F450020C32F /* like_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_gray.png; sourceTree = "<group>"; };
 		512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumSearchTblCell.swift; sourceTree = "<group>"; };
+		512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsVC.swift; sourceTree = "<group>"; };
+		512CF0F821DE4394007A470A /* GymnasiumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetails.swift; sourceTree = "<group>"; };
 		51FA120B21DA22E800D7E009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51FA120D21DA231900D7E009 /* Ajinkya.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ajinkya.storyboard; sourceTree = "<group>"; };
 		51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumVC.swift; sourceTree = "<group>"; };
@@ -517,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */,
+				512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 			isa = PBXGroup;
 			children = (
 				51FA121521DA2F3200D7E009 /* GymnasiumList.swift */,
+				512CF0F821DE4394007A470A /* GymnasiumDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -828,6 +834,7 @@
 				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
 				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
 				51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */,
+				512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */,
 				48272B0621C4962300B288F6 /* URLManager.swift in Sources */,
 				4858D16421D6FAAE009F5033 /* LaboratoryDetailsModel.swift in Sources */,
 				51FA121421DA2BF000D7E009 /* GymnasiumDetailsTableCell.swift in Sources */,
@@ -884,6 +891,7 @@
 				48272AEB21C4887000B288F6 /* TaskDelegate.swift in Sources */,
 				48A58AC921D5AEC0009F8736 /* LocationSearchTable.swift in Sources */,
 				4858D16121D6FA80009F5033 /* LaboratoryDetailsViewController.swift in Sources */,
+				512CF0F721DE40F3007A470A /* GymnasiumDetailsVC.swift in Sources */,
 				48272AF221C4887000B288F6 /* AFError.swift in Sources */,
 				51FA121821DA30F400D7E009 /* GymnasiumServices.swift in Sources */,
 				48272AF921C4887000B288F6 /* SessionManager.swift in Sources */,

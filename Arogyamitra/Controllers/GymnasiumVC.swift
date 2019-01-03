@@ -118,6 +118,11 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
         return 250
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
+        self.navigationController?.pushViewController(detailsVc, animated: true)
+    }
+    
 }
 
 // MARK: Gymnasium Tableview Cell Delegate Functions written here...
