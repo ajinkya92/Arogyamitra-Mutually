@@ -6,7 +6,9 @@ target 'Arogyamitra' do
   use_frameworks!
 
   # Pods for Arogyamitra
-  pod 'Kingfisher'
+  	pod 'Kingfisher'
+	pod 'Toast-Swift'
+	
 
 
 
