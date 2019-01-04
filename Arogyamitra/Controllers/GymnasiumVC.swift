@@ -90,7 +90,7 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }else {
-            guard let cell = tableview.dequeueReusableCell(withIdentifier: "GymnasiumDetailsTableCell") as? GymnasiumDetailsTableCell else {return UITableViewCell()}
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: "GymnasiumListTableCell") as? GymnasiumListTableCell else {return UITableViewCell()}
             
             cell.configureGymnasiumCell(gymnasiumListResult: gymnasiumListArray[indexPath.row])
             
@@ -126,7 +126,12 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: Gymnasium Tableview Cell Delegate Functions written here...
-extension GymnasiumVC: GymnasiumDetailsTableCellDelegate {
+extension GymnasiumVC: GymnasiumListTableCellDelegate {
+    
+    func didTapVisitButton(_ tag: Int) {
+        print("Visit Button Tag: \(tag)")
+    }
+    
     
     func didTapServiceLabel(_ tag: Int) {
         //print(tag)

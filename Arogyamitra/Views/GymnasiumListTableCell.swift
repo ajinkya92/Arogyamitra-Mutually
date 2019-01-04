@@ -9,12 +9,13 @@
 import UIKit
 import Kingfisher
 
-protocol GymnasiumDetailsTableCellDelegate {
+protocol GymnasiumListTableCellDelegate {
     func didTapServiceLabel(_ tag: Int)
+    func didTapVisitButton(_ tag: Int)
 
 }
 
-class GymnasiumDetailsTableCell: UITableViewCell {
+class GymnasiumListTableCell: UITableViewCell {
     
     //Outlets
     @IBOutlet weak var gymnasiumImage: UIImageView!
@@ -30,7 +31,7 @@ class GymnasiumDetailsTableCell: UITableViewCell {
     @IBOutlet weak var serviceLbl2: UILabel!
     @IBOutlet weak var showMoreLbl: UILabel!
     
-    var delegate: GymnasiumDetailsTableCellDelegate?
+    var delegate: GymnasiumListTableCellDelegate?
     
     //Storage Variables
     var timingStringArray = [String]()
@@ -91,7 +92,7 @@ class GymnasiumDetailsTableCell: UITableViewCell {
 
 }
 
-extension GymnasiumDetailsTableCell {
+extension GymnasiumListTableCell {
     
     //MARK: Assigning Tap Gesture to all Label
     
@@ -120,6 +121,11 @@ extension GymnasiumDetailsTableCell {
         
     }
     
+    //MARK: Visit Button Action
     
+    @IBAction func visitButtonTapped(_ sender: UIButton) {
+        delegate?.didTapVisitButton(self.tag)
+        print("Visit Button Tap Working")
+    }
     
 }
