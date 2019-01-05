@@ -25,6 +25,7 @@ class GymnasiumDetailsVC: UIViewController {
     @IBOutlet weak var discountPercentageLbl: UILabel!
     @IBOutlet weak var seeServicesTblView: UITableView!
     @IBOutlet weak var seeReviewsTblView: UITableView!
+    @IBOutlet weak var selectPlanPickerView: UIPickerView!
     
     //Outlets That Hides
     @IBOutlet weak var imageCollectionStackView: UIStackView!
@@ -34,9 +35,14 @@ class GymnasiumDetailsVC: UIViewController {
     var patientId = 157
     var gymnasiumId: Int!
     
+    //Variables
+    var selectedPlanValue = String()
+    
     //Strorage Variables
     var gymnasiumDetailsArray = [GymnasiumDetailsServiceResult]()
     var gymnasiumImageGalleryArray = [GymnasiumDetailsServiceGymnasiumYogaGallery]()
+    var gymnasiumServicesArray = [GymnasiumDetailsServiceGymnasiumYogaService]()
+    var gymnasiumPlansArray = [GymnasiumDetailsServiceGymnasiumYogaPlan]()
     var gymnasiumTimingsArray = [String]()
 
     override func viewDidLoad() {
@@ -44,6 +50,8 @@ class GymnasiumDetailsVC: UIViewController {
         getGymnasiumDetails()
         imageCollectionView.delegate = self
         imageCollectionView.dataSource = self
+        selectPlanPickerView.delegate = self
+        selectPlanPickerView.dataSource = self
         
     }
 
@@ -60,6 +68,36 @@ extension GymnasiumDetailsVC: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "GymnasiumPhotoGalleryCollectionCell", for: indexPath) as? GymnasiumPhotoGalleryCollectionCell else {return UICollectionViewCell()}
         cell.configureGymnasiumImageGalleryCell(gymnasiumPhotoGalleryImages: gymnasiumImageGalleryArray[indexPath.row])
         return cell
+    }
+    
+}
+
+//MARK: GYMNASIUM SERVICES TABLE VIEW
+extension GymnasiumDetailsVC {
+    
+    
+}
+
+//MARK: SELECT PLAN PICKER VIEW IMPLEMENTATION
+extension GymnasiumDetailsVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return gymnasiumPlansArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let returnedPlanString = "\(gymnasiumPlansArray[row].planName) \(gymnasiumPlansArray[row].amount) Rs"
+        return returnedPlanString
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedPlanValue = "\(gymnasiumPlansArray[row].planName) \(gymnasiumPlansArray[row].amount) Rs"
+        //print(selectedPlanValue)
     }
     
     
@@ -82,7 +120,11 @@ extension GymnasiumDetailsVC {
             //print(self.gymnasiumDetailsArray)
             DispatchQueue.main.async {
                 self.assignValuesToOutlets()
+                if self.gymnasiumImageGalleryArray.isEmpty {
+                    self.imageCollectionStackView.isHidden = true
+                }
                 self.imageCollectionView.reloadData()
+                self.selectPlanPickerView.reloadAllComponents()
             }
             
         }
@@ -108,6 +150,7 @@ extension GymnasiumDetailsVC {
             self.availableTimingsLbl.text = gymnasiumTimingsArray.joined(separator: ",")
             self.discountPercentageLbl.text = "\(allValues.discount)"
             self.gymnasiumImageGalleryArray = allValues.gymnasiumYogaGallery
+            self.gymnasiumPlansArray = allValues.gymnasiumYogaPlans
             
         }
         
