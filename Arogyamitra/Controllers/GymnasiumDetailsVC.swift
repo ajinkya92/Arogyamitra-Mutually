@@ -30,6 +30,16 @@ class GymnasiumDetailsVC: UIViewController {
     //Outlets That Hides
     @IBOutlet weak var imageCollectionStackView: UIStackView!
     
+    //ACTIONS Done Here...
+    
+    @IBAction func seeServicesBtnTapped(_ sender: UIButton) {
+        seeServicesTblView.isHidden = false
+        seeServicesTblView.reloadData()
+    }
+    
+    @IBAction func seeReviewsBtnTapped(_ sender: UIButton) {
+        
+    }
     
     //MARK: Required values from previous Gymnasium VC
     var patientId = 157
@@ -52,6 +62,9 @@ class GymnasiumDetailsVC: UIViewController {
         imageCollectionView.dataSource = self
         selectPlanPickerView.delegate = self
         selectPlanPickerView.dataSource = self
+        seeServicesTblView.delegate = self
+        seeServicesTblView.dataSource = self
+        seeServicesTblView.isHidden = true
         
     }
 
@@ -73,7 +86,17 @@ extension GymnasiumDetailsVC: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 //MARK: GYMNASIUM SERVICES TABLE VIEW
-extension GymnasiumDetailsVC {
+extension GymnasiumDetailsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gymnasiumServicesArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = seeServicesTblView.dequeueReusableCell(withIdentifier: "GymnasiumDetailsSeeSevicesTblCell") as? GymnasiumDetailsSeeSevicesTblCell else {return UITableViewCell()}
+        cell.configureGymnasiumDetailsSeeServicesTblCell(gymnasiumServicesList: gymnasiumServicesArray[indexPath.row])
+        return cell
+    }
     
     
 }
@@ -125,6 +148,7 @@ extension GymnasiumDetailsVC {
                 }
                 self.imageCollectionView.reloadData()
                 self.selectPlanPickerView.reloadAllComponents()
+                self.seeServicesTblView.reloadData()
             }
             
         }
@@ -151,6 +175,7 @@ extension GymnasiumDetailsVC {
             self.discountPercentageLbl.text = "\(allValues.discount)"
             self.gymnasiumImageGalleryArray = allValues.gymnasiumYogaGallery
             self.gymnasiumPlansArray = allValues.gymnasiumYogaPlans
+            self.gymnasiumServicesArray = allValues.gymnasiumYogaServices
             
         }
         
