@@ -8,18 +8,5 @@ target 'Arogyamitra' do
   # Pods for Arogyamitra
   	pod 'Kingfisher'
 	pod 'Toast-Swift'
-	
-
-
-
-  target 'ArogyamitraTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'ArogyamitraUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

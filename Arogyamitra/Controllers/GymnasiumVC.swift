@@ -53,6 +53,9 @@ class GymnasiumVC: UIViewController {
     var cellName: String?
     var isSearching = false
     var searchingArray = [GymnasiumListResult]()
+    
+    //Variables To Pass
+    var gymnasiumIdToPass = Int()
 
     
     //MARK: Actions for Service Popup View
@@ -87,7 +90,7 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "GymnasiumSearchTblCell") as? GymnasiumSearchTblCell else {return UITableViewCell()}
             
             cell.configureGymnasiumSearchCell(gymnasiumListResult: searchingArray[indexPath.row])
-            
+            cellName = "gymnasiumSearchCell"
             return cell
         }else {
             guard let cell = tableview.dequeueReusableCell(withIdentifier: "GymnasiumListTableCell") as? GymnasiumListTableCell else {return UITableViewCell()}
@@ -96,7 +99,7 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
             
             cell.delegate = self
             cell.tag = indexPath.row
-            
+            cellName = "gymnasiumListCell"
             return cell
             
         }
@@ -119,8 +122,17 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
-        self.navigationController?.pushViewController(detailsVc, animated: true)
+        
+        if cellName == "gymnasiumListCell" {
+            gymnasiumIdToPass = gymnasiumListArray[indexPath.row].gymnasiumYogaID
+        }else {
+            gymnasiumIdToPass = searchingArray[indexPath.row].gymnasiumYogaID
+        }
+        
+        guard let gymnasiumDetailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
+        gymnasiumDetailsVc.gymnasiumId = self.gymnasiumIdToPass
+        self.navigationController?.pushViewController(gymnasiumDetailsVc, animated: true)
+        
     }
     
 }
@@ -129,7 +141,17 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
 extension GymnasiumVC: GymnasiumListTableCellDelegate {
     
     func didTapVisitButton(_ tag: Int) {
-        print("Visit Button Tag: \(tag)")
+        
+        if cellName == "gymnasiumListCell" {
+            gymnasiumIdToPass = gymnasiumListArray[tag].gymnasiumYogaID
+        }else {
+            gymnasiumIdToPass = searchingArray[tag].gymnasiumYogaID
+        }
+        
+        guard let gymnasiumDetailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
+        gymnasiumDetailsVc.gymnasiumId = self.gymnasiumIdToPass
+        self.navigationController?.pushViewController(gymnasiumDetailsVc, animated: true)
+        
     }
     
     
@@ -217,6 +239,8 @@ extension GymnasiumVC {
 
     func loadGymnasiumList() {
         
+        self.view.makeToastActivity(.center)
+        
         GymnasiumServices.instance.getGymnasiumListByLocation(latitude: "19.077064399", longitude: "72.9989925") { (success, returnedGymnasiumList) in
             
             if let returnedGymnasiumList = returnedGymnasiumList {
@@ -229,6 +253,7 @@ extension GymnasiumVC {
             DispatchQueue.main.async {
                 self.tableview.reloadData()
                 self.servicePopupCollectionView.reloadData()
+                self.view.hideToastActivity()
                 
             }
         }

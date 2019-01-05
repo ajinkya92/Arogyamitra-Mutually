@@ -49,7 +49,41 @@ class GymnasiumServices {
         
     }
     
+    //MARK: API SERVICE FOR GETIING GYMNAISUM DETAILS.
     
+    func getGymnasiumDetails(withGymnasiumId gymnasiumId: Int, andPatientId patientId: Int, completion: @escaping(_ success: Bool, GymnasiumDetailsService?) -> ()) {
+        let postData = NSMutableData(data: "gymnasium_id=\(gymnasiumId)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: GET_GYMNASIUM_DETAILS_URL) else {return}
+        
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedGymnasiumDetailsData = try decoder.decode(GymnasiumDetailsService.self, from: data)
+                    completion(true, returnedGymnasiumDetailsData)
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+            }
+            
+        }.resume()
+        
+    }
     
     
 }

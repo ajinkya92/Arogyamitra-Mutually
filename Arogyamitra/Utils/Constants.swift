@@ -9,3 +9,4 @@
 import Foundation
 
 let GYMNASIUM_LIST_BY_LOCATION_URL = "https://arogyamitra.net/doctor/index.php/Webservice/get_gymnasium_list_by_location"
+let GET_GYMNASIUM_DETAILS_URL = "https://arogyamitra.net/doctor/index.php/Webservice/get_gymnasium_details"
