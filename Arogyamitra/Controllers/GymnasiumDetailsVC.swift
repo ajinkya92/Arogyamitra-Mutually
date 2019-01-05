@@ -14,6 +14,7 @@ class GymnasiumDetailsVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var mainDisplayImageView: UIImageView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var gymnasiumNameLbl: UILabel!
     @IBOutlet weak var gymnasiumAddressLbl: UILabel!
     //Map outlet Required here
@@ -25,6 +26,8 @@ class GymnasiumDetailsVC: UIViewController {
     @IBOutlet weak var seeServicesTblView: UITableView!
     @IBOutlet weak var seeReviewsTblView: UITableView!
     
+    //Outlets That Hides
+    @IBOutlet weak var imageCollectionStackView: UIStackView!
     
     
     //MARK: Required values from previous Gymnasium VC
@@ -33,15 +36,35 @@ class GymnasiumDetailsVC: UIViewController {
     
     //Strorage Variables
     var gymnasiumDetailsArray = [GymnasiumDetailsServiceResult]()
+    var gymnasiumImageGalleryArray = [GymnasiumDetailsServiceGymnasiumYogaGallery]()
     var gymnasiumTimingsArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getGymnasiumDetails()
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
         
     }
 
 }
+
+//MARK: CollectionView for Additional 4 Images
+extension GymnasiumDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gymnasiumImageGalleryArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "GymnasiumPhotoGalleryCollectionCell", for: indexPath) as? GymnasiumPhotoGalleryCollectionCell else {return UICollectionViewCell()}
+        cell.configureGymnasiumImageGalleryCell(gymnasiumPhotoGalleryImages: gymnasiumImageGalleryArray[indexPath.row])
+        return cell
+    }
+    
+    
+}
+
 
 // MARK: API CALL TO GET GYM DETAILS
 extension GymnasiumDetailsVC {
@@ -59,6 +82,7 @@ extension GymnasiumDetailsVC {
             //print(self.gymnasiumDetailsArray)
             DispatchQueue.main.async {
                 self.assignValuesToOutlets()
+                self.imageCollectionView.reloadData()
             }
             
         }
@@ -83,6 +107,7 @@ extension GymnasiumDetailsVC {
             }
             self.availableTimingsLbl.text = gymnasiumTimingsArray.joined(separator: ",")
             self.discountPercentageLbl.text = "\(allValues.discount)"
+            self.gymnasiumImageGalleryArray = allValues.gymnasiumYogaGallery
             
         }
         
