@@ -23,6 +23,8 @@ class GymnasiumListTableCell: UITableViewCell {
     @IBOutlet weak var gymnasiumAddressLbl: UILabel!
     @IBOutlet weak var availableDaysLbl: UILabel!
     @IBOutlet weak var gymnasiumTimeLbl: UILabel!
+    @IBOutlet weak var cosmosStarRatings: CosmosView!
+    
     
     //Services Stackview and Outlets
     
@@ -51,6 +53,7 @@ class GymnasiumListTableCell: UITableViewCell {
         self.gymnasiumImage.kf.setImage(with: imageUrl)
         self.gymnasiumNameLbl.text = gymnasiumListResult.name
         self.gymnasiumAddressLbl.text = gymnasiumListResult.address
+        self.cosmosStarRatings.rating = Double(gymnasiumListResult.averageRating)
         let convertedDaysString = avaliableDays(days: gymnasiumListResult.daysAvailability)
         self.availableDaysLbl.text = convertedDaysString
         
@@ -125,7 +128,7 @@ extension GymnasiumListTableCell {
     
     @IBAction func visitButtonTapped(_ sender: UIButton) {
         delegate?.didTapVisitButton(self.tag)
-        print("Visit Button Tap Working")
+        //print("Visit Button Tap Working")
     }
     
 }

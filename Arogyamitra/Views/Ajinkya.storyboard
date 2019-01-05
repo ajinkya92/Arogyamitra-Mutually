@@ -182,12 +182,6 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️⭐️⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-Ze-Z38">
-                                                            <rect key="frame" x="98" y="163" width="105" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4w-k1-xYZ" customClass="MyButton" customModule="Arogyamitra" customModuleProvider="target">
                                                             <rect key="frame" x="278" y="168.66666666666666" width="100" height="29"/>
                                                             <color key="backgroundColor" red="0.28133306990000001" green="0.69683047279999999" blue="0.10556453440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -211,6 +205,15 @@
                                                                 <constraint firstAttribute="height" constant="40" id="QAn-6H-5XT"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMu-6B-dHr" customClass="CosmosView" customModule="Arogyamitra" customModuleProvider="target">
+                                                            <rect key="frame" x="98" y="151" width="130" height="22"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                    <real key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -218,18 +221,18 @@
                                                         <constraint firstItem="OjH-MN-nn7" firstAttribute="top" secondItem="W3G-YI-MUc" secondAttribute="top" constant="20" id="4dN-33-Cdz"/>
                                                         <constraint firstAttribute="bottom" secondItem="xNv-t3-vlD" secondAttribute="bottom" constant="-15" id="8cI-8r-Q15"/>
                                                         <constraint firstItem="pMW-ru-TT6" firstAttribute="leading" secondItem="Se4-bh-AFc" secondAttribute="leading" id="Dm7-tn-9cN"/>
+                                                        <constraint firstItem="DMu-6B-dHr" firstAttribute="leading" secondItem="OjH-MN-nn7" secondAttribute="leading" id="HHj-1Y-4GS"/>
                                                         <constraint firstItem="xNv-t3-vlD" firstAttribute="leading" secondItem="W3G-YI-MUc" secondAttribute="leading" id="Hqz-EV-FBp"/>
-                                                        <constraint firstItem="Z1C-Ze-Z38" firstAttribute="top" secondItem="glV-c4-Lex" secondAttribute="bottom" constant="20" id="JTP-gy-5d9"/>
                                                         <constraint firstItem="Se4-bh-AFc" firstAttribute="leading" secondItem="OjH-MN-nn7" secondAttribute="leading" id="Kvx-ER-RdT"/>
                                                         <constraint firstItem="pMW-ru-TT6" firstAttribute="top" secondItem="Se4-bh-AFc" secondAttribute="bottom" constant="8" id="MFq-7n-RFz"/>
                                                         <constraint firstItem="Se4-bh-AFc" firstAttribute="trailing" secondItem="OjH-MN-nn7" secondAttribute="trailing" id="Mge-Vm-1q1"/>
                                                         <constraint firstItem="RSW-6b-5tF" firstAttribute="top" secondItem="W3G-YI-MUc" secondAttribute="top" constant="30" id="PD1-8R-09p"/>
+                                                        <constraint firstItem="DMu-6B-dHr" firstAttribute="top" secondItem="glV-c4-Lex" secondAttribute="bottom" constant="8" id="Psg-ku-07e"/>
                                                         <constraint firstItem="sol-1c-are" firstAttribute="leading" secondItem="Se4-bh-AFc" secondAttribute="leading" id="QUe-vV-nnJ"/>
                                                         <constraint firstItem="sol-1c-are" firstAttribute="top" secondItem="pMW-ru-TT6" secondAttribute="bottom" constant="8" id="UZ9-i9-G8Q"/>
                                                         <constraint firstItem="glV-c4-Lex" firstAttribute="leading" secondItem="sol-1c-are" secondAttribute="leading" id="Vsv-E9-sey"/>
                                                         <constraint firstAttribute="bottom" secondItem="e4w-k1-xYZ" secondAttribute="bottom" constant="14" id="WWe-10-Wl6"/>
                                                         <constraint firstItem="OjH-MN-nn7" firstAttribute="leading" secondItem="RSW-6b-5tF" secondAttribute="trailing" constant="16" id="aAI-xe-dvw"/>
-                                                        <constraint firstItem="Z1C-Ze-Z38" firstAttribute="leading" secondItem="OjH-MN-nn7" secondAttribute="leading" id="cbb-qz-lTE"/>
                                                         <constraint firstAttribute="trailing" secondItem="xNv-t3-vlD" secondAttribute="trailing" id="h6g-vR-67H"/>
                                                         <constraint firstItem="sol-1c-are" firstAttribute="trailing" secondItem="Se4-bh-AFc" secondAttribute="trailing" id="jxI-Ua-tQA"/>
                                                         <constraint firstItem="glV-c4-Lex" firstAttribute="trailing" secondItem="sol-1c-are" secondAttribute="trailing" id="kOB-gd-Pdp"/>
@@ -250,6 +253,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="availableDaysLbl" destination="Rz7-o9-N1e" id="LD6-2a-QWM"/>
+                                            <outlet property="cosmosStarRatings" destination="DMu-6B-dHr" id="rbH-s1-8Ze"/>
                                             <outlet property="gymnasiumAddressLbl" destination="Se4-bh-AFc" id="cCt-5C-vzI"/>
                                             <outlet property="gymnasiumImage" destination="RSW-6b-5tF" id="yro-ks-9Bf"/>
                                             <outlet property="gymnasiumNameLbl" destination="OjH-MN-nn7" id="UgR-XD-OyC"/>
@@ -442,11 +446,11 @@
             <objects>
                 <viewController storyboardIdentifier="GymnasiumDetailsVC" id="dvA-Ff-PGS" customClass="GymnasiumDetailsVC" customModule="Arogyamitra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pLZ-XX-jK5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CR-z1-1bY">
-                                <rect key="frame" x="0.0" y="20" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="1500"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLs-ST-RhO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
@@ -771,7 +775,7 @@
                                                             <constraint firstAttribute="height" constant="300" id="mgW-ND-8T0"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GymnasiumDetailsSeeReviewsTblCell" rowHeight="100" id="nsH-5V-HfX" customClass="GymnasiumDetailsSeeReviewsTblCell" customModule="Arogyamitra" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GymnasiumDetailsSeeReviewsTblCell" rowHeight="100" id="nsH-5V-HfX" customClass="GymnasiumDetailsSeeReviewsTblCell" customModule="Arogyamitra" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="392" height="100"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nsH-5V-HfX" id="lIK-ZU-BpZ">
@@ -781,24 +785,34 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VGg-Tz-ZKS">
                                                                             <rect key="frame" x="20" y="11" width="352" height="72.666666666666671"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4G-Cf-rcO">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="20.333333333333332"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4G-Cf-rcO">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="43.666666666666664" height="13.333333333333334"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj2-26-J4r">
-                                                                                    <rect key="frame" x="0.0" y="27.333333333333336" width="41.666666666666664" height="20.333333333333336"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nj2-26-J4r">
+                                                                                    <rect key="frame" x="0.0" y="20.333333333333336" width="41.666666666666664" height="20.333333333333336"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️⭐️⭐️⭐️⭐️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTC-Gb-871">
-                                                                                    <rect key="frame" x="0.0" y="54.666666666666671" width="105" height="18"/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
+                                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6K-Vr-MhN" customClass="CosmosView" customModule="Arogyamitra" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="47.666666666666664" width="145" height="24.999999999999993"/>
+                                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="height" constant="25" id="M07-WD-w2A"/>
+                                                                                        <constraint firstAttribute="width" constant="145" id="Q8P-WN-PJ0"/>
+                                                                                    </constraints>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                                            <real key="value" value="25"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                                            <integer key="value" value="5"/>
+                                                                                        </userDefinedRuntimeAttribute>
+                                                                                    </userDefinedRuntimeAttributes>
+                                                                                </view>
                                                                             </subviews>
                                                                         </stackView>
                                                                     </subviews>
@@ -810,9 +824,9 @@
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                                 <connections>
+                                                                    <outlet property="cosmosStarRatings" destination="S6K-Vr-MhN" id="lqX-q3-OTj"/>
                                                                     <outlet property="reviewText" destination="Nj2-26-J4r" id="qea-nP-rkk"/>
                                                                     <outlet property="reviewerName" destination="X4G-Cf-rcO" id="9yB-cq-DQC"/>
-                                                                    <outlet property="starRatings" destination="UTC-Gb-871" id="oU0-u6-qfz"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -898,6 +912,7 @@
                         <viewLayoutGuide key="safeArea" id="ffn-qE-eNz"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cu4-2s-awC"/>
+                    <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="availableDaysLbl" destination="edZ-36-zco" id="CTZ-Uj-MJW"/>
                         <outlet property="availableTimingsLbl" destination="XZS-fX-9Xz" id="7hq-pg-bsI"/>
@@ -923,7 +938,7 @@
     <resources>
         <image name="cancel" width="40" height="40"/>
         <image name="curve_orange.png" width="722" height="159"/>
-        <image name="dotimage" width="72" height="75"/>
-        <image name="search_white" width="24" height="24"/>
+        <image name="dotimage" width="72" height="75.666664123535156"/>
+        <image name="search_white" width="72" height="72"/>
     </resources>
 </document>

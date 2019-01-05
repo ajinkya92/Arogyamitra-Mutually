@@ -12,7 +12,7 @@ class GymnasiumDetailsSeeReviewsTblCell: UITableViewCell {
     
     @IBOutlet weak var reviewerName: UILabel!
     @IBOutlet weak var reviewText: UILabel!
-    @IBOutlet weak var starRatings: UILabel!
+    @IBOutlet weak var cosmosStarRatings: CosmosView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class GymnasiumDetailsSeeReviewsTblCell: UITableViewCell {
         
         self.reviewerName.text = reviewsList.reviewBy
         self.reviewText.text = reviewsList.review
-        self.starRatings.text = "\(reviewsList.rating)"
+        cosmosStarRatings.rating = Double(reviewsList.rating)
     }
 
 }
