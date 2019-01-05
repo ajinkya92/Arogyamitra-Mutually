@@ -32,7 +32,7 @@ struct GymnasiumDetailsServiceResult: Codable {
     let gymnasiumYogaTimings: [GymnasiumDetailsServiceGymnasiumYogaTiming]
     let gymnasiumYogaPlans: [GymnasiumDetailsServiceGymnasiumYogaPlan]
     let averageRating, totalReviews: Int
-    let reviewsList: [ReviewsList]
+    let reviewsList: [GymnasiumDetailsServiceReviewsList]
     let reviewExists: Bool
     let gymnasiumYogaGallery: [GymnasiumDetailsServiceGymnasiumYogaGallery]
     let daysAvailability, notAvailabilityDates: String
@@ -99,7 +99,7 @@ struct GymnasiumDetailsServiceGymnasiumYogaTiming: Codable {
     }
 }
 
-struct ReviewsList: Codable {
+struct GymnasiumDetailsServiceReviewsList: Codable {
     let reviewID, rating: Int
     let review: String
     let reviewOutOf: Int

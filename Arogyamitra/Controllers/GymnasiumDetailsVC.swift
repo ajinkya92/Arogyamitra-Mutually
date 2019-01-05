@@ -21,11 +21,12 @@ class GymnasiumDetailsVC: UIViewController {
     @IBOutlet weak var mobileNumberLbl: UILabel!
     @IBOutlet weak var availableDaysLbl: UILabel!
     @IBOutlet weak var availableTimingsLbl: UILabel!
-    //Plans Dropdown to be done with pod
     @IBOutlet weak var discountPercentageLbl: UILabel!
     @IBOutlet weak var seeServicesTblView: UITableView!
     @IBOutlet weak var seeReviewsTblView: UITableView!
     @IBOutlet weak var selectPlanPickerView: UIPickerView!
+    @IBOutlet weak var seeServicesBtn: UIButton!
+    @IBOutlet weak var seeReviewsBtn: UIButton!
     
     //Outlets That Hides
     @IBOutlet weak var imageCollectionStackView: UIStackView!
@@ -38,7 +39,8 @@ class GymnasiumDetailsVC: UIViewController {
     }
     
     @IBAction func seeReviewsBtnTapped(_ sender: UIButton) {
-        
+        seeReviewsTblView.isHidden = false
+        seeReviewsTblView.reloadData()
     }
     
     //MARK: Required values from previous Gymnasium VC
@@ -53,6 +55,7 @@ class GymnasiumDetailsVC: UIViewController {
     var gymnasiumImageGalleryArray = [GymnasiumDetailsServiceGymnasiumYogaGallery]()
     var gymnasiumServicesArray = [GymnasiumDetailsServiceGymnasiumYogaService]()
     var gymnasiumPlansArray = [GymnasiumDetailsServiceGymnasiumYogaPlan]()
+    var gymnasiumReviewListArray = [GymnasiumDetailsServiceReviewsList]()
     var gymnasiumTimingsArray = [String]()
 
     override func viewDidLoad() {
@@ -65,6 +68,9 @@ class GymnasiumDetailsVC: UIViewController {
         seeServicesTblView.delegate = self
         seeServicesTblView.dataSource = self
         seeServicesTblView.isHidden = true
+        seeReviewsTblView.delegate = self
+        seeReviewsTblView.dataSource = self
+        seeReviewsTblView.isHidden = true
         
     }
 
@@ -89,17 +95,42 @@ extension GymnasiumDetailsVC: UICollectionViewDelegate, UICollectionViewDataSour
 extension GymnasiumDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gymnasiumServicesArray.count
+        
+        if tableView == seeServicesTblView {
+            return gymnasiumServicesArray.count
+        }else {
+            return gymnasiumReviewListArray.count
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = seeServicesTblView.dequeueReusableCell(withIdentifier: "GymnasiumDetailsSeeSevicesTblCell") as? GymnasiumDetailsSeeSevicesTblCell else {return UITableViewCell()}
-        cell.configureGymnasiumDetailsSeeServicesTblCell(gymnasiumServicesList: gymnasiumServicesArray[indexPath.row])
-        return cell
+        
+        if tableView == seeServicesTblView {
+            guard let cell = seeServicesTblView.dequeueReusableCell(withIdentifier: "GymnasiumDetailsSeeSevicesTblCell") as? GymnasiumDetailsSeeSevicesTblCell else {return UITableViewCell()}
+            cell.configureGymnasiumDetailsSeeServicesTblCell(gymnasiumServicesList: gymnasiumServicesArray[indexPath.row])
+            return cell
+        }else {
+            guard let cell = seeReviewsTblView.dequeueReusableCell(withIdentifier: "GymnasiumDetailsSeeReviewsTblCell") as? GymnasiumDetailsSeeReviewsTblCell else {return UITableViewCell()}
+            cell.configureGymnasiumDetailsSeeReviewsCell(reviewsList: self.gymnasiumReviewListArray[indexPath.row])
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
     
     
 }
+
+
 
 //MARK: SELECT PLAN PICKER VIEW IMPLEMENTATION
 extension GymnasiumDetailsVC: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -149,6 +180,7 @@ extension GymnasiumDetailsVC {
                 self.imageCollectionView.reloadData()
                 self.selectPlanPickerView.reloadAllComponents()
                 self.seeServicesTblView.reloadData()
+                self.seeReviewsTblView.reloadData()
             }
             
         }
@@ -176,6 +208,19 @@ extension GymnasiumDetailsVC {
             self.gymnasiumImageGalleryArray = allValues.gymnasiumYogaGallery
             self.gymnasiumPlansArray = allValues.gymnasiumYogaPlans
             self.gymnasiumServicesArray = allValues.gymnasiumYogaServices
+            self.seeServicesBtn.setTitle("See Services: (\((self.gymnasiumServicesArray.count)))", for: .normal)
+            self.gymnasiumReviewListArray = allValues.reviewsList
+            self.seeReviewsBtn.setTitle("See Reviews: \(allValues.totalReviews)", for: .normal)
+            
+            //Condition to hide reviews table in no reviews
+            if allValues.totalReviews == 0 {
+                self.seeReviewsBtn.isEnabled = false
+            }
+            
+            //Condition to hide Services in no services present
+            if self.gymnasiumServicesArray.isEmpty {
+                self.seeServicesBtn.isEnabled = false
+            }
             
         }
         
