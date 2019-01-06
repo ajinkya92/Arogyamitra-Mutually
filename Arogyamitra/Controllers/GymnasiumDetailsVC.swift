@@ -54,6 +54,7 @@ class GymnasiumDetailsVC: UIViewController {
     let annotation = MKPointAnnotation()
     var latitudeString = String()
     var longitudeString = String()
+    var mobilePhoneNumberString = String()
     
     //Strorage Variables
     var gymnasiumDetailsArray = [GymnasiumDetailsServiceResult]()
@@ -77,6 +78,11 @@ class GymnasiumDetailsVC: UIViewController {
         seeReviewsTblView.dataSource = self
         seeReviewsTblView.isHidden = true
         
+        //Adding Tap Gesture to mobile number label
+        let tapToCallGesture = UITapGestureRecognizer(target: self, action: #selector(self.mobileNumberTapToCall(_:)))
+        mobileNumberLbl.isUserInteractionEnabled = true
+        mobileNumberLbl.addGestureRecognizer(tapToCallGesture)
+        
     }
 
 }
@@ -92,6 +98,11 @@ extension GymnasiumDetailsVC: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "GymnasiumPhotoGalleryCollectionCell", for: indexPath) as? GymnasiumPhotoGalleryCollectionCell else {return UICollectionViewCell()}
         cell.configureGymnasiumImageGalleryCell(gymnasiumPhotoGalleryImages: gymnasiumImageGalleryArray[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let imageUrlAtIndex = URL(string: "\(gymnasiumImageGalleryArray[indexPath.row].photo)") else {return}
+        mainDisplayImageView.kf.setImage(with: imageUrlAtIndex)
     }
     
 }
@@ -200,6 +211,7 @@ extension GymnasiumDetailsVC {
             mapView.setRegion(region, animated: true)
         }
     }
+    
     func getZoom() -> Double {
         var angleCamera = self.mapView.camera.heading
         if angleCamera > 270 {
@@ -215,6 +227,20 @@ extension GymnasiumDetailsVC {
         return log2(360 * ((width / 256) / spanStraight)) + 1
     }
     
+}
+
+//MARK: MOBILE NUMBER TAP TO CALL IMPLEMENTATION
+extension GymnasiumDetailsVC {
+    
+    @objc func mobileNumberTapToCall(_ sender: UITapGestureRecognizer) {
+        if let url = URL(string: "tel://\(mobilePhoneNumberString)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
 }
 
 
@@ -262,6 +288,7 @@ extension GymnasiumDetailsVC {
             self.gymnasiumNameLbl.text = allValues.name
             self.gymnasiumAddressLbl.text = allValues.address
             self.mobileNumberLbl.text = allValues.mobileno
+            self.mobilePhoneNumberString = allValues.mobileno
             self.availableDaysLbl.text = avaliableDays(days: allValues.daysAvailability)
             for timings in allValues.gymnasiumYogaTimings {
                 gymnasiumTimingsArray.append("\(timings.openTime) - \(timings.closeTime)")
@@ -269,6 +296,7 @@ extension GymnasiumDetailsVC {
             self.availableTimingsLbl.text = gymnasiumTimingsArray.joined(separator: ",")
             self.discountPercentageLbl.text = "\(allValues.discount)"
             self.gymnasiumImageGalleryArray = allValues.gymnasiumYogaGallery
+            self.gymnasiumImageGalleryArray.removeFirst()
             self.gymnasiumPlansArray = allValues.gymnasiumYogaPlans
             self.gymnasiumServicesArray = allValues.gymnasiumYogaServices
             self.seeServicesBtn.setTitle("See Services: (\((self.gymnasiumServicesArray.count)))", for: .normal)
