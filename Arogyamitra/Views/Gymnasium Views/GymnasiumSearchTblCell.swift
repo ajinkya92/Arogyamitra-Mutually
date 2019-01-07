@@ -18,7 +18,7 @@ class GymnasiumSearchTblCell: UITableViewCell {
         // Initialization code
     }
 
-    func configureGymnasiumSearchCell(gymnasiumListResult: GymnasiumListResult) {
+    func configureGymnasiumSearchCell(gymnasiumListResult: GymnasiumOrYogaListResult) {
         self.gymnasiumNameLbl.text = gymnasiumListResult.name
         self.gymnasiumCategoryLbl.text = gymnasiumListResult.typeName
     }

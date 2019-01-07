@@ -18,7 +18,6 @@ class GymnasiumDetailsVC: UIViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var gymnasiumNameLbl: UILabel!
     @IBOutlet weak var gymnasiumAddressLbl: UILabel!
-    //Map outlet Required here
     @IBOutlet weak var mobileNumberLbl: UILabel!
     @IBOutlet weak var availableDaysLbl: UILabel!
     @IBOutlet weak var availableTimingsLbl: UILabel!
@@ -29,6 +28,7 @@ class GymnasiumDetailsVC: UIViewController {
     @IBOutlet weak var seeServicesBtn: UIButton!
     @IBOutlet weak var seeReviewsBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var bookButton: UIButton!
     
     //Outlets That Hides
     @IBOutlet weak var imageCollectionStackView: UIStackView!
@@ -50,10 +50,20 @@ class GymnasiumDetailsVC: UIViewController {
         //Here perform action for Bookings, navigate to calendar and then final page - @Nitin's Implementation
     }
     
+    @IBAction func writeReviewBtnTapped(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        guard let reviewAndRatingsVc = mainStoryboard.instantiateViewController(withIdentifier: "RatingAndReviewViewController") as? RatingAndReviewViewController else {return}
+        reviewAndRatingsVc.bgImagePassedFromOtherVC = self.gymnasiumImageUrlToPassReviewAndRatingsVc
+        self.navigationController?.pushViewController(reviewAndRatingsVc, animated: true)
+        
+    }
+    
     //MARK: Required values from & for previous and next View Controller Gymnasium VC
     var patientId = 157
     var gymnasiumId: Int!
     var notAvailableDatesString = String()
+    var gymnasiumImageUrlToPassReviewAndRatingsVc = String()
     
     //Variables
     var selectedPlanValue = String()
@@ -63,7 +73,7 @@ class GymnasiumDetailsVC: UIViewController {
     var mobilePhoneNumberString = String()
     
     //Strorage Variables
-    var gymnasiumDetailsArray = [GymnasiumDetailsServiceResult]()
+    var gymnasiumDetailsArray = [GymnasiumOrYogaDetailsServiceResult]()
     var gymnasiumImageGalleryArray = [GymnasiumDetailsServiceGymnasiumYogaGallery]()
     var gymnasiumServicesArray = [GymnasiumDetailsServiceGymnasiumYogaService]()
     var gymnasiumPlansArray = [GymnasiumDetailsServiceGymnasiumYogaPlan]()
@@ -90,6 +100,7 @@ class GymnasiumDetailsVC: UIViewController {
         mobileNumberLbl.addGestureRecognizer(tapToCallGesture)
         
     }
+    
 
 }
 
@@ -258,7 +269,7 @@ extension GymnasiumDetailsVC {
         self.view.makeToastActivity(.center)
         guard let gymnasiumId = gymnasiumId else {return}
         
-        GymnasiumServices.instance.getGymnasiumDetails(withGymnasiumId: gymnasiumId, andPatientId: patientId) { (success, returnedGymnasiumDetails) in
+        GymnasiumServices.instance.getGymnasiumOrYogaDetails(withGymnasiumOrYogaId: gymnasiumId, andPatientId: patientId) { (success, returnedGymnasiumDetails) in
             
             if let returnedGymnasiumDetails = returnedGymnasiumDetails {
                 self.gymnasiumDetailsArray = returnedGymnasiumDetails.results
@@ -291,6 +302,7 @@ extension GymnasiumDetailsVC {
         for allValues in self.gymnasiumDetailsArray {
             guard let mainDisplayimageUrl = URL(string: allValues.photo) else {return}
             self.mainDisplayImageView.kf.setImage(with: mainDisplayimageUrl)
+            self.gymnasiumImageUrlToPassReviewAndRatingsVc = allValues.photo
             self.gymnasiumNameLbl.text = allValues.name
             self.gymnasiumAddressLbl.text = allValues.address
             self.mobileNumberLbl.text = allValues.mobileno
@@ -320,6 +332,12 @@ extension GymnasiumDetailsVC {
             //Condition to hide Services in no services present
             if self.gymnasiumServicesArray.isEmpty {
                 self.seeServicesBtn.isEnabled = false
+            }
+            
+            if allValues.allowBooking == true {
+                self.bookButton.isHidden = false
+            }else {
+                self.bookButton.isHidden = true
             }
             
         }

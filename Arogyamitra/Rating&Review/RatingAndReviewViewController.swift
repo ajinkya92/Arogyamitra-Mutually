@@ -7,20 +7,34 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RatingAndReviewViewController: UIViewController {
 
     var arr_doctorDetails = [DoctorDetails]()
     var arr_hospitalDetails = [HospitalDetailsResult]()
     var isFromHospital = Bool()
+    
+    //MARK: Changes Done By Ajinkya
+    var bgImagePassedFromOtherVC: String?
 
     @IBOutlet weak var label_drName: UILabel!
     @IBOutlet weak var imageView_bgImage: UIImageView!
     @IBOutlet weak var imageView_drImage: UIImageView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: Changes Done By Ajinkya
+        if let bgImageString = bgImagePassedFromOtherVC {
+            print(bgImageString)
+        }else {return}
 
         // Do any additional setup after loading the view.
+        
+        /*
        
         if isFromHospital
         {
@@ -40,7 +54,10 @@ class RatingAndReviewViewController: UIViewController {
             .replacingOccurrences(of: " ", with: "%20")), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
         imageView_drImage.kf.setImage(with: URL(string:(arr_doctorDetails.first?.doctor_photo!
             .replacingOccurrences(of: " ", with: "%20"))!), placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
         }
+ 
+ */
     }
 
 }

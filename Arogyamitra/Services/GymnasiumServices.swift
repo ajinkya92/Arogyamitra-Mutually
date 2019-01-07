@@ -13,7 +13,7 @@ class GymnasiumServices {
     
     //MARK: API for getting Gym list by location.
     
-    func getGymnasiumListByLocation(latitude: String, longitude: String, completion: @escaping (_ success: Bool, GymnasiumList?) -> ()) {
+    func getGymnasiumOrYogaListByLocation(latitude: String, longitude: String, completion: @escaping (_ success: Bool, GymnasiumOrYogaList?) -> ()) {
         
         let postData = NSMutableData(data: "user_current_latitude=\(latitude)".data(using: String.Encoding.utf8)!)
         postData.append("&user_current_longitude=\(longitude)".data(using: String.Encoding.utf8)!)
@@ -34,7 +34,7 @@ class GymnasiumServices {
                 let decoder = JSONDecoder()
                 
                 do{
-                    let returnedGymnasiumList = try decoder.decode(GymnasiumList.self, from: data)
+                    let returnedGymnasiumList = try decoder.decode(GymnasiumOrYogaList.self, from: data)
                     completion(true, returnedGymnasiumList)
                     
                 }catch{
@@ -51,8 +51,8 @@ class GymnasiumServices {
     
     //MARK: API SERVICE FOR GETIING GYMNAISUM DETAILS.
     
-    func getGymnasiumDetails(withGymnasiumId gymnasiumId: Int, andPatientId patientId: Int, completion: @escaping(_ success: Bool, GymnasiumDetailsService?) -> ()) {
-        let postData = NSMutableData(data: "gymnasium_id=\(gymnasiumId)".data(using: String.Encoding.utf8)!)
+    func getGymnasiumOrYogaDetails(withGymnasiumOrYogaId gymnasiumIdOrYoga: Int, andPatientId patientId: Int, completion: @escaping(_ success: Bool, GymnasiumOrYogaDetailsService?) -> ()) {
+        let postData = NSMutableData(data: "gymnasium_id=\(gymnasiumIdOrYoga)".data(using: String.Encoding.utf8)!)
         postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
         
         guard let url = URL(string: GET_GYMNASIUM_DETAILS_URL) else {return}
@@ -72,7 +72,7 @@ class GymnasiumServices {
                 let decoder = JSONDecoder()
                 
                 do{
-                    let returnedGymnasiumDetailsData = try decoder.decode(GymnasiumDetailsService.self, from: data)
+                    let returnedGymnasiumDetailsData = try decoder.decode(GymnasiumOrYogaDetailsService.self, from: data)
                     completion(true, returnedGymnasiumDetailsData)
                 }catch{
                     debugPrint(error.localizedDescription)

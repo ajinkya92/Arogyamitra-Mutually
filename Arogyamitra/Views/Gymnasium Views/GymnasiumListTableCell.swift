@@ -46,7 +46,7 @@ class GymnasiumListTableCell: UITableViewCell {
         
     }
 
-    func configureGymnasiumCell(gymnasiumListResult: GymnasiumListResult) {
+    func configureGymnasiumCell(gymnasiumListResult: GymnasiumOrYogaListResult) {
         
         guard let imageUrl = URL(string: gymnasiumListResult.photo) else {return}
         

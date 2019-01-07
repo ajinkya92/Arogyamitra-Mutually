@@ -46,13 +46,13 @@ class GymnasiumVC: UIViewController {
     }
     
     //Storage Variables
-    var gymnasiumListArray = [GymnasiumListResult]()
+    var gymnasiumListArray = [GymnasiumOrYogaListResult]()
     var gymnasiumServiceListArray = [GymnasiumYogaService]()
     
     //Search and Cell variables
     var cellName: String?
     var isSearching = false
-    var searchingArray = [GymnasiumListResult]()
+    var searchingArray = [GymnasiumOrYogaListResult]()
     
     //Variables To Pass
     var gymnasiumIdToPass = Int()
@@ -242,7 +242,7 @@ extension GymnasiumVC {
         
         self.view.makeToastActivity(.center)
         
-        GymnasiumServices.instance.getGymnasiumListByLocation(latitude: "19.077064399", longitude: "72.9989925") { (success, returnedGymnasiumList) in
+        GymnasiumServices.instance.getGymnasiumOrYogaListByLocation(latitude: "19.077064399", longitude: "72.9989925") { (success, returnedGymnasiumList) in
             
             if let returnedGymnasiumList = returnedGymnasiumList {
                 

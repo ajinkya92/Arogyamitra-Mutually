@@ -99,6 +99,12 @@ extension PhysicalFitnessViewController: UICollectionViewDelegate, UICollectionV
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             self.navigationController?.pushViewController(gymnaisumVc, animated: true)
             
+        case 1:
+            guard let yogaVc = ajinkyaStoryboard.instantiateViewController(withIdentifier: "YogaVC") as? YogaVC else {return}
+            yogaVc.title = "Yoga Centers"
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            self.navigationController?.pushViewController(yogaVc, animated: true)
+            
         default:
             break
         }

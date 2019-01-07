@@ -12,13 +12,13 @@
 
 import Foundation
 
-struct GymnasiumDetailsService: Codable {
+struct GymnasiumOrYogaDetailsService: Codable {
     let code: Int
     let status, message: String
-    let results: [GymnasiumDetailsServiceResult]
+    let results: [GymnasiumOrYogaDetailsServiceResult]
 }
 
-struct GymnasiumDetailsServiceResult: Codable {
+struct GymnasiumOrYogaDetailsServiceResult: Codable {
     let gymnasiumYogaID, typeID: Int
     let typeName: String
     let photo: String
