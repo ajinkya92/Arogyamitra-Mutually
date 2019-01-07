@@ -332,6 +332,7 @@ extension GymnasiumDetailsVC {
             //Condition to hide Services in no services present
             if self.gymnasiumServicesArray.isEmpty {
                 self.seeServicesBtn.isEnabled = false
+                self.seeServicesTblView.isHidden = true
             }
             
             if allValues.allowBooking == true {

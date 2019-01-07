@@ -110,6 +110,9 @@
 		5148156021E3509400503050 /* YogaCentreSearchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155F21E3509400503050 /* YogaCentreSearchTblCell.swift */; };
 		5148156221E3572900503050 /* YogaCentreServicePopupCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156121E3572900503050 /* YogaCentreServicePopupCollectionCell.swift */; };
 		5148156421E37A5000503050 /* YogaCentreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156321E37A5000503050 /* YogaCentreDetailsVC.swift */; };
+		5148156621E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156521E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift */; };
+		5148156A21E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156921E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift */; };
+		5148156C21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */; };
 		51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */; };
 		51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */; };
 		51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */; };
@@ -260,6 +263,9 @@
 		5148155F21E3509400503050 /* YogaCentreSearchTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreSearchTblCell.swift; sourceTree = "<group>"; };
 		5148156121E3572900503050 /* YogaCentreServicePopupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreServicePopupCollectionCell.swift; sourceTree = "<group>"; };
 		5148156321E37A5000503050 /* YogaCentreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsVC.swift; sourceTree = "<group>"; };
+		5148156521E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentrePhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
+		5148156921E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsSeeServicesTblCell.swift; sourceTree = "<group>"; };
+		5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
 		51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumPhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
 		51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeSevicesTblCell.swift; sourceTree = "<group>"; };
 		51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
@@ -634,6 +640,9 @@
 				5148155D21E33E0700503050 /* YogaListTblCell.swift */,
 				5148155F21E3509400503050 /* YogaCentreSearchTblCell.swift */,
 				5148156121E3572900503050 /* YogaCentreServicePopupCollectionCell.swift */,
+				5148156521E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift */,
+				5148156921E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift */,
+				5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */,
 			);
 			path = "Yoga Centre Views";
 			sourceTree = "<group>";
@@ -954,6 +963,7 @@
 				487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */,
 				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
 				51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */,
+				5148156A21E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift in Sources */,
 				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
 				51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */,
 				5148156421E37A5000503050 /* YogaCentreDetailsVC.swift in Sources */,
@@ -989,6 +999,7 @@
 				48A58ABC21D464CA009F8736 /* LaboratoryViewController.swift in Sources */,
 				48414F0C21CF5B1C00A49605 /* PhysicalFitnessViewController.swift in Sources */,
 				4846A27A21C7385900B47AB2 /* DoctorSearchTableViewCell.swift in Sources */,
+				5148156C21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift in Sources */,
 				1719A7C921E1269500BD5169 /* CosmosLayerHelper.swift in Sources */,
 				1719A7C621E1269500BD5169 /* StarFillMode.swift in Sources */,
 				1719A7C721E1269500BD5169 /* CosmosSize.swift in Sources */,
@@ -1000,6 +1011,7 @@
 				483F105621C1302900181AB3 /* Varialbe.swift in Sources */,
 				48272B0221C48F8600B288F6 /* WebserviceHelper.swift in Sources */,
 				48272AF421C4887000B288F6 /* Notifications.swift in Sources */,
+				5148156621E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift in Sources */,
 				487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */,
 				48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */,
 				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,

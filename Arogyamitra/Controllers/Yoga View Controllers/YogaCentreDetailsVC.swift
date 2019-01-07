@@ -25,7 +25,7 @@ class YogaCentreDetailsVC: UIViewController {
     @IBOutlet weak var yogaCentreDetailsselectPlanPickerView: UIPickerView!
     @IBOutlet weak var yogaCentreDetailsseeServicesBtn: UIButton!
     @IBOutlet weak var yogaCentreDetailsseeReviewsBtn: UIButton!
-    @IBOutlet weak var yogaCentreDetailsmapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var yogaCentreDetailsbookButton: UIButton!
     
     //Outlets That Hides
@@ -81,16 +81,16 @@ class YogaCentreDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getYogaCentreDetails()
-//        yogaCentreDetailsimageCollectionView.delegate = self
-//        yogaCentreDetailsimageCollectionView.dataSource = self
-//        yogaCentreDetailsselectPlanPickerView.delegate = self
-//        yogaCentreDetailsselectPlanPickerView.dataSource = self
-//        yogaCentreDetailsseeServicesTblView.delegate = self
-//        yogaCentreDetailsseeServicesTblView.dataSource = self
-//        yogaCentreDetailsseeServicesTblView.isHidden = true
-//        yogaCentreDetailsseeReviewsTblView.delegate = self
-//        yogaCentreDetailsseeReviewsTblView.dataSource = self
-//        yogaCentreDetailsseeReviewsTblView.isHidden = true
+        yogaCentreDetailsimageCollectionView.delegate = self
+        yogaCentreDetailsimageCollectionView.dataSource = self
+        yogaCentreDetailsselectPlanPickerView.delegate = self
+        yogaCentreDetailsselectPlanPickerView.dataSource = self
+        yogaCentreDetailsseeServicesTblView.delegate = self
+        yogaCentreDetailsseeServicesTblView.dataSource = self
+        yogaCentreDetailsseeServicesTblView.isHidden = true
+        yogaCentreDetailsseeReviewsTblView.delegate = self
+        yogaCentreDetailsseeReviewsTblView.dataSource = self
+        yogaCentreDetailsseeReviewsTblView.isHidden = true
         
         //Adding Tap Gesture to mobile number label
         let tapToCallGesture = UITapGestureRecognizer(target: self, action: #selector(self.yogaCentreDetailsmobileNumberTapToCall(_:)))
@@ -100,6 +100,152 @@ class YogaCentreDetailsVC: UIViewController {
     }
 
 }
+
+
+//MARK: CollectionView for Additional 4 Images
+extension YogaCentreDetailsVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return yogaCentreDetailsImageGalleryArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = yogaCentreDetailsimageCollectionView.dequeueReusableCell(withReuseIdentifier: "YogaCentrePhotoGalleryCollectionCell", for: indexPath) as? YogaCentrePhotoGalleryCollectionCell else {return UICollectionViewCell()}
+        
+        cell.configureYogaCentreImageGalleryCell(yogaCentrePhotoGalleryImages: yogaCentreDetailsImageGalleryArray[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let imageUrlAtIndex = URL(string: "\(yogaCentreDetailsImageGalleryArray[indexPath.row].photo)") else {return}
+        yogaCentreDetailsmainDisplayImageView.kf.setImage(with: imageUrlAtIndex)
+    }
+    
+}
+
+//MARK: Yoga Centre Details SERVICES TABLE VIEW
+extension YogaCentreDetailsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == yogaCentreDetailsseeServicesTblView {
+            return yogaCentreDetailsServicesArray.count
+        }else {
+            return yogaCentreDetailsReviewListArray.count
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if tableView == yogaCentreDetailsseeServicesTblView {
+            guard let cell = yogaCentreDetailsseeServicesTblView.dequeueReusableCell(withIdentifier: "YogaCentreDetailsSeeServicesTblCell") as? YogaCentreDetailsSeeServicesTblCell else {return UITableViewCell()}
+            cell.configureGymnasiumDetailsSeeServicesTblCell(yogaCentreDetailsServicesList: yogaCentreDetailsServicesArray[indexPath.row])
+            return cell
+        }else {
+            guard let cell = yogaCentreDetailsseeReviewsTblView.dequeueReusableCell(withIdentifier: "YogaCentreDetailsSeeReviewsTblCell") as? YogaCentreDetailsSeeReviewsTblCell else {return UITableViewCell()}
+            cell.configureGymnasiumDetailsSeeReviewsCell(yogaCentreDetailsReviewsList: self.yogaCentreDetailsReviewListArray[indexPath.row])
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    
+}
+
+
+
+//MARK: SELECT PLAN PICKER VIEW IMPLEMENTATION
+extension YogaCentreDetailsVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return yogaCentreDetailsPlansArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let returnedPlanString = "\(yogaCentreDetailsPlansArray[row].planName) \(yogaCentreDetailsPlansArray[row].amount) Rs"
+        return returnedPlanString
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedPlanValue = "\(yogaCentreDetailsPlansArray[row].planName) \(yogaCentreDetailsPlansArray[row].amount) Rs"
+        //print(selectedPlanValue)
+    }
+    
+    
+}
+
+//MARK: MAP METHODS IMPLEMENTATION
+extension YogaCentreDetailsVC {
+    
+    func setMapAnnotationDetails()  {
+        
+        let latitude = (latitudeString as NSString).doubleValue
+        let longitude = (longitudeString as NSString).doubleValue
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        mapView.addAnnotation(annotation)
+        
+        let latDelta:CLLocationDegrees = 0.05
+        
+        let lonDelta:CLLocationDegrees = 0.05
+        
+        let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+        
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        mapView.setRegion(region, animated: false)
+        
+    }
+    
+    
+    @IBAction func btn_plusPressed(_ sender: Any) {
+        let region = MKCoordinateRegion(center: self.mapView.region.center, span: MKCoordinateSpan(latitudeDelta: mapView.region.span.latitudeDelta*0.7, longitudeDelta: mapView.region.span.longitudeDelta*0.7))
+        mapView.setRegion(region, animated: true)
+    }
+    
+    @IBAction func btn_minusPressed(_ sender: Any) {
+        let zoom = getZoom()
+        if zoom > 3.5{
+            let region = MKCoordinateRegion(center: self.mapView.region.center, span: MKCoordinateSpan(latitudeDelta: mapView.region.span.latitudeDelta/0.7, longitudeDelta: mapView.region.span.longitudeDelta/0.7))
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    func getZoom() -> Double {
+        var angleCamera = self.mapView.camera.heading
+        if angleCamera > 270 {
+            angleCamera = 360 - angleCamera
+        } else if angleCamera > 90 {
+            angleCamera = fabs(angleCamera - 180)
+        }
+        let angleRad = Double.pi * angleCamera / 180
+        let width = Double(self.view.frame.size.width)
+        let height = Double(self.view.frame.size.height)
+        let heightOffset : Double = 20
+        let spanStraight = width * self.mapView.region.span.longitudeDelta / (width * cos(angleRad) + (height - heightOffset) * sin(angleRad))
+        return log2(360 * ((width / 256) / spanStraight)) + 1
+    }
+    
+}
+
+
 
 //MARK: MOBILE NUMBER TAP TO CALL IMPLEMENTATION
 extension YogaCentreDetailsVC {
@@ -130,7 +276,7 @@ extension YogaCentreDetailsVC {
                 self.yogaCentreDetailsArray = returnedGymnasiumDetails.results
             }
             
-            print("Yoga Centre Details Array: \(self.yogaCentreDetailsArray)")
+            //print("Yoga Centre Details Array: \(self.yogaCentreDetailsArray)")
             
             DispatchQueue.main.async {
                 self.assignValuesToOutlets()
