@@ -87,6 +87,7 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if isSearching {
+            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "GymnasiumSearchTblCell") as? GymnasiumSearchTblCell else {return UITableViewCell()}
             
             cell.configureGymnasiumSearchCell(gymnasiumListResult: searchingArray[indexPath.row])
@@ -244,7 +245,13 @@ extension GymnasiumVC {
         GymnasiumServices.instance.getGymnasiumListByLocation(latitude: "19.077064399", longitude: "72.9989925") { (success, returnedGymnasiumList) in
             
             if let returnedGymnasiumList = returnedGymnasiumList {
-                self.gymnasiumListArray = returnedGymnasiumList.results
+                
+                for filteringGymnasiums in returnedGymnasiumList.results {
+                    
+                    if filteringGymnasiums.typeID == 1 {
+                        self.gymnasiumListArray.append(filteringGymnasiums)
+                    }
+                }
                 
             }
             

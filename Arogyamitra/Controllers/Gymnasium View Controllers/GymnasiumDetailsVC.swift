@@ -45,9 +45,15 @@ class GymnasiumDetailsVC: UIViewController {
         seeReviewsTblView.reloadData()
     }
     
-    //MARK: Required values from previous Gymnasium VC
+    @IBAction func bookBtnTapped(_ sender: UIButton) {
+        print("Book Button Tapped")
+        //Here perform action for Bookings, navigate to calendar and then final page - @Nitin's Implementation
+    }
+    
+    //MARK: Required values from & for previous and next View Controller Gymnasium VC
     var patientId = 157
     var gymnasiumId: Int!
+    var notAvailableDatesString = String()
     
     //Variables
     var selectedPlanValue = String()
@@ -304,6 +310,7 @@ extension GymnasiumDetailsVC {
             self.seeReviewsBtn.setTitle("See Reviews: \(allValues.totalReviews)", for: .normal)
             self.latitudeString = allValues.latitude
             self.longitudeString = allValues.longitude
+            self.notAvailableDatesString = allValues.notAvailabilityDates
             
             //Condition to hide reviews table in no reviews
             if allValues.totalReviews == 0 {

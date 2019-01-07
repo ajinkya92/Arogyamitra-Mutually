@@ -578,11 +578,41 @@
 			path = Laboratory;
 			sourceTree = "<group>";
 		};
-		51FA120521DA225100D7E009 /* Controllers */ = {
+		5148155421E3196200503050 /* Gymnasium Views */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121321DA2BF000D7E009 /* GymnasiumListTableCell.swift */,
+				51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */,
+				512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */,
+				51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */,
+				51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */,
+				51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */,
+			);
+			path = "Gymnasium Views";
+			sourceTree = "<group>";
+		};
+		5148155521E3197800503050 /* Gymnasium View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */,
 				512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */,
+			);
+			path = "Gymnasium View Controllers";
+			sourceTree = "<group>";
+		};
+		5148155621E3198800503050 /* Gymnasium Models */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121521DA2F3200D7E009 /* GymnasiumList.swift */,
+				512CF0F821DE4394007A470A /* GymnasiumDetails.swift */,
+			);
+			path = "Gymnasium Models";
+			sourceTree = "<group>";
+		};
+		51FA120521DA225100D7E009 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5148155521E3197800503050 /* Gymnasium View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -591,12 +621,7 @@
 			isa = PBXGroup;
 			children = (
 				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
-				51FA121321DA2BF000D7E009 /* GymnasiumListTableCell.swift */,
-				51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */,
-				512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */,
-				51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */,
-				51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */,
-				51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */,
+				5148155421E3196200503050 /* Gymnasium Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -604,8 +629,7 @@
 		51FA120721DA22AF00D7E009 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				51FA121521DA2F3200D7E009 /* GymnasiumList.swift */,
-				512CF0F821DE4394007A470A /* GymnasiumDetails.swift */,
+				5148155621E3198800503050 /* Gymnasium Models */,
 			);
 			path = Model;
 			sourceTree = "<group>";
