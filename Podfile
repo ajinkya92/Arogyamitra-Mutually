@@ -6,7 +6,8 @@ target 'Arogyamitra' do
   use_frameworks!
 
   # Pods for Arogyamitra
-  	pod 'Kingfisher'
-	pod 'Toast-Swift'
+  	pod 'Kingfisher', '~> 4.8.1'
+    pod 'GoogleMaps'
+  	pod 'GooglePlaces'
 
 end

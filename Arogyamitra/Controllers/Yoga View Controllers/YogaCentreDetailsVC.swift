@@ -77,7 +77,7 @@ class YogaCentreDetailsVC: UIViewController {
     var yogaCentreDetailsPlansArray = [GymnasiumDetailsServiceGymnasiumYogaPlan]()
     var yogaCentreDetailsReviewListArray = [GymnasiumDetailsServiceReviewsList]()
     var yogaCentreDetailsTimingsArray = [String]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getYogaCentreDetails()
@@ -98,7 +98,7 @@ class YogaCentreDetailsVC: UIViewController {
         yogaCentreDetailsmobileNumberLbl.addGestureRecognizer(tapToCallGesture)
         
     }
-
+    
 }
 
 
@@ -287,7 +287,7 @@ extension YogaCentreDetailsVC {
                 self.yogaCentreDetailsselectPlanPickerView.reloadAllComponents()
                 self.yogaCentreDetailsseeServicesTblView.reloadData()
                 self.yogaCentreDetailsseeReviewsTblView.reloadData()
-                //self.setMapAnnotationDetails()
+                self.setMapAnnotationDetails()
                 self.view.hideToastActivity()
             }
             

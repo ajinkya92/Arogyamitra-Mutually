@@ -22,8 +22,6 @@
 		1719A7CB21E1269500BD5169 /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719A7BC21E1269400BD5169 /* CosmosDefaultSettings.swift */; };
 		1719A7CC21E1269500BD5169 /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719A7BD21E1269400BD5169 /* CosmosLocalizedRating.swift */; };
 		1719A7CD21E1269500BD5169 /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719A7BE21E1269400BD5169 /* CosmosAccessibility.swift */; };
-		36F890CC260E5AAEC5395AFD /* Pods_ArogyamitraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */; };
-		3F15734D2AF7C8CEF3AD40B0 /* Pods_ArogyamitraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */; };
 		48272AE621C4887000B288F6 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48272AC521C4887000B288F6 /* Toast.swift */; };
 		48272AE721C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACA21C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		48272AE821C4887000B288F6 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48272ACB21C4887000B288F6 /* TPKeyboardAvoidingTableView.m */; };
@@ -145,7 +143,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraUITests/Pods-ArogyamitraUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1719A7AF21E1269000BD5169 /* CosmosView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosView.swift; sourceTree = "<group>"; };
 		1719A7B021E1269100BD5169 /* Cosmos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cosmos.h; sourceTree = "<group>"; };
 		1719A7B121E1269100BD5169 /* CosmosText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmosText.swift; sourceTree = "<group>"; };
@@ -277,11 +274,8 @@
 		51FA121721DA30F400D7E009 /* GymnasiumServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumServices.swift; sourceTree = "<group>"; };
 		51FBEAE721DCEC6F00F69264 /* CustomCircularImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCircularImage.swift; sourceTree = "<group>"; };
 		51FBEAE921DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumServicePopupCollectionCell.swift; sourceTree = "<group>"; };
-		8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraTests/Pods-ArogyamitraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9A60CC82B3EEDD5278C59522 /* Pods_ArogyamitraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3892354BC0B1DC6B9CF32C3 /* Pods_ArogyamitraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArogyamitraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraUITests/Pods-ArogyamitraUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArogyamitraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArogyamitraTests/Pods-ArogyamitraTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE640C4300B061F551F9B497 /* Pods-Arogyamitra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arogyamitra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,7 +292,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36F890CC260E5AAEC5395AFD /* Pods_ArogyamitraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +299,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F15734D2AF7C8CEF3AD40B0 /* Pods_ArogyamitraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,10 +697,6 @@
 			children = (
 				EE640C4300B061F551F9B497 /* Pods-Arogyamitra.debug.xcconfig */,
 				3D334C37FCABAB756950AC8B /* Pods-Arogyamitra.release.xcconfig */,
-				8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */,
-				D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */,
-				C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */,
-				09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -725,6 +713,7 @@
 				487BE1B621BABA3D0076F210 /* Frameworks */,
 				487BE1B721BABA3D0076F210 /* Resources */,
 				5650854DE6720EC158ABDEF8 /* [CP] Embed Pods Frameworks */,
+				769A7EB33E5EE27B834DFC9E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -739,7 +728,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 487BE1E421BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraTests" */;
 			buildPhases = (
-				65BAFD748944D3A77BC02D66 /* [CP] Check Pods Manifest.lock */,
 				487BE1C921BABA400076F210 /* Sources */,
 				487BE1CA21BABA400076F210 /* Frameworks */,
 				487BE1CB21BABA400076F210 /* Resources */,
@@ -758,7 +746,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 487BE1E721BABA400076F210 /* Build configuration list for PBXNativeTarget "ArogyamitraUITests" */;
 			buildPhases = (
-				A7A15C338579AC94474BCB0B /* [CP] Check Pods Manifest.lock */,
 				487BE1D421BABA400076F210 /* Sources */,
 				487BE1D521BABA400076F210 /* Frameworks */,
 				487BE1D621BABA400076F210 /* Resources */,
@@ -862,7 +849,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -873,10 +860,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		65BAFD748944D3A77BC02D66 /* [CP] Check Pods Manifest.lock */ = {
+		769A7EB33E5EE27B834DFC9E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -884,40 +871,20 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArogyamitraTests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A7A15C338579AC94474BCB0B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArogyamitraUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5A1B1F84C12FF497C6793EA /* [CP] Check Pods Manifest.lock */ = {
@@ -1259,7 +1226,6 @@
 		};
 		487BE1E521BABA400076F210 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BA5116ACA86383A9C43A22F /* Pods-ArogyamitraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1280,7 +1246,6 @@
 		};
 		487BE1E621BABA400076F210 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1AEC9B37293FD9477DCD63C /* Pods-ArogyamitraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1301,7 +1266,6 @@
 		};
 		487BE1E821BABA400076F210 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2FF42A33D690F22927F5578 /* Pods-ArogyamitraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1321,7 +1285,6 @@
 		};
 		487BE1E921BABA400076F210 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09BBDBB8C554E31E4D3C99B4 /* Pods-ArogyamitraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
