@@ -118,6 +118,8 @@
 		51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */; };
 		51DC9E0B21E48378005D6784 /* TrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0A21E48378005D6784 /* TrainerList.swift */; };
 		51DC9E0D21E483C6005D6784 /* TrainerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0C21E483C6005D6784 /* TrainerServices.swift */; };
+		51DC9E0F21E4A859005D6784 /* SearchTrainerTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0E21E4A859005D6784 /* SearchTrainerTblCell.swift */; };
+		51DC9E1121E4BDAB005D6784 /* TrainerDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E1021E4BDAB005D6784 /* TrainerDetailsVC.swift */; };
 		51FA120C21DA22E800D7E009 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA120B21DA22E800D7E009 /* Constants.swift */; };
 		51FA120E21DA231900D7E009 /* Ajinkya.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51FA120D21DA231900D7E009 /* Ajinkya.storyboard */; };
 		51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */; };
@@ -274,6 +276,8 @@
 		51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerListTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0A21E48378005D6784 /* TrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerList.swift; sourceTree = "<group>"; };
 		51DC9E0C21E483C6005D6784 /* TrainerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerServices.swift; sourceTree = "<group>"; };
+		51DC9E0E21E4A859005D6784 /* SearchTrainerTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTrainerTblCell.swift; sourceTree = "<group>"; };
+		51DC9E1021E4BDAB005D6784 /* TrainerDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetailsVC.swift; sourceTree = "<group>"; };
 		51FA120B21DA22E800D7E009 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51FA120D21DA231900D7E009 /* Ajinkya.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ajinkya.storyboard; sourceTree = "<group>"; };
 		51FA121121DA27BF00D7E009 /* GymnasiumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumVC.swift; sourceTree = "<group>"; };
@@ -651,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				51DC9E0121E47EFB005D6784 /* TrainerVC.swift */,
+				51DC9E1021E4BDAB005D6784 /* TrainerDetailsVC.swift */,
 			);
 			path = "Trainer View Controllers";
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 			isa = PBXGroup;
 			children = (
 				51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */,
+				51DC9E0E21E4A859005D6784 /* SearchTrainerTblCell.swift */,
 			);
 			path = "Trainer Views";
 			sourceTree = "<group>";
@@ -995,6 +1001,7 @@
 				48A58AC721D5AEA0009F8736 /* LocationSearchViewController.swift in Sources */,
 				487BE20121BCD0EF0076F210 /* DoctorListTableViewCell.swift in Sources */,
 				5148156221E3572900503050 /* YogaCentreServicePopupCollectionCell.swift in Sources */,
+				51DC9E1121E4BDAB005D6784 /* TrainerDetailsVC.swift in Sources */,
 				48DCD2E721C5DA8700215B86 /* HospitalListModel.swift in Sources */,
 				1719A7CD21E1269500BD5169 /* CosmosAccessibility.swift in Sources */,
 				51FBEAE821DCEC6F00F69264 /* CustomCircularImage.swift in Sources */,
@@ -1007,6 +1014,7 @@
 				1719A7C921E1269500BD5169 /* CosmosLayerHelper.swift in Sources */,
 				1719A7C621E1269500BD5169 /* StarFillMode.swift in Sources */,
 				1719A7C721E1269500BD5169 /* CosmosSize.swift in Sources */,
+				51DC9E0F21E4A859005D6784 /* SearchTrainerTblCell.swift in Sources */,
 				48DCD2ED21C634C400215B86 /* CustomLabel.swift in Sources */,
 				48414F0321CBA82D00A49605 /* DoctorListModel.swift in Sources */,
 				48272AEF21C4887000B288F6 /* DispatchQueue+Alamofire.swift in Sources */,
