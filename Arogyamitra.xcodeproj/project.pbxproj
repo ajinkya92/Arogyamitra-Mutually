@@ -114,6 +114,8 @@
 		51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */; };
 		51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */; };
 		51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */; };
+		5151B28C21E5C7D10079D45A /* TrainerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B28B21E5C7D10079D45A /* TrainerDetails.swift */; };
+		5151B28E21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B28D21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift */; };
 		51DC9E0221E47EFB005D6784 /* TrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0121E47EFB005D6784 /* TrainerVC.swift */; };
 		51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */; };
 		51DC9E0B21E48378005D6784 /* TrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0A21E48378005D6784 /* TrainerList.swift */; };
@@ -272,6 +274,8 @@
 		51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumPhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
 		51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeSevicesTblCell.swift; sourceTree = "<group>"; };
 		51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
+		5151B28B21E5C7D10079D45A /* TrainerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetails.swift; sourceTree = "<group>"; };
+		5151B28D21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetailsReviewTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0121E47EFB005D6784 /* TrainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerVC.swift; sourceTree = "<group>"; };
 		51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerListTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0A21E48378005D6784 /* TrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerList.swift; sourceTree = "<group>"; };
@@ -665,6 +669,7 @@
 			children = (
 				51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */,
 				51DC9E0E21E4A859005D6784 /* SearchTrainerTblCell.swift */,
+				5151B28D21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift */,
 			);
 			path = "Trainer Views";
 			sourceTree = "<group>";
@@ -673,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				51DC9E0A21E48378005D6784 /* TrainerList.swift */,
+				5151B28B21E5C7D10079D45A /* TrainerDetails.swift */,
 			);
 			path = "Trainer Model";
 			sourceTree = "<group>";
@@ -1036,6 +1042,7 @@
 				5148155A21E32BE300503050 /* YogaVC.swift in Sources */,
 				487BE1F321BABBC10076F210 /* ContainerViewController.swift in Sources */,
 				48272AE621C4887000B288F6 /* Toast.swift in Sources */,
+				5151B28C21E5C7D10079D45A /* TrainerDetails.swift in Sources */,
 				483F105821C1F4C300181AB3 /* HospitalDetailsViewController.swift in Sources */,
 				1719A7C021E1269500BD5169 /* CosmosText.swift in Sources */,
 				48272AFD21C4887000B288F6 /* SessionDelegate.swift in Sources */,
@@ -1050,6 +1057,7 @@
 				487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */,
 				1719A7C321E1269500BD5169 /* CosmosLayers.swift in Sources */,
 				5148155E21E33E0700503050 /* YogaListTblCell.swift in Sources */,
+				5151B28E21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift in Sources */,
 				1719A7C821E1269500BD5169 /* StarLayer.swift in Sources */,
 				487BE1F721BABD250076F210 /* DashboardViewController.swift in Sources */,
 				487BE1FD21BCC46B0076F210 /* DoctorViewController.swift in Sources */,

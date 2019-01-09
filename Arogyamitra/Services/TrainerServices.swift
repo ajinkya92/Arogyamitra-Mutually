@@ -48,6 +48,41 @@ class TrainerServices {
         
     }
     
+    //MARK: API CALL For Trainer Details
     
+    func getTrainerDetails(withTrainerId: Int, andPatientId: Int, completion: @escaping(_ success: Bool, TrainerDetails?) -> ()) {
+        
+        let postData = NSMutableData(data: "trainer_id=\(withTrainerId)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(andPatientId)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: GET_TRAINER_DETAILS_URL) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedTrainerDetailsData = try decoder.decode(TrainerDetails.self, from: data)
+                    completion(true, returnedTrainerDetailsData)
+                    
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+            }
+            
+            }.resume()
+        
+    }
     
 }
