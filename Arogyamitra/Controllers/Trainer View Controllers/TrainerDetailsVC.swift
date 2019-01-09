@@ -24,6 +24,10 @@ class TrainerDetailsVC: UIViewController {
     @IBOutlet weak var seeReviewsBtn: UIButton!
     @IBOutlet weak var SeeReviewsTableView: UITableView!
     
+    //Automationa Contraints
+    
+    @IBOutlet weak var seeReviewTableViewHeightConstraint: NSLayoutConstraint!
+    
     //MARK: Required Variable from previous view Controllers
     var trainerId: Int!
     var patientId = 157
@@ -118,6 +122,11 @@ extension TrainerDetailsVC {
             
             if allValues.totalReviews == 0 {
                 self.SeeReviewsTableView.isHidden = true
+                self.seeReviewTableViewHeightConstraint.constant = 0
+                self.SeeReviewsTableView.reloadData()
+            }else {
+                self.seeReviewTableViewHeightConstraint.constant = 250
+                self.SeeReviewsTableView.reloadData()
             }
             
             self.trainerReviewListArray = allValues.reviewsList
