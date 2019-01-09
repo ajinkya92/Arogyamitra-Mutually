@@ -116,6 +116,10 @@
 		51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */; };
 		5151B28C21E5C7D10079D45A /* TrainerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B28B21E5C7D10079D45A /* TrainerDetails.swift */; };
 		5151B28E21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B28D21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift */; };
+		5151B29221E5FE940079D45A /* ArogyamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29121E5FE940079D45A /* ArogyamVC.swift */; };
+		5151B29621E605A60079D45A /* ArogyamTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29521E605A60079D45A /* ArogyamTblCell.swift */; };
+		5151B29921E606E70079D45A /* ArogyamNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29821E606E70079D45A /* ArogyamNotification.swift */; };
+		5151B29B21E609880079D45A /* ArogyamServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29A21E609880079D45A /* ArogyamServices.swift */; };
 		51DC9E0221E47EFB005D6784 /* TrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0121E47EFB005D6784 /* TrainerVC.swift */; };
 		51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */; };
 		51DC9E0B21E48378005D6784 /* TrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0A21E48378005D6784 /* TrainerList.swift */; };
@@ -276,6 +280,10 @@
 		51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
 		5151B28B21E5C7D10079D45A /* TrainerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetails.swift; sourceTree = "<group>"; };
 		5151B28D21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerDetailsReviewTblCell.swift; sourceTree = "<group>"; };
+		5151B29121E5FE940079D45A /* ArogyamVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArogyamVC.swift; sourceTree = "<group>"; };
+		5151B29521E605A60079D45A /* ArogyamTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamTblCell.swift; sourceTree = "<group>"; };
+		5151B29821E606E70079D45A /* ArogyamNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamNotification.swift; sourceTree = "<group>"; };
+		5151B29A21E609880079D45A /* ArogyamServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamServices.swift; sourceTree = "<group>"; };
 		51DC9E0121E47EFB005D6784 /* TrainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerVC.swift; sourceTree = "<group>"; };
 		51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerListTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0A21E48378005D6784 /* TrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerList.swift; sourceTree = "<group>"; };
@@ -655,6 +663,30 @@
 			path = "Yoga Centre Views";
 			sourceTree = "<group>";
 		};
+		5151B29321E604B80079D45A /* Arogyam Views */ = {
+			isa = PBXGroup;
+			children = (
+				5151B29521E605A60079D45A /* ArogyamTblCell.swift */,
+			);
+			path = "Arogyam Views";
+			sourceTree = "<group>";
+		};
+		5151B29421E604CD0079D45A /* Arogyam View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5151B29121E5FE940079D45A /* ArogyamVC.swift */,
+			);
+			path = "Arogyam View Controllers";
+			sourceTree = "<group>";
+		};
+		5151B29721E606500079D45A /* Arogyam */ = {
+			isa = PBXGroup;
+			children = (
+				5151B29821E606E70079D45A /* ArogyamNotification.swift */,
+			);
+			path = Arogyam;
+			sourceTree = "<group>";
+		};
 		51DC9E0021E47EA2005D6784 /* Trainer View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -686,6 +718,7 @@
 		51FA120521DA225100D7E009 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5151B29421E604CD0079D45A /* Arogyam View Controllers */,
 				5148155521E3197800503050 /* Gymnasium View Controllers */,
 				5148155821E32BB400503050 /* Yoga View Controllers */,
 				51DC9E0021E47EA2005D6784 /* Trainer View Controllers */,
@@ -697,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
+				5151B29321E604B80079D45A /* Arogyam Views */,
 				5148155421E3196200503050 /* Gymnasium Views */,
 				5148155C21E33DA800503050 /* Yoga Centre Views */,
 				51DC9E0421E4806B005D6784 /* Trainer Views */,
@@ -707,6 +741,7 @@
 		51FA120721DA22AF00D7E009 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5151B29721E606500079D45A /* Arogyam */,
 				5148155621E3198800503050 /* Gymnasium And Yoga Models */,
 				51DC9E0721E481A2005D6784 /* Trainer Model */,
 			);
@@ -718,6 +753,7 @@
 			children = (
 				51FA121721DA30F400D7E009 /* GymnasiumServices.swift */,
 				51DC9E0C21E483C6005D6784 /* TrainerServices.swift */,
+				5151B29A21E609880079D45A /* ArogyamServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -974,6 +1010,7 @@
 				1719A7C121E1269500BD5169 /* CosmosRating.swift in Sources */,
 				487BE1BF21BABA3D0076F210 /* ViewController.swift in Sources */,
 				48272AF521C4887000B288F6 /* Response.swift in Sources */,
+				5151B29921E606E70079D45A /* ArogyamNotification.swift in Sources */,
 				48A58AC121D4652C009F8736 /* LaboratoryModel.swift in Sources */,
 				487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */,
 				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
@@ -1031,6 +1068,7 @@
 				48272B0221C48F8600B288F6 /* WebserviceHelper.swift in Sources */,
 				48272AF421C4887000B288F6 /* Notifications.swift in Sources */,
 				5148156621E3860F00503050 /* YogaCentrePhotoGalleryCollectionCell.swift in Sources */,
+				5151B29B21E609880079D45A /* ArogyamServices.swift in Sources */,
 				487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */,
 				48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */,
 				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,
@@ -1038,10 +1076,12 @@
 				51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */,
 				48272AEC21C4887000B288F6 /* MultipartFormData.swift in Sources */,
 				512CF0F521DE1A89007A470A /* GymnasiumSearchTblCell.swift in Sources */,
+				5151B29221E5FE940079D45A /* ArogyamVC.swift in Sources */,
 				51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */,
 				5148155A21E32BE300503050 /* YogaVC.swift in Sources */,
 				487BE1F321BABBC10076F210 /* ContainerViewController.swift in Sources */,
 				48272AE621C4887000B288F6 /* Toast.swift in Sources */,
+				5151B29621E605A60079D45A /* ArogyamTblCell.swift in Sources */,
 				5151B28C21E5C7D10079D45A /* TrainerDetails.swift in Sources */,
 				483F105821C1F4C300181AB3 /* HospitalDetailsViewController.swift in Sources */,
 				1719A7C021E1269500BD5169 /* CosmosText.swift in Sources */,

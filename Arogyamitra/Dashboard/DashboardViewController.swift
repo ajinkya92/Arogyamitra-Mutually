@@ -97,8 +97,12 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             break
             
         case 7:
-            let vc = LocationStoryboard.instantiateViewController(withIdentifier: "LocationSearchViewController") as! LocationSearchViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            
+            let ajinkyaStroryboard = UIStoryboard.init(name: "Ajinkya", bundle: nil)
+            guard let arogyamVc = ajinkyaStroryboard.instantiateViewController(withIdentifier: "ArogyamVC") as? ArogyamVC else {return}
+            arogyamVc.title = "Navigation"
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            self.navigationController?.pushViewController(arogyamVc, animated: true)
             break
             
         default:
