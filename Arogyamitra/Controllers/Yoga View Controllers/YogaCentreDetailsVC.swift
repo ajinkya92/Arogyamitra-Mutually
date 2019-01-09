@@ -30,6 +30,9 @@ class YogaCentreDetailsVC: UIViewController {
     
     //Outlets That Hides
     @IBOutlet weak var yogaCentreDetailsImageCollectionStackView: UIStackView!
+    @IBOutlet weak var yogaCentreDetailsServicesTblHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var yogaCentreDetailsReviewTblHeightConstraint: NSLayoutConstraint!
+    
     
     //ACTIONS Done Here...
     
@@ -97,6 +100,28 @@ class YogaCentreDetailsVC: UIViewController {
         yogaCentreDetailsmobileNumberLbl.isUserInteractionEnabled = true
         yogaCentreDetailsmobileNumberLbl.addGestureRecognizer(tapToCallGesture)
         
+        self.yogaCentreDetailsseeServicesTblView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+        self.yogaCentreDetailsseeReviewsTblView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+        
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        yogaCentreDetailsseeServicesTblView.layer.removeAllAnimations()
+        yogaCentreDetailsseeReviewsTblView.layer.removeAllAnimations()
+        yogaCentreDetailsServicesTblHeightConstraint.constant = yogaCentreDetailsseeServicesTblView.contentSize.height
+        yogaCentreDetailsReviewTblHeightConstraint.constant = yogaCentreDetailsseeReviewsTblView.contentSize.height
+        UIView.animate(withDuration: 0.5) {
+            self.yogaCentreDetailsseeServicesTblView.updateConstraints()
+            self.yogaCentreDetailsseeReviewsTblView.updateConstraints()
+            self.yogaCentreDetailsseeServicesTblView.layoutIfNeeded()
+            self.yogaCentreDetailsseeReviewsTblView.layoutIfNeeded()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.yogaCentreDetailsseeServicesTblView.removeObserver(self, forKeyPath: "contentSize", context: nil)
+        self.yogaCentreDetailsseeReviewsTblView.removeObserver(self, forKeyPath: "contentSize", context: nil)
     }
     
 }

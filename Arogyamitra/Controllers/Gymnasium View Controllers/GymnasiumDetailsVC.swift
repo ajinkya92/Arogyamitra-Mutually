@@ -32,6 +32,8 @@ class GymnasiumDetailsVC: UIViewController {
     
     //Outlets That Hides
     @IBOutlet weak var imageCollectionStackView: UIStackView!
+    @IBOutlet weak var seeServicesTblViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var seeReviewsTblViewHeightConstraint: NSLayoutConstraint!
     
     //ACTIONS Done Here...
     
@@ -93,6 +95,8 @@ class GymnasiumDetailsVC: UIViewController {
         seeReviewsTblView.delegate = self
         seeReviewsTblView.dataSource = self
         seeReviewsTblView.isHidden = true
+        self.seeReviewsTblView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+        self.seeServicesTblView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         
         //Adding Tap Gesture to mobile number label
         let tapToCallGesture = UITapGestureRecognizer(target: self, action: #selector(self.mobileNumberTapToCall(_:)))
@@ -101,6 +105,24 @@ class GymnasiumDetailsVC: UIViewController {
         
     }
     
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        seeServicesTblView.layer.removeAllAnimations()
+        seeReviewsTblView.layer.removeAllAnimations()
+        seeReviewsTblViewHeightConstraint.constant = seeReviewsTblView.contentSize.height
+        seeServicesTblViewHeightConstraint.constant = seeServicesTblView.contentSize.height
+        UIView.animate(withDuration: 0.5) {
+            self.seeServicesTblView.updateConstraints()
+            self.seeReviewsTblView.updateConstraints()
+            self.seeServicesTblView.layoutIfNeeded()
+            self.seeReviewsTblView.layoutIfNeeded()
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.seeReviewsTblView.removeObserver(self, forKeyPath: "contentSize", context: nil)
+        self.seeServicesTblView.removeObserver(self, forKeyPath: "contentSize", context: nil)
+    }
 
 }
 

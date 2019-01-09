@@ -35,14 +35,31 @@ class TrainerDetailsVC: UIViewController {
     //MARK: Storage Collection Variables
     var trainerDetailsArray = [TrainerDetailsResult]()
     var trainerReviewListArray = [TrainerDetailsReviewsList]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getTrainerDetails()
         SeeReviewsTableView.delegate = self
         SeeReviewsTableView.dataSource = self
     }
-
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        SeeReviewsTableView.layer.removeAllAnimations()
+        seeReviewTableViewHeightConstraint.constant = SeeReviewsTableView.contentSize.height
+        UIView.animate(withDuration: 0.5) {
+            self.SeeReviewsTableView.updateConstraints()
+            self.SeeReviewsTableView.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: ACTIONS PERFORMED HERE
+    
+    @IBAction func seeReviewsBtnTapped(_ sender: UIButton) {
+        //print("See Review Btn Tapped")
+        self.SeeReviewsTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+        SeeReviewsTableView.reloadData()
+    }
+    
 }
 
 //MARK: SEE Reviews Tableview Implementation
@@ -109,7 +126,7 @@ extension TrainerDetailsVC {
                 if additionalMobileNumberArray[0] != "" {
                     self.trainerOptional1MobileNumberLbl.text = additionalMobileNumberArray[0]
                 }else {self.trainerOptional1MobileNumberLbl.isHidden = true}
-
+                
                 if additionalMobileNumberArray[1] != "" {
                     self.trainerOptional2MobileNumberLbl.text = additionalMobileNumberArray[1]
                 }else {self.trainerOptional2MobileNumberLbl.isHidden = true}
@@ -119,20 +136,12 @@ extension TrainerDetailsVC {
             self.trainerChargesLbl.text = allValues.chargesPerVisit
             self.trainerExperienceLbl.text = allValues.experience
             self.seeReviewsBtn.setTitle("See Reviews \(allValues.totalReviews)", for: .normal)
-            
-            if allValues.totalReviews == 0 {
-                self.SeeReviewsTableView.isHidden = true
-                self.seeReviewTableViewHeightConstraint.constant = 0
-                self.SeeReviewsTableView.reloadData()
-            }else {
-                self.seeReviewTableViewHeightConstraint.constant = 250
-                self.SeeReviewsTableView.reloadData()
-            }
-            
             self.trainerReviewListArray = allValues.reviewsList
+            self.seeReviewTableViewHeightConstraint.constant = 0
             
         }
         
     }
+    
     
 }
