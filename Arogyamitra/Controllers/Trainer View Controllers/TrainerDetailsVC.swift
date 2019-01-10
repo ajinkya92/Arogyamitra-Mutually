@@ -17,8 +17,8 @@ class TrainerDetailsVC: UIViewController {
     @IBOutlet weak var trainerAddressLbl: UILabel!
     @IBOutlet weak var trainerMainMobileNumberLbl: UILabel!
     @IBOutlet weak var trainerAdditionalMobileNumberStackView: UIStackView!
-    @IBOutlet weak var trainerOptional1MobileNumberLbl: UILabel!
-    @IBOutlet weak var trainerOptional2MobileNumberLbl: UILabel!
+    @IBOutlet weak var trainerOptional1MobileNumberBtn: UIButton!
+    @IBOutlet weak var trainerOptional2MobileNumberBtn: UIButton!
     @IBOutlet weak var trainerChargesLbl: UILabel!
     @IBOutlet weak var trainerExperienceLbl: UILabel!
     @IBOutlet weak var seeReviewsBtn: UIButton!
@@ -36,11 +36,17 @@ class TrainerDetailsVC: UIViewController {
     var trainerDetailsArray = [TrainerDetailsResult]()
     var trainerReviewListArray = [TrainerDetailsReviewsList]()
     
+    //Variables
+    var mobilePhoneNumberString = String()
+    var trainerOptional1MobileString = String()
+    var trainerOptional2MobileString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getTrainerDetails()
         SeeReviewsTableView.delegate = self
         SeeReviewsTableView.dataSource = self
+        addTapGestureToView()
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -58,6 +64,29 @@ class TrainerDetailsVC: UIViewController {
         //print("See Review Btn Tapped")
         self.SeeReviewsTableView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
         SeeReviewsTableView.reloadData()
+    }
+    
+    @IBAction func trainerOptional1MobileNumberBtn(_ sender: UIButton) {
+        
+        if let url = URL(string: "tel://\(trainerOptional1MobileString)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+    }
+    
+    @IBAction func trainerOptional2MobileNumberBtn(_ sender: UIButton) {
+        
+        if let url = URL(string: "tel://\(trainerOptional2MobileString)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
     }
     
 }
@@ -118,18 +147,21 @@ extension TrainerDetailsVC {
             self.trainerNameLbl.text = allValues.name
             self.trainerAddressLbl.text = allValues.address
             self.trainerMainMobileNumberLbl.text = allValues.mobileno
+            self.mobilePhoneNumberString = allValues.mobileno
             //Logic for multiple mobile number...
             let additionalMobileNumberArray = allValues.mobilenoMultiple.components(separatedBy: ",")
             
             
             if additionalMobileNumberArray.count != 1 {
                 if additionalMobileNumberArray[0] != "" {
-                    self.trainerOptional1MobileNumberLbl.text = additionalMobileNumberArray[0]
-                }else {self.trainerOptional1MobileNumberLbl.isHidden = true}
+                    self.trainerOptional1MobileNumberBtn.setTitle("\(additionalMobileNumberArray[0])", for: .normal)
+                    self.trainerOptional1MobileString = additionalMobileNumberArray[0]
+                }else {self.trainerOptional1MobileNumberBtn.isHidden = true}
                 
                 if additionalMobileNumberArray[1] != "" {
-                    self.trainerOptional2MobileNumberLbl.text = additionalMobileNumberArray[1]
-                }else {self.trainerOptional2MobileNumberLbl.isHidden = true}
+                    self.trainerOptional2MobileNumberBtn.setTitle("\(additionalMobileNumberArray[1])", for: .normal)
+                    self.trainerOptional2MobileString = additionalMobileNumberArray[1]
+                }else {self.trainerOptional2MobileNumberBtn.isHidden = true}
             }else {trainerAdditionalMobileNumberStackView.isHidden = true}
             
             
@@ -143,5 +175,37 @@ extension TrainerDetailsVC {
         
     }
     
+    
+}
+
+// MARK: Function To Add Tap Gesture To Call Labels
+extension TrainerDetailsVC {
+    
+    func setGesture() -> UITapGestureRecognizer {
+        
+        var myRegognizer = UITapGestureRecognizer()
+        myRegognizer = UITapGestureRecognizer(target: self, action: #selector(self.addTapGestureToView))
+        return myRegognizer
+    }
+    
+    @objc func addTapGestureToView() {
+        
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(mobileLabelTappedForCall))
+        trainerMainMobileNumberLbl.isUserInteractionEnabled = true
+        trainerMainMobileNumberLbl.addGestureRecognizer(tap1)
+        
+    }
+    
+    @objc func mobileLabelTappedForCall() {
+        
+        if let url = URL(string: "tel://\(mobilePhoneNumberString)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+
+    }
     
 }
