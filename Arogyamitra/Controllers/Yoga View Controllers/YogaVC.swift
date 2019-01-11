@@ -34,6 +34,7 @@ class YogaVC: UIViewController {
     
     //Variables To Pass
     var yogaCentreIdToPass = Int()
+    var yogaCentreNameToPass = String()
     
     //Storage Variables
     var yogaListArray = [GymnasiumOrYogaListResult]()
@@ -125,13 +126,16 @@ extension YogaVC: UITableViewDelegate, UITableViewDataSource {
 
         if cellName == "yogaCentreListCell" {
             yogaCentreIdToPass = yogaListArray[indexPath.row].gymnasiumYogaID
+            yogaCentreNameToPass = yogaListArray[indexPath.row].name
             
         }else {
             yogaCentreIdToPass = searchingArray[indexPath.row].gymnasiumYogaID
+            yogaCentreNameToPass = searchingArray[indexPath.row].name
         }
 
         guard let yogaCentreDetailsVc = storyboard?.instantiateViewController(withIdentifier: "YogaCentreDetailsVC") as? YogaCentreDetailsVC else {return}
         yogaCentreDetailsVc.yogaCentreId = self.yogaCentreIdToPass
+        yogaCentreDetailsVc.title = self.yogaCentreNameToPass
         self.navigationController?.pushViewController(yogaCentreDetailsVc, animated: true)
 
     }
@@ -144,13 +148,16 @@ extension YogaVC: YogaListTblCelllDelegate {
     func didTapVisitButton(_ tag: Int) {
         if cellName == "yogaCentreListCell" {
             yogaCentreIdToPass = yogaListArray[tag].gymnasiumYogaID
+            yogaCentreNameToPass = yogaListArray[tag].name
             
         }else {
             yogaCentreIdToPass = searchingArray[tag].gymnasiumYogaID
+            yogaCentreNameToPass = searchingArray[tag].name
         }
         
         guard let yogaCentreDetailsVc = storyboard?.instantiateViewController(withIdentifier: "YogaCentreDetailsVC") as? YogaCentreDetailsVC else {return}
         yogaCentreDetailsVc.yogaCentreId = self.yogaCentreIdToPass
+        yogaCentreDetailsVc.title = self.yogaCentreNameToPass
         self.navigationController?.pushViewController(yogaCentreDetailsVc, animated: true)
         
     }

@@ -56,6 +56,7 @@ class GymnasiumVC: UIViewController {
     
     //Variables To Pass
     var gymnasiumIdToPass = Int()
+    var gymnasiumNameToPass = String()
 
     
     //MARK: Actions for Service Popup View
@@ -126,12 +127,15 @@ extension GymnasiumVC: UITableViewDelegate, UITableViewDataSource {
         
         if cellName == "gymnasiumListCell" {
             gymnasiumIdToPass = gymnasiumListArray[indexPath.row].gymnasiumYogaID
+            gymnasiumNameToPass = gymnasiumListArray[indexPath.row].name
         }else {
             gymnasiumIdToPass = searchingArray[indexPath.row].gymnasiumYogaID
+            gymnasiumNameToPass = searchingArray[indexPath.row].name
         }
         
         guard let gymnasiumDetailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
         gymnasiumDetailsVc.gymnasiumId = self.gymnasiumIdToPass
+        gymnasiumDetailsVc.title = gymnasiumNameToPass
         self.navigationController?.pushViewController(gymnasiumDetailsVc, animated: true)
         
     }
@@ -145,12 +149,15 @@ extension GymnasiumVC: GymnasiumListTableCellDelegate {
         
         if cellName == "gymnasiumListCell" {
             gymnasiumIdToPass = gymnasiumListArray[tag].gymnasiumYogaID
+            gymnasiumNameToPass = gymnasiumListArray[tag].name
         }else {
             gymnasiumIdToPass = searchingArray[tag].gymnasiumYogaID
+            gymnasiumNameToPass = searchingArray[tag].name
         }
         
         guard let gymnasiumDetailsVc = storyboard?.instantiateViewController(withIdentifier: "GymnasiumDetailsVC") as? GymnasiumDetailsVC else {return}
         gymnasiumDetailsVc.gymnasiumId = self.gymnasiumIdToPass
+        gymnasiumDetailsVc.title = gymnasiumNameToPass
         self.navigationController?.pushViewController(gymnasiumDetailsVc, animated: true)
         
     }

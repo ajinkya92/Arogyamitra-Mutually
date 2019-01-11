@@ -64,6 +64,7 @@ class GymnasiumDetailsVC: UIViewController {
     //MARK: Required values from & for previous and next View Controller Gymnasium VC
     var patientId = 157
     var gymnasiumId: Int!
+    var gymnasiumName: String!
     var notAvailableDatesString = String()
     var gymnasiumImageUrlToPassReviewAndRatingsVc = String()
     
@@ -339,9 +340,9 @@ extension GymnasiumDetailsVC {
             self.gymnasiumImageGalleryArray.removeFirst()
             self.gymnasiumPlansArray = allValues.gymnasiumYogaPlans
             self.gymnasiumServicesArray = allValues.gymnasiumYogaServices
-            self.seeServicesBtn.setTitle("See Services: (\((self.gymnasiumServicesArray.count)))", for: .normal)
+            self.seeServicesBtn.setTitle("See Services (\((self.gymnasiumServicesArray.count)))", for: .normal)
             self.gymnasiumReviewListArray = allValues.reviewsList
-            self.seeReviewsBtn.setTitle("See Reviews: \(allValues.totalReviews)", for: .normal)
+            self.seeReviewsBtn.setTitle("See Reviews (\((allValues.totalReviews)))", for: .normal)
             self.latitudeString = allValues.latitude
             self.longitudeString = allValues.longitude
             self.notAvailableDatesString = allValues.notAvailabilityDates

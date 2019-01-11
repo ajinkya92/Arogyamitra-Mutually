@@ -344,9 +344,9 @@ extension YogaCentreDetailsVC {
             self.yogaCentreDetailsImageGalleryArray.removeFirst()
             self.yogaCentreDetailsPlansArray = allValues.gymnasiumYogaPlans
             self.yogaCentreDetailsServicesArray = allValues.gymnasiumYogaServices
-            self.yogaCentreDetailsseeServicesBtn.setTitle("See Services: (\((self.yogaCentreDetailsServicesArray.count)))", for: .normal)
+            self.yogaCentreDetailsseeServicesBtn.setTitle("See Services (\((self.yogaCentreDetailsServicesArray.count)))", for: .normal)
             self.yogaCentreDetailsReviewListArray = allValues.reviewsList
-            self.yogaCentreDetailsseeReviewsBtn.setTitle("See Reviews: \(allValues.totalReviews)", for: .normal)
+            self.yogaCentreDetailsseeReviewsBtn.setTitle("See Reviews (\((allValues.totalReviews)))", for: .normal)
             self.latitudeString = allValues.latitude
             self.longitudeString = allValues.longitude
             self.notAvailableDatesString = allValues.notAvailabilityDates

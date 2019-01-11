@@ -41,6 +41,9 @@ class TrainerDetailsVC: UIViewController {
     var trainerOptional1MobileString = String()
     var trainerOptional2MobileString = String()
     
+    //Variables to pass
+    var trainerImageUrlToPassReviewAndRatingsVc = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getTrainerDetails()
@@ -86,6 +89,15 @@ class TrainerDetailsVC: UIViewController {
                 UIApplication.shared.openURL(url)
             }
         }
+        
+    }
+    
+    @IBAction func writeReviewBtnTapped(_ sender: UIButton) {
+        
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let reviewAndRatingsVc = mainStoryboard.instantiateViewController(withIdentifier: "RatingAndReviewViewController") as? RatingAndReviewViewController else {return}
+        reviewAndRatingsVc.bgImagePassedFromOtherVC = self.trainerImageUrlToPassReviewAndRatingsVc
+        self.navigationController?.pushViewController(reviewAndRatingsVc, animated: true)
         
     }
     
@@ -143,6 +155,7 @@ extension TrainerDetailsVC {
         for allValues in self.trainerDetailsArray {
             
             guard let trainerImageUrl = URL(string: allValues.photo) else {return}
+            self.trainerImageUrlToPassReviewAndRatingsVc = allValues.photo
             self.trainerDisplayImageView.kf.setImage(with: trainerImageUrl)
             self.trainerNameLbl.text = allValues.name
             self.trainerAddressLbl.text = allValues.address
@@ -165,9 +178,9 @@ extension TrainerDetailsVC {
             }else {trainerAdditionalMobileNumberStackView.isHidden = true}
             
             
-            self.trainerChargesLbl.text = allValues.chargesPerVisit
+            self.trainerChargesLbl.text = "\(allValues.chargesPerVisit) INR"
             self.trainerExperienceLbl.text = allValues.experience
-            self.seeReviewsBtn.setTitle("See Reviews \(allValues.totalReviews)", for: .normal)
+            self.seeReviewsBtn.setTitle("See Reviews (\((allValues.totalReviews)))", for: .normal)
             self.trainerReviewListArray = allValues.reviewsList
             self.seeReviewTableViewHeightConstraint.constant = 0
             

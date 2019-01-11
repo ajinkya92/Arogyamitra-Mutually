@@ -718,10 +718,10 @@
 		51FA120521DA225100D7E009 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5151B29421E604CD0079D45A /* Arogyam View Controllers */,
 				5148155521E3197800503050 /* Gymnasium View Controllers */,
 				5148155821E32BB400503050 /* Yoga View Controllers */,
 				51DC9E0021E47EA2005D6784 /* Trainer View Controllers */,
+				5151B29421E604CD0079D45A /* Arogyam View Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
