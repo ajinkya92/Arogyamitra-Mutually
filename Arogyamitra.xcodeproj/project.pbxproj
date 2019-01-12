@@ -352,6 +352,49 @@
 			path = Cosmos;
 			sourceTree = "<group>";
 		};
+		171EC4CB21E9C98E00AAC20C /* Stay Healthy Module Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5148155521E3197800503050 /* Gymnasium View Controllers */,
+				5148155821E32BB400503050 /* Yoga View Controllers */,
+				51DC9E0021E47EA2005D6784 /* Trainer View Controllers */,
+				5151B29421E604CD0079D45A /* Arogyam View Controllers */,
+			);
+			path = "Stay Healthy Module Controllers";
+			sourceTree = "<group>";
+		};
+		171EC4CC21E9C9A800AAC20C /* Stay Healthy Module Views */ = {
+			isa = PBXGroup;
+			children = (
+				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
+				5151B29321E604B80079D45A /* Arogyam Views */,
+				5148155421E3196200503050 /* Gymnasium Views */,
+				5148155C21E33DA800503050 /* Yoga Centre Views */,
+				51DC9E0421E4806B005D6784 /* Trainer Views */,
+			);
+			path = "Stay Healthy Module Views";
+			sourceTree = "<group>";
+		};
+		171EC4CD21E9C9DA00AAC20C /* Stay Healthy Module Models */ = {
+			isa = PBXGroup;
+			children = (
+				5151B29721E606500079D45A /* Arogyam */,
+				5148155621E3198800503050 /* Gymnasium And Yoga Models */,
+				51DC9E0721E481A2005D6784 /* Trainer Model */,
+			);
+			path = "Stay Healthy Module Models";
+			sourceTree = "<group>";
+		};
+		171EC4CE21E9CA4E00AAC20C /* Stay Healthy Module Services */ = {
+			isa = PBXGroup;
+			children = (
+				51FA121721DA30F400D7E009 /* GymnasiumServices.swift */,
+				51DC9E0C21E483C6005D6784 /* TrainerServices.swift */,
+				5151B29A21E609880079D45A /* ArogyamServices.swift */,
+			);
+			path = "Stay Healthy Module Services";
+			sourceTree = "<group>";
+		};
 		48272AC421C4887000B288F6 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,10 +761,7 @@
 		51FA120521DA225100D7E009 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5148155521E3197800503050 /* Gymnasium View Controllers */,
-				5148155821E32BB400503050 /* Yoga View Controllers */,
-				51DC9E0021E47EA2005D6784 /* Trainer View Controllers */,
-				5151B29421E604CD0079D45A /* Arogyam View Controllers */,
+				171EC4CB21E9C98E00AAC20C /* Stay Healthy Module Controllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -729,11 +769,7 @@
 		51FA120621DA225F00D7E009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				51FA120D21DA231900D7E009 /* Ajinkya.storyboard */,
-				5151B29321E604B80079D45A /* Arogyam Views */,
-				5148155421E3196200503050 /* Gymnasium Views */,
-				5148155C21E33DA800503050 /* Yoga Centre Views */,
-				51DC9E0421E4806B005D6784 /* Trainer Views */,
+				171EC4CC21E9C9A800AAC20C /* Stay Healthy Module Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -741,9 +777,7 @@
 		51FA120721DA22AF00D7E009 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5151B29721E606500079D45A /* Arogyam */,
-				5148155621E3198800503050 /* Gymnasium And Yoga Models */,
-				51DC9E0721E481A2005D6784 /* Trainer Model */,
+				171EC4CD21E9C9DA00AAC20C /* Stay Healthy Module Models */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -751,9 +785,7 @@
 		51FA120821DA22B900D7E009 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				51FA121721DA30F400D7E009 /* GymnasiumServices.swift */,
-				51DC9E0C21E483C6005D6784 /* TrainerServices.swift */,
-				5151B29A21E609880079D45A /* ArogyamServices.swift */,
+				171EC4CE21E9CA4E00AAC20C /* Stay Healthy Module Services */,
 			);
 			path = Services;
 			sourceTree = "<group>";

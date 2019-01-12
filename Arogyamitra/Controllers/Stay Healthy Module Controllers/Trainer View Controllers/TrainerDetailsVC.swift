@@ -50,7 +50,7 @@ class TrainerDetailsVC: UIViewController {
         SeeReviewsTableView.delegate = self
         SeeReviewsTableView.dataSource = self
         addTapGestureToView()
-    }
+    } 
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         SeeReviewsTableView.layer.removeAllAnimations()
