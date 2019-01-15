@@ -14,8 +14,8 @@ class AmbulanceTypeListVC: UIViewController {
     @IBOutlet weak var ambulanceTypeListCollectionView: UICollectionView!
     
     //Static Variables To be changes later
-    let usersCurrentLatitude = "3243.546"
-    let usersCurrentLongitude = "45.878"
+    let usersCurrentLatitude = "19.0659"
+    let usersCurrentLongitude = "73.0011"
     let patientId = 157
     
     //Storage Variables
@@ -41,6 +41,8 @@ extension AmbulanceTypeListVC: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = ambulanceTypeListCollectionView.dequeueReusableCell(withReuseIdentifier: "AmbulanceTypeListCollCell", for: indexPath) as? AmbulanceTypeListCollCell else {return UICollectionViewCell()}
         cell.configureAmbulanceListCollCell(ambulanceTypeListData: ambulaceTypeListArray[indexPath.row])
+        cell.tag = indexPath.row
+        cell.delegate = self
         return cell
     }
     
@@ -61,10 +63,25 @@ extension AmbulanceTypeListVC: UICollectionViewDelegate, UICollectionViewDataSou
 
         return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 170, height: 170)
-//    }
+    
+}
+
+//MARK: AmbulanceType CollectionView Cell Delegate Implementation
+extension AmbulanceTypeListVC: AmbulanceTypeListCollCellDelegate {
+    
+    func didTapAmbulanceSelectionBtn(_ tag: Int) {
+        
+        if ambulaceTypeListArray[tag].ambulanceTypeID != 23 {
+            guard let exceptEmergencyAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "ExceptEmergencyAmbulanceVC") as? ExceptEmergencyAmbulanceVC else {return}
+            exceptEmergencyAmbulanceVc.ambulanceTypeId = ambulaceTypeListArray[tag].ambulanceTypeID
+            exceptEmergencyAmbulanceVc.title = ambulaceTypeListArray[tag].name
+            exceptEmergencyAmbulanceVc.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            self.navigationController?.pushViewController(exceptEmergencyAmbulanceVc, animated: true)
+        }else {return}
+        
+        
+        
+    }
     
 }
 

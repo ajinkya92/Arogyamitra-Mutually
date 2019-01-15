@@ -49,5 +49,43 @@ class AmbulanceServices {
     }
     
     
+    //MARK: API FUNCTION TO GET AMBULANCE LIST EXCEPT EXERGENCY
+    
+    func getAmbulanceListExceptExergency(withAmbulanceTypeId typeId: Int, userCurrentLatitude latitude: String, userCurrentLongitude longitude: String, patientId: Int, completion: @escaping (_ success: Bool, AmbulanceExceptEmergency?) -> ()) {
+        
+        let postData = NSMutableData(data: "ambulance_type_id=\(typeId)".data(using: String.Encoding.utf8)!)
+        postData.append("&user_current_latitude=\(latitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&user_current_longitude=\(longitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: GET_AMBULANCE_LIST_EXCEPT_EMERGENCY) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedAmbulanceResponse = try decoder.decode(AmbulanceExceptEmergency.self, from: data)
+                    completion(true, returnedAmbulanceResponse)
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+            }
+            
+        }.resume()
+        
+        
+    }
     
 }

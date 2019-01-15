@@ -9,11 +9,17 @@
 import UIKit
 import Kingfisher
 
+protocol AmbulanceTypeListCollCellDelegate {
+    func didTapAmbulanceSelectionBtn(_ tag: Int)
+}
+
 class AmbulanceTypeListCollCell: UICollectionViewCell {
     
     @IBOutlet weak var ambulanceTypeImage: UIImageView!
     @IBOutlet weak var ambulanceTypeNameLbl: UILabel!
     @IBOutlet weak var ambulanceAvailableCount: UILabel!
+    
+    var delegate:AmbulanceTypeListCollCellDelegate?
     
     
     func configureAmbulanceListCollCell(ambulanceTypeListData: AmbulanceTypeListResult) {
@@ -21,6 +27,12 @@ class AmbulanceTypeListCollCell: UICollectionViewCell {
         self.ambulanceTypeImage.kf.setImage(with: ambulanceTypeImageUrl)
         self.ambulanceTypeNameLbl.text = ambulanceTypeListData.name
         self.ambulanceAvailableCount.text = "\(ambulanceTypeListData.ambulanceCount) Available"
+    }
+    
+    //Actions
+    @IBAction func ambulanceSelectionBtnTapped(_ sender: UIButton) {
+        //print("Ambulance Selection button Tapped")
+        delegate?.didTapAmbulanceSelectionBtn(self.tag)
     }
     
 }
