@@ -10,6 +10,9 @@ import UIKit
 
 class ExceptEmergencyAmbulanceVC: UIViewController {
     
+    //Outlets
+    @IBOutlet weak var ambulanceListTableView: UITableView!
+    
     let usersCurrentLatitude = "19.0659"
     let usersCurrentLongitude = "73.0011"
     let patientId = 157

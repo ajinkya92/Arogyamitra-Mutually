@@ -127,6 +127,7 @@
 		5160BDCF21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */; };
 		5160BDD121EDF8BD00993ECB /* AmbulanceExceptEmergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDD021EDF8BD00993ECB /* AmbulanceExceptEmergency.swift */; };
 		5160BDD321EE0DF900993ECB /* ExceptEmergencyAmbulanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDD221EE0DF900993ECB /* ExceptEmergencyAmbulanceVC.swift */; };
+		5160BDD521EE194C00993ECB /* ExceptEmergencyAmbulanceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDD421EE194C00993ECB /* ExceptEmergencyAmbulanceTblCell.swift */; };
 		51DC9E0221E47EFB005D6784 /* TrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0121E47EFB005D6784 /* TrainerVC.swift */; };
 		51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */; };
 		51DC9E0B21E48378005D6784 /* TrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0A21E48378005D6784 /* TrainerList.swift */; };
@@ -298,6 +299,7 @@
 		5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeListCollCell.swift; sourceTree = "<group>"; };
 		5160BDD021EDF8BD00993ECB /* AmbulanceExceptEmergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceExceptEmergency.swift; sourceTree = "<group>"; };
 		5160BDD221EE0DF900993ECB /* ExceptEmergencyAmbulanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptEmergencyAmbulanceVC.swift; sourceTree = "<group>"; };
+		5160BDD421EE194C00993ECB /* ExceptEmergencyAmbulanceTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptEmergencyAmbulanceTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0121E47EFB005D6784 /* TrainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerVC.swift; sourceTree = "<group>"; };
 		51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerListTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0A21E48378005D6784 /* TrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerList.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 			children = (
 				5160BDC621EDA8C100993ECB /* Ambulance.storyboard */,
 				5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */,
+				5160BDD421EE194C00993ECB /* ExceptEmergencyAmbulanceTblCell.swift */,
 			);
 			path = "Ambulance Module Views";
 			sourceTree = "<group>";
@@ -1106,6 +1109,7 @@
 				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
 				51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */,
 				5148156421E37A5000503050 /* YogaCentreDetailsVC.swift in Sources */,
+				5160BDD521EE194C00993ECB /* ExceptEmergencyAmbulanceTblCell.swift in Sources */,
 				512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */,
 				5160BDC921EDABA400993ECB /* AmbulanceTypeListVC.swift in Sources */,
 				48272B0621C4962300B288F6 /* URLManager.swift in Sources */,
