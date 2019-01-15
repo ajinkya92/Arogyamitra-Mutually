@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ambulance Type ListVC-->
+        <scene sceneID="Jt2-6O-f6r">
+            <objects>
+                <viewController storyboardIdentifier="AmbulanceTypeListVC" id="F2E-l0-kjk" customClass="AmbulanceTypeListVC" customModule="Arogyamitra" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8aF-WV-hIA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9US-mb-N4E">
+                                <rect key="frame" x="0.0" y="50" width="375" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LKx-bD-bsc">
+                                    <size key="itemSize" width="170" height="170"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AmbulanceTypeListCollCell" id="iKU-S0-cIF" customClass="AmbulanceTypeListCollCell" customModule="Arogyamitra" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ri8-9q-U9A" customClass="CustomCircularImage" customModule="Arogyamitra" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="0.0" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="676-Tg-APy"/>
+                                                        <constraint firstAttribute="height" constant="100" id="m0s-aD-VNT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gUO-fZ-cgL">
+                                                    <rect key="frame" x="0.0" y="108" width="170" height="52"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Ambulance name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-1d-E7H">
+                                                            <rect key="frame" x="18.5" y="0.0" width="133" height="31.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Number Available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQK-8l-UiK">
+                                                            <rect key="frame" x="18.5" y="31.5" width="133.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="gUO-fZ-cgL" secondAttribute="bottom" constant="10" id="Nr6-sm-VFU"/>
+                                            <constraint firstAttribute="trailing" secondItem="gUO-fZ-cgL" secondAttribute="trailing" id="U1N-Xx-2Vd"/>
+                                            <constraint firstItem="gUO-fZ-cgL" firstAttribute="leading" secondItem="iKU-S0-cIF" secondAttribute="leading" id="fWi-7W-hO7"/>
+                                            <constraint firstItem="Ri8-9q-U9A" firstAttribute="centerX" secondItem="iKU-S0-cIF" secondAttribute="centerX" id="g9T-Cw-LLj"/>
+                                            <constraint firstItem="gUO-fZ-cgL" firstAttribute="top" secondItem="Ri8-9q-U9A" secondAttribute="bottom" constant="8" id="r5B-d8-tPd"/>
+                                            <constraint firstItem="Ri8-9q-U9A" firstAttribute="top" secondItem="iKU-S0-cIF" secondAttribute="top" id="yOp-Fg-G9n"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="ambulanceAvailableCount" destination="RQK-8l-UiK" id="T6q-oJ-IdC"/>
+                                            <outlet property="ambulanceTypeImage" destination="Ri8-9q-U9A" id="c2e-sB-edq"/>
+                                            <outlet property="ambulanceTypeNameLbl" destination="2Pr-1d-E7H" id="peF-He-JUI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9US-mb-N4E" firstAttribute="leading" secondItem="lYr-1Z-pXR" secondAttribute="leading" id="1gk-xx-yLx"/>
+                            <constraint firstItem="9US-mb-N4E" firstAttribute="top" secondItem="lYr-1Z-pXR" secondAttribute="top" constant="30" id="6XP-zz-jII"/>
+                            <constraint firstItem="lYr-1Z-pXR" firstAttribute="bottom" secondItem="9US-mb-N4E" secondAttribute="bottom" constant="30" id="FX7-Qe-kg0"/>
+                            <constraint firstItem="lYr-1Z-pXR" firstAttribute="trailing" secondItem="9US-mb-N4E" secondAttribute="trailing" id="vl6-K9-2OO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lYr-1Z-pXR"/>
+                    </view>
+                    <connections>
+                        <outlet property="ambulanceTypeListCollectionView" destination="9US-mb-N4E" id="vUs-cX-UFq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oC1-dT-1wX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1084" y="-143.47826086956522"/>
+        </scene>
+    </scenes>
+</document>

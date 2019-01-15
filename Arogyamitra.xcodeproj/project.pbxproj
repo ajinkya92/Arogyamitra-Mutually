@@ -120,6 +120,11 @@
 		5151B29621E605A60079D45A /* ArogyamTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29521E605A60079D45A /* ArogyamTblCell.swift */; };
 		5151B29921E606E70079D45A /* ArogyamNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29821E606E70079D45A /* ArogyamNotification.swift */; };
 		5151B29B21E609880079D45A /* ArogyamServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29A21E609880079D45A /* ArogyamServices.swift */; };
+		5160BDC721EDA8C100993ECB /* Ambulance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5160BDC621EDA8C100993ECB /* Ambulance.storyboard */; };
+		5160BDC921EDABA400993ECB /* AmbulanceTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */; };
+		5160BDCB21EDB92D00993ECB /* AmbulanceTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */; };
+		5160BDCD21EDB9B200993ECB /* AmbulanceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDCC21EDB9B200993ECB /* AmbulanceServices.swift */; };
+		5160BDCF21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */; };
 		51DC9E0221E47EFB005D6784 /* TrainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0121E47EFB005D6784 /* TrainerVC.swift */; };
 		51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */; };
 		51DC9E0B21E48378005D6784 /* TrainerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DC9E0A21E48378005D6784 /* TrainerList.swift */; };
@@ -284,6 +289,11 @@
 		5151B29521E605A60079D45A /* ArogyamTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamTblCell.swift; sourceTree = "<group>"; };
 		5151B29821E606E70079D45A /* ArogyamNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamNotification.swift; sourceTree = "<group>"; };
 		5151B29A21E609880079D45A /* ArogyamServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamServices.swift; sourceTree = "<group>"; };
+		5160BDC621EDA8C100993ECB /* Ambulance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ambulance.storyboard; sourceTree = "<group>"; };
+		5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeListVC.swift; sourceTree = "<group>"; };
+		5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeList.swift; sourceTree = "<group>"; };
+		5160BDCC21EDB9B200993ECB /* AmbulanceServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceServices.swift; sourceTree = "<group>"; };
+		5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeListCollCell.swift; sourceTree = "<group>"; };
 		51DC9E0121E47EFB005D6784 /* TrainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerVC.swift; sourceTree = "<group>"; };
 		51DC9E0521E48181005D6784 /* TrainerListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerListTblCell.swift; sourceTree = "<group>"; };
 		51DC9E0A21E48378005D6784 /* TrainerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerList.swift; sourceTree = "<group>"; };
@@ -730,6 +740,39 @@
 			path = Arogyam;
 			sourceTree = "<group>";
 		};
+		5160BDC221EDA80A00993ECB /* Ambulance Module Views */ = {
+			isa = PBXGroup;
+			children = (
+				5160BDC621EDA8C100993ECB /* Ambulance.storyboard */,
+				5160BDCE21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift */,
+			);
+			path = "Ambulance Module Views";
+			sourceTree = "<group>";
+		};
+		5160BDC321EDA82900993ECB /* Ambulance Module Models */ = {
+			isa = PBXGroup;
+			children = (
+				5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */,
+			);
+			path = "Ambulance Module Models";
+			sourceTree = "<group>";
+		};
+		5160BDC421EDA83B00993ECB /* Ambulance Module Services */ = {
+			isa = PBXGroup;
+			children = (
+				5160BDCC21EDB9B200993ECB /* AmbulanceServices.swift */,
+			);
+			path = "Ambulance Module Services";
+			sourceTree = "<group>";
+		};
+		5160BDC521EDA84B00993ECB /* Ambulance Module Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */,
+			);
+			path = "Ambulance Module Controllers";
+			sourceTree = "<group>";
+		};
 		51DC9E0021E47EA2005D6784 /* Trainer View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +804,7 @@
 		51FA120521DA225100D7E009 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5160BDC521EDA84B00993ECB /* Ambulance Module Controllers */,
 				171EC4CB21E9C98E00AAC20C /* Stay Healthy Module Controllers */,
 			);
 			path = Controllers;
@@ -769,6 +813,7 @@
 		51FA120621DA225F00D7E009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5160BDC221EDA80A00993ECB /* Ambulance Module Views */,
 				171EC4CC21E9C9A800AAC20C /* Stay Healthy Module Views */,
 			);
 			path = Views;
@@ -777,6 +822,7 @@
 		51FA120721DA22AF00D7E009 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5160BDC321EDA82900993ECB /* Ambulance Module Models */,
 				171EC4CD21E9C9DA00AAC20C /* Stay Healthy Module Models */,
 			);
 			path = Model;
@@ -785,6 +831,7 @@
 		51FA120821DA22B900D7E009 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5160BDC421EDA83B00993ECB /* Ambulance Module Services */,
 				171EC4CE21E9CA4E00AAC20C /* Stay Healthy Module Services */,
 			);
 			path = Services;
@@ -927,6 +974,7 @@
 				487BE21021BE763C0076F210 /* curve_green.png in Resources */,
 				48A58AC521D5AE2C009F8736 /* LocationSearch.storyboard in Resources */,
 				487BE1C721BABA400076F210 /* LaunchScreen.storyboard in Resources */,
+				5160BDC721EDA8C100993ECB /* Ambulance.storyboard in Resources */,
 				487BE20721BCFDA50076F210 /* ic_favorite_2x.png in Resources */,
 				487BE21121BE763C0076F210 /* curve_orange.png in Resources */,
 				487BE1C421BABA400076F210 /* Assets.xcassets in Resources */,
@@ -1046,12 +1094,14 @@
 				48A58AC121D4652C009F8736 /* LaboratoryModel.swift in Sources */,
 				487BE1FF21BCC4980076F210 /* DoctorTableViewCell.swift in Sources */,
 				487BE1F121BABBC10076F210 /* MenuDrawerTableViewCell.swift in Sources */,
+				5160BDCF21EDC06E00993ECB /* AmbulanceTypeListCollCell.swift in Sources */,
 				51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */,
 				5148156A21E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift in Sources */,
 				487BE21521BEB58F0076F210 /* HospitalListViewController.swift in Sources */,
 				51FBEAEA21DCF12600F69264 /* GymnasiumServicePopupCollectionCell.swift in Sources */,
 				5148156421E37A5000503050 /* YogaCentreDetailsVC.swift in Sources */,
 				512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */,
+				5160BDC921EDABA400993ECB /* AmbulanceTypeListVC.swift in Sources */,
 				48272B0621C4962300B288F6 /* URLManager.swift in Sources */,
 				51DC9E0221E47EFB005D6784 /* TrainerVC.swift in Sources */,
 				4858D16421D6FAAE009F5033 /* LaboratoryDetailsModel.swift in Sources */,
@@ -1065,6 +1115,7 @@
 				51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */,
 				4858D16821D70E36009F5033 /* LabTestScanListTableViewCell.swift in Sources */,
 				48272B0421C4901700B288F6 /* CommonMethod.swift in Sources */,
+				5160BDCB21EDB92D00993ECB /* AmbulanceTypeList.swift in Sources */,
 				48272AF621C4887000B288F6 /* Alamofire.swift in Sources */,
 				1719A7C421E1269500BD5169 /* RightToLeft.swift in Sources */,
 				487BE21321BE7C6E0076F210 /* CardView.swift in Sources */,
@@ -1104,6 +1155,7 @@
 				487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */,
 				48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */,
 				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,
+				5160BDCD21EDB9B200993ECB /* AmbulanceServices.swift in Sources */,
 				483F105C21C3406700181AB3 /* RatingAndReviewViewController.swift in Sources */,
 				51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */,
 				48272AEC21C4887000B288F6 /* MultipartFormData.swift in Sources */,

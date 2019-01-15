@@ -81,8 +81,13 @@ extension DashboardViewController: UICollectionViewDelegate, UICollectionViewDat
             self.navigationController?.pushViewController(viewController, animated: true)
             break
         case 2:
-            let viewController = self.storyboard?.instantiateViewController(withIdentifier: "DoctorViewController") as! DoctorViewController
-            self.navigationController?.pushViewController(viewController, animated: true)
+            //This Goes To Ambulance Storyboard - Edited By Ajinkya
+            let ambulanceStoryboard = UIStoryboard(name: "Ambulance", bundle: nil)
+            
+            guard let ambulanceTypeListVc = ambulanceStoryboard.instantiateViewController(withIdentifier: "AmbulanceTypeListVC") as? AmbulanceTypeListVC else {return}
+            ambulanceTypeListVc.title = "Book Ambulance"
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            self.navigationController?.pushViewController(ambulanceTypeListVc, animated: true)
             break
             
         case 5:
