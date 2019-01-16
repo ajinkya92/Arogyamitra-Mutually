@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
     
-    @IBOutlet weak var ambulanceTypeLbl: UILabel!
+    @IBOutlet weak var ambulanceImage: UIImageView!
+    @IBOutlet weak var ambulanceNameLbl: UILabel!
     @IBOutlet weak var mobileNumberBtn: UIButton!
     @IBOutlet weak var feesLbl: UILabel!
     @IBOutlet weak var bookingLbl: UILabel!
@@ -24,7 +26,9 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
     
     func configureExceptEmergencyAmbulanceTblCell(exceptEmergencyData: AmbulanceExceptEmergencyResult) {
         
-        self.ambulanceTypeLbl.text = exceptEmergencyData.ambulanceName
+        guard let ambulanceImage = URL(string: exceptEmergencyData.ambulancePhoto) else {return}
+        self.ambulanceImage.kf.setImage(with: ambulanceImage)
+        self.ambulanceNameLbl.text = exceptEmergencyData.ambulanceName
         self.mobileNumberBtn.setTitle(exceptEmergencyData.mobileno, for: .normal)
         self.feesLbl.text = "Rs. \(exceptEmergencyData.chargesPerKM )/- per km"
         self.bookingLbl.text = "Rs. \(exceptEmergencyData.bookingAmount )/-"
