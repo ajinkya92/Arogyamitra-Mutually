@@ -104,6 +104,7 @@
 		512CF0F721DE40F3007A470A /* GymnasiumDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */; };
 		512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F821DE4394007A470A /* GymnasiumDetails.swift */; };
 		5147A68021EF129E000E12CE /* MultipleUserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */; };
+		5147A68221EF5320000E12CE /* SelectedAmbulanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */; };
 		5148155A21E32BE300503050 /* YogaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155921E32BE300503050 /* YogaVC.swift */; };
 		5148155E21E33E0700503050 /* YogaListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155D21E33E0700503050 /* YogaListTblCell.swift */; };
 		5148156021E3509400503050 /* YogaCentreSearchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155F21E3509400503050 /* YogaCentreSearchTblCell.swift */; };
@@ -277,6 +278,7 @@
 		512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsVC.swift; sourceTree = "<group>"; };
 		512CF0F821DE4394007A470A /* GymnasiumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetails.swift; sourceTree = "<group>"; };
 		5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUserLocations.swift; sourceTree = "<group>"; };
+		5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAmbulanceVC.swift; sourceTree = "<group>"; };
 		5148155921E32BE300503050 /* YogaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaVC.swift; sourceTree = "<group>"; };
 		5148155D21E33E0700503050 /* YogaListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaListTblCell.swift; sourceTree = "<group>"; };
 		5148155F21E3509400503050 /* YogaCentreSearchTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreSearchTblCell.swift; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 			children = (
 				5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */,
 				5160BDD221EE0DF900993ECB /* ExceptEmergencyAmbulanceVC.swift */,
+				5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */,
 			);
 			path = "Ambulance Module Controllers";
 			sourceTree = "<group>";
@@ -1196,6 +1199,7 @@
 				48272AF821C4887000B288F6 /* Request.swift in Sources */,
 				487BE1BD21BABA3D0076F210 /* AppDelegate.swift in Sources */,
 				1719A7C321E1269500BD5169 /* CosmosLayers.swift in Sources */,
+				5147A68221EF5320000E12CE /* SelectedAmbulanceVC.swift in Sources */,
 				5148155E21E33E0700503050 /* YogaListTblCell.swift in Sources */,
 				5151B28E21E5DC9C0079D45A /* TrainerDetailsReviewTblCell.swift in Sources */,
 				1719A7C821E1269500BD5169 /* StarLayer.swift in Sources */,

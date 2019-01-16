@@ -59,7 +59,12 @@ extension ExceptEmergencyAmbulanceVC: UITableViewDelegate,  UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Index Of TableView Clicked: \(indexPath.row)")
+        //print("Index Of TableView Clicked: \(indexPath.row)")
+        guard let selectedAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "SelectedAmbulanceVC") as? SelectedAmbulanceVC else {return}
+        let individualSelectedValues = ambulanceExceptEmergencyArray[indexPath.row]
+        selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": individualSelectedValues.ambulancePhoto, "ambulanceType":individualSelectedValues.ambulanceType, "ambulanceName":individualSelectedValues.ambulanceName, "mobileNumber":individualSelectedValues.mobileno, "driverName":individualSelectedValues.driverName, "charges":individualSelectedValues.chargesPerKM, "vehicleNumber":individualSelectedValues.vehicleNo, "outOfStationServices":individualSelectedValues.outOfStationService]
+        self.navigationController?.present(selectedAmbulanceVc, animated: true, completion: nil)
+        
     }
     
 }
@@ -81,7 +86,7 @@ extension ExceptEmergencyAmbulanceVC: ExceptEmergencyAmbulanceTblCellDelegate {
 }
 
 //MARK: MAP IMPLEMENTATION
-extension ExceptEmergencyAmbulanceVC {
+extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
     
     func setMapAnnotationDetails()  {
         
@@ -107,9 +112,9 @@ extension ExceptEmergencyAmbulanceVC {
         let latitude = (usersCurrentLatitude as NSString).doubleValue
         let longitude = (usersCurrentLongitude as NSString).doubleValue
         
-        let latDelta:CLLocationDegrees = 0.20
+        let latDelta:CLLocationDegrees = 0.01
         
-        let lonDelta:CLLocationDegrees = 0.20
+        let lonDelta:CLLocationDegrees = 0.01
         
         let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
         
@@ -149,11 +154,7 @@ extension ExceptEmergencyAmbulanceVC {
         return log2(360 * ((width / 256) / spanStraight)) + 1
     }
     
-    
-}
-
-extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
-    
+    //Set Annotation Pin To Ambulance
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         // Don't want to show a custom image if the annotation is the user's location.
@@ -182,8 +183,8 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
         
         return annotationView
     }
+    
 }
-
 
 
 //MARK: API CALL TO GET AMBULANCE LIST EXCEPT EMERGENCY
