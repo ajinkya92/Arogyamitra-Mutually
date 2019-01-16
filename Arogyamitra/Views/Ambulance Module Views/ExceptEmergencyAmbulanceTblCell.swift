@@ -9,6 +9,10 @@
 import UIKit
 import Kingfisher
 
+protocol ExceptEmergencyAmbulanceTblCellDelegate {
+    func didTapMobileNumberAt(_ tag: Int)
+}
+
 class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
     
     @IBOutlet weak var ambulanceImage: UIImageView!
@@ -18,6 +22,8 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
     @IBOutlet weak var bookingLbl: UILabel!
     @IBOutlet weak var availableLbl: UILabel!
     @IBOutlet weak var outOfServiceImage: UIImageView!
+    
+    var delegate: ExceptEmergencyAmbulanceTblCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +48,12 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
             self.outOfServiceImage.image = UIImage(named: "cancelRed")
         }
         
+    }
+    
+    
+    //Action For Buttons
+    @IBAction func mobileNumberBtnTapped(_ sender: UIButton) {
+        delegate?.didTapMobileNumberAt(self.tag)
     }
 
 }
