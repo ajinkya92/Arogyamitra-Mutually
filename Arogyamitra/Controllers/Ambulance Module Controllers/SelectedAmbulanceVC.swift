@@ -36,6 +36,21 @@ class SelectedAmbulanceVC: UIViewController {
     @IBAction func closeButtonTapped(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //Mobile Number Call Action
+    @IBAction func mobileNumberBtnTapped(_ sender: UIButton) {
+        let mobileNumber = requiedValuesDictionary["mobileNumber"] as? String
+        
+        if let mobileNumber = mobileNumber {
+            if let url = URL(string: "tel://\(mobileNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
 
 }
 

@@ -103,6 +103,7 @@
 		512CF0F521DE1A89007A470A /* GymnasiumSearchTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */; };
 		512CF0F721DE40F3007A470A /* GymnasiumDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */; };
 		512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F821DE4394007A470A /* GymnasiumDetails.swift */; };
+		5141CB7921F08625009519C1 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5141CB7721F08624009519C1 /* DLRadioButton.m */; };
 		5147A68021EF129E000E12CE /* MultipleUserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */; };
 		5147A68221EF5320000E12CE /* SelectedAmbulanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */; };
 		5148155A21E32BE300503050 /* YogaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155921E32BE300503050 /* YogaVC.swift */; };
@@ -277,6 +278,8 @@
 		512CF0F421DE1A89007A470A /* GymnasiumSearchTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumSearchTblCell.swift; sourceTree = "<group>"; };
 		512CF0F621DE40F3007A470A /* GymnasiumDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsVC.swift; sourceTree = "<group>"; };
 		512CF0F821DE4394007A470A /* GymnasiumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetails.swift; sourceTree = "<group>"; };
+		5141CB7721F08624009519C1 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		5141CB7821F08624009519C1 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUserLocations.swift; sourceTree = "<group>"; };
 		5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAmbulanceVC.swift; sourceTree = "<group>"; };
 		5148155921E32BE300503050 /* YogaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaVC.swift; sourceTree = "<group>"; };
@@ -484,6 +487,7 @@
 		48272AFE21C488CD00B288F6 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				5141CB7A21F08632009519C1 /* Radio Buttons */,
 				1719A7AE21E1266A00BD5169 /* Cosmos */,
 				48272AD021C4887000B288F6 /* Almofire */,
 				48272AC421C4887000B288F6 /* Toast */,
@@ -671,6 +675,15 @@
 				4858D16721D70E36009F5033 /* LabTestScanListTableViewCell.swift */,
 			);
 			path = Laboratory;
+			sourceTree = "<group>";
+		};
+		5141CB7A21F08632009519C1 /* Radio Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5141CB7821F08624009519C1 /* DLRadioButton.h */,
+				5141CB7721F08624009519C1 /* DLRadioButton.m */,
+			);
+			path = "Radio Buttons";
 			sourceTree = "<group>";
 		};
 		5148155421E3196200503050 /* Gymnasium Views */ = {
@@ -1194,6 +1207,7 @@
 				5160BDD321EE0DF900993ECB /* ExceptEmergencyAmbulanceVC.swift in Sources */,
 				48DCD2EB21C633C200215B86 /* ServicesViewController.swift in Sources */,
 				483F100621C0D5B100181AB3 /* DoctorDetailsViewController.swift in Sources */,
+				5141CB7921F08625009519C1 /* DLRadioButton.m in Sources */,
 				48272AF321C4887000B288F6 /* Validation.swift in Sources */,
 				48272AF121C4887000B288F6 /* ParameterEncoding.swift in Sources */,
 				48272AF821C4887000B288F6 /* Request.swift in Sources */,
