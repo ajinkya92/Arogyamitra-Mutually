@@ -100,12 +100,23 @@ extension SelectedAmbulanceVC {
         innerContentView.layer.cornerRadius = 5
         guard let ambulanceImageUrl = URL(string: requiedValuesDictionary["ambulanceImage"] as! String) else {return}
         ambulanceImage.kf.setImage(with: ambulanceImageUrl)
-        ambulanceTypeLbl.text = "Type - \(requiedValuesDictionary["ambulanceType"] ?? "")"
+        
+        if let ambulanceTypeString = requiedValuesDictionary["ambulanceType"] {
+            ambulanceTypeLbl.text = "Type - \(ambulanceTypeString as? String ?? "")"
+        }
+        
         ambulanceNameLbl.text = requiedValuesDictionary["ambulanceName"] as? String
         contactNumberBtn.setTitle(requiedValuesDictionary["mobileNumber"] as? String, for: .normal)
         driverNameLbl.text = requiedValuesDictionary["driverName"] as? String
-        chargesLbl.text = "Rs. \(requiedValuesDictionary["charges"]  ?? "")/- per km"
-        vehicleNumLbl.text = "\(requiedValuesDictionary["vehicleNumber"] ?? "")"
+        
+        if let chargesString = requiedValuesDictionary["charges"] {
+            chargesLbl.text =  "Rs. \((chargesString as? String ?? ""))/- per km"
+        }
+        
+        if let vehicleNumberString = requiedValuesDictionary["vehicleNumber"] {
+            vehicleNumLbl.text = (vehicleNumberString as? String ?? "")
+        }
+        
         let outOfStationServiceValue = requiedValuesDictionary["outOfStationServices"] as? Int
         
         if let outOfStationServiceValue = outOfStationServiceValue {

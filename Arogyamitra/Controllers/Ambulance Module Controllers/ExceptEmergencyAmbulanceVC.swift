@@ -11,6 +11,7 @@ import MapKit
 
 class ExceptEmergencyAmbulanceVC: UIViewController {
     
+    var customAnnotationTag = 0
     
     //Outlets
     @IBOutlet weak var ambulanceListTableView: UITableView!
@@ -93,17 +94,26 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
         
         for allLocationDetails in self.ambulanceExceptEmergencyArray {
             
-            let allLocations = MultipleUserLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!)
+            let allLocations = MultipleUserLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!, charges: allLocationDetails.chargesPerKM, ambulanceImageUrl: allLocationDetails.ambulancePhoto, ambulanceType: allLocationDetails.ambulanceType, contactNumber: allLocationDetails.mobileno, vehicleNumber: allLocationDetails.vehicleNo, outOfServiceValue: allLocationDetails.outOfStationService)
             
             allAmbulanceLocationsArray.append(allLocations)
             //print("All Locations Array: \(locations)")
             //print("All Locations Of Ambulances: \(allAmbulanceLocationsArray)")
             
             for location in allAmbulanceLocationsArray {
-                let annotation = MKPointAnnotation()
+                //let annotation = MKPointAnnotation()
+                let annotation = CustomPointAnnotation()
                 annotation.title = location.ambulanceName
                 annotation.subtitle = location.driverName
                 annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                annotation.charges = location.charges
+                annotation.ambulanceImageUrl = location.ambulanceImageUrl
+                annotation.ambulanceType = location.ambulanceType
+                annotation.contactNumber = location.contactNumber
+                annotation.vehicleNumber = location.vehicleNumber
+                annotation.outOfServiceValue = location.outOfServiceValue
+                annotation.ambulanceName = location.ambulanceName
+                annotation.driverName = location.driverName
                 mapView.addAnnotation(annotation)
             }
 
@@ -188,7 +198,15 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if control == view.rightCalloutAccessoryView {
-            print("button tapped")
+            
+            if let customAnnotation = view.annotation as? CustomPointAnnotation {
+                
+                guard let selectedAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "SelectedAmbulanceVC") as? SelectedAmbulanceVC else {return}
+                selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": customAnnotation.ambulanceImageUrl, "ambulanceType":customAnnotation.ambulanceType, "ambulanceName":customAnnotation.ambulanceName, "mobileNumber":customAnnotation.contactNumber, "driverName":customAnnotation.driverName, "charges":customAnnotation.charges, "vehicleNumber":customAnnotation.vehicleNumber, "outOfStationServices":customAnnotation.outOfServiceValue]
+                self.navigationController?.present(selectedAmbulanceVc, animated: true, completion: nil)
+                
+                
+            }
             
         }
     }

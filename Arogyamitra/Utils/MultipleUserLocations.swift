@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import MapKit
 
 struct MultipleUserLocations {
     
@@ -14,5 +16,27 @@ struct MultipleUserLocations {
     let driverName: String
     let latitude: Double
     let longitude: Double
+    let charges: String
+    let ambulanceImageUrl: String
+    let ambulanceType: String
+    let contactNumber: String
+    let vehicleNumber: String
+    let outOfServiceValue: Int
+}
+
+import UIKit
+import MapKit
+
+class CustomPointAnnotation: MKPointAnnotation {
+    var ambulanceName: String!
+    var driverName: String!
+    var latitude: Double!
+    var longitude: Double!
+    var charges: String!
+    var ambulanceImageUrl: String!
+    var ambulanceType: String!
+    var contactNumber: String!
+    var vehicleNumber: String!
+    var outOfServiceValue: Int!
     
 }
