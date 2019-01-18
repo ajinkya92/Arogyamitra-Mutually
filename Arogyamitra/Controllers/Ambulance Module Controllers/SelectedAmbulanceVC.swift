@@ -21,7 +21,15 @@ class SelectedAmbulanceVC: UIViewController {
     @IBOutlet weak var chargesLbl: UILabel!
     @IBOutlet weak var vehicleNumLbl: UILabel!
     @IBOutlet weak var outStationServiceImage: UIImageView!
-    @IBOutlet weak var bookBtn: UIButton!
+    @IBOutlet weak var innerContentViewBookBtn: UIButton!
+    @IBOutlet weak var innerContentViewCloseBtn: UIButton!
+    
+    //Small POPUP View Outlets
+    @IBOutlet weak var smallPopupView: UIView!
+    
+    
+    //Animating Outlets - Constratints
+    @IBOutlet weak var smallPopupViewCenterShiftConstraint: NSLayoutConstraint!
     
 
     var requiedValuesDictionary = [String:Any]()
@@ -51,6 +59,36 @@ class SelectedAmbulanceVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func innerContentViewBookBtnTapped(_ sender: UIButton) {
+        
+        smallPopupViewCenterShiftConstraint.constant = 0
+        innerContentViewBookBtn.setTitle("Processing", for: .normal)
+        innerContentViewCloseBtn.isHidden = true
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    //MARK: SMALL POPUP VIEW ACTIONS
+    
+    @IBAction func smallPopupViewCloseBtnTapped(_ sender: UIButton) {
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            smallPopupViewCenterShiftConstraint.constant = -500
+        }else {
+            smallPopupViewCenterShiftConstraint.constant = -1200
+        }
+        
+        innerContentViewCloseBtn.isHidden = false
+        innerContentViewBookBtn.setTitle("Book", for: .normal)
+        
+        UIView.animate(withDuration: 1.0) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
 
 }
 
@@ -77,6 +115,22 @@ extension SelectedAmbulanceVC {
             }else {outStationServiceImage.image = UIImage(named: "cancelRed")}
             
         }
+        
+        smallPopupView.layer.borderWidth = 1.0
+        smallPopupView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        smallPopupView.layer.cornerRadius = 5.0
+        smallPopupView.clipsToBounds = true
+        
+        //Check If Iphone or Ipad and hide the smallPopupView
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            smallPopupViewCenterShiftConstraint.constant = -500
+            self.view.layoutIfNeeded()
+        }else {
+            smallPopupViewCenterShiftConstraint.constant = -1200
+            self.view.layoutIfNeeded()
+        }
+        
+        
         
         self.view.hideToastActivity()
         

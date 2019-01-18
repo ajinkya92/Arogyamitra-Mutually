@@ -11,6 +11,7 @@ import MapKit
 
 class ExceptEmergencyAmbulanceVC: UIViewController {
     
+    
     //Outlets
     @IBOutlet weak var ambulanceListTableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
@@ -182,6 +183,14 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
         }
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
+        if control == view.rightCalloutAccessoryView {
+            print("button tapped")
+            
+        }
     }
     
 }

@@ -14,4 +14,5 @@ struct MultipleUserLocations {
     let driverName: String
     let latitude: Double
     let longitude: Double
+    
 }

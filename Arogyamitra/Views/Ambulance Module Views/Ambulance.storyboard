@@ -349,7 +349,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-wx-HTM" userLabel="Inner Content View">
                                 <rect key="frame" x="10" y="93" width="394" height="550"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yet-te-Gw5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yet-te-Gw5" userLabel="Close Button">
                                         <rect key="frame" x="8" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="cL9-YX-Mcp"/>
@@ -400,6 +400,9 @@
                                                         <rect key="frame" x="73" y="0.0" width="105" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <state key="normal" title="Mobile Number"/>
+                                                        <connections>
+                                                            <action selector="mobileNumberBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="Jdr-lT-kZ1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -485,6 +488,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Book"/>
+                                        <connections>
+                                            <action selector="innerContentViewBookBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="c9X-hk-Z46"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -586,7 +592,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Book"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-Cv-3PF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-Cv-3PF" userLabel="Close Button">
                                         <rect key="frame" x="8" y="9" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="BFA-FX-ezc"/>
@@ -594,6 +600,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="close"/>
+                                        <connections>
+                                            <action selector="smallPopupViewCloseBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="VD5-qZ-8uy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -631,12 +640,15 @@
                         <outlet property="ambulanceImage" destination="4uz-1b-GFV" id="4sO-pG-cfe"/>
                         <outlet property="ambulanceNameLbl" destination="GZL-ll-6EF" id="Ghm-05-oms"/>
                         <outlet property="ambulanceTypeLbl" destination="VXd-HI-vsT" id="cFR-Bu-vij"/>
-                        <outlet property="bookBtn" destination="EzL-oE-uxl" id="MHf-77-mMo"/>
                         <outlet property="chargesLbl" destination="PWn-0F-Avk" id="d8P-h1-hUe"/>
                         <outlet property="contactNumberBtn" destination="Swy-9g-Ubz" id="Zcq-79-EpF"/>
                         <outlet property="driverNameLbl" destination="UtW-Q9-49F" id="M5E-PP-LJi"/>
                         <outlet property="innerContentView" destination="sFQ-wx-HTM" id="8TV-eY-yGg"/>
+                        <outlet property="innerContentViewBookBtn" destination="EzL-oE-uxl" id="MHf-77-mMo"/>
+                        <outlet property="innerContentViewCloseBtn" destination="yet-te-Gw5" id="0eh-cm-9Bw"/>
                         <outlet property="outStationServiceImage" destination="kwS-xN-t6m" id="OfB-SA-NlW"/>
+                        <outlet property="smallPopupView" destination="CR4-9C-Rtc" id="Eif-QV-kNP"/>
+                        <outlet property="smallPopupViewCenterShiftConstraint" destination="glX-g5-CBA" id="iPg-LG-u8g"/>
                         <outlet property="vehicleNumLbl" destination="NcO-kS-CNf" id="OoY-yp-qju"/>
                     </connections>
                 </viewController>
