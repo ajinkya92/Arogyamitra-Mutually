@@ -9,5 +9,6 @@ target 'Arogyamitra' do
   	pod 'Kingfisher', '~> 4.8.1'
     pod 'GoogleMaps'
   	pod 'GooglePlaces'
+    pod 'DLRadioButton', '~> 1.4'
 
 end

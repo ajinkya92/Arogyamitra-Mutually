@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import DLRadioButton
+import CoreLocation
 
 class SelectedAmbulanceVC: UIViewController {
     
@@ -23,20 +25,40 @@ class SelectedAmbulanceVC: UIViewController {
     @IBOutlet weak var outStationServiceImage: UIImageView!
     @IBOutlet weak var innerContentViewBookBtn: UIButton!
     @IBOutlet weak var innerContentViewCloseBtn: UIButton!
+    @IBOutlet weak var radioBtn: DLRadioButton!
+    
     
     //Small POPUP View Outlets
     @IBOutlet weak var smallPopupView: UIView!
+    @IBOutlet weak var registeredAddressLbl: UILabel!
+    @IBOutlet weak var currentAddressTxtView: UITextView!
+    @IBOutlet weak var smallPopupBookBtn: UIButton!
     
     
     //Animating Outlets - Constratints
     @IBOutlet weak var smallPopupViewCenterShiftConstraint: NSLayoutConstraint!
     
+    
+    //Location Variables
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    var latitudeString = String()
+    var longitudeString = String()
+    var addressStringForTxtView = String()
 
+    //Storage Variables
     var requiedValuesDictionary = [String:Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setAllDisplayElements()
+        radioBtn.isMultipleSelectionEnabled = false
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.startUpdatingLocation()
+        currentAddressTxtView.delegate = self
+        
     }
     
     //ACTIONS
@@ -87,6 +109,23 @@ class SelectedAmbulanceVC: UIViewController {
             self.view.layoutIfNeeded()
         }
         
+    }
+    
+    @IBAction func radioButtonActions(_ sender: DLRadioButton) {
+        //Tag 1 for Registered Address and 2 for Current Address
+        if sender.tag == 1 {
+            //print("Register Address")
+            registeredAddressLbl.text = "This Should Have Address Saved in User Defaults"
+            currentAddressTxtView.isHidden = true
+            registeredAddressLbl.isHidden = false
+        }else {
+            //print("Current Address")
+            //print(addressStringForTxtView)
+            currentAddressTxtView.isHidden = false
+            registeredAddressLbl.isHidden = true
+            currentAddressTxtView.text = addressStringForTxtView
+            
+        }
     }
     
 
@@ -144,6 +183,83 @@ extension SelectedAmbulanceVC {
         
         
         self.view.hideToastActivity()
+        
+    }
+    
+}
+
+//MARK: TEXT VIEW IMPLEMENTATION
+extension SelectedAmbulanceVC: UITextViewDelegate {
+    
+}
+
+//MARK: Core Location Implementation to Get User Location Coordinates
+extension SelectedAmbulanceVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        latitudeString = "\(latitude)"
+        longitudeString = "\(longitude)"
+        
+        locationManager.stopUpdatingLocation()
+        getAddressFromLatLon(pdblLatitude: latitudeString, withLongitude: longitudeString)
+    }
+    
+}
+
+//MARK: Custom Functions
+extension SelectedAmbulanceVC {
+    
+    //Reverse Geo Coding Function
+    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        //21.228124
+        let lon: Double = Double("\(pdblLongitude)")!
+        //72.833770
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    self.addressStringForTxtView = addressString
+                    //print(addressString)
+                }
+        })
         
     }
     

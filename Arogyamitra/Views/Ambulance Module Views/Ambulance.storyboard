@@ -524,7 +524,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-16-w98" userLabel="Radio Stack View">
                                         <rect key="frame" x="8" y="49.666666666666657" width="200" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGx-bd-y2Q" customClass="DLRadioButton">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGx-bd-y2Q" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="   Register Address">
@@ -541,8 +541,12 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonActions:" destination="Hag-4A-2PA" eventType="touchUpInside" id="OQi-5Q-g9o"/>
+                                                    <outletCollection property="otherButtons" destination="1Pn-rl-keL" id="goF-yW-gyi"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pn-rl-keL" customClass="DLRadioButton">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pn-rl-keL" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="50.000000000000028" width="200" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="   Current Address">
@@ -559,6 +563,9 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="radioButtonActions:" destination="Hag-4A-2PA" eventType="touchUpInside" id="vzx-UB-fsX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -642,11 +649,15 @@
                         <outlet property="ambulanceTypeLbl" destination="VXd-HI-vsT" id="cFR-Bu-vij"/>
                         <outlet property="chargesLbl" destination="PWn-0F-Avk" id="d8P-h1-hUe"/>
                         <outlet property="contactNumberBtn" destination="Swy-9g-Ubz" id="Zcq-79-EpF"/>
+                        <outlet property="currentAddressTxtView" destination="5gP-L6-HbE" id="4Vl-at-4GB"/>
                         <outlet property="driverNameLbl" destination="UtW-Q9-49F" id="M5E-PP-LJi"/>
                         <outlet property="innerContentView" destination="sFQ-wx-HTM" id="8TV-eY-yGg"/>
                         <outlet property="innerContentViewBookBtn" destination="EzL-oE-uxl" id="MHf-77-mMo"/>
                         <outlet property="innerContentViewCloseBtn" destination="yet-te-Gw5" id="0eh-cm-9Bw"/>
                         <outlet property="outStationServiceImage" destination="kwS-xN-t6m" id="OfB-SA-NlW"/>
+                        <outlet property="radioBtn" destination="hGx-bd-y2Q" id="LUK-ht-Dfs"/>
+                        <outlet property="registeredAddressLbl" destination="lrT-lQ-vhv" id="STq-3A-nCu"/>
+                        <outlet property="smallPopupBookBtn" destination="XR6-gz-DNS" id="pd2-3B-0JW"/>
                         <outlet property="smallPopupView" destination="CR4-9C-Rtc" id="Eif-QV-kNP"/>
                         <outlet property="smallPopupViewCenterShiftConstraint" destination="glX-g5-CBA" id="iPg-LG-u8g"/>
                         <outlet property="vehicleNumLbl" destination="NcO-kS-CNf" id="OoY-yp-qju"/>
