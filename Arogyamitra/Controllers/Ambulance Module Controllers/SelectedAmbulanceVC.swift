@@ -119,6 +119,7 @@ class SelectedAmbulanceVC: UIViewController {
             currentAddressTxtView.isHidden = true
             registeredAddressLbl.isHidden = false
         }else {
+            locationManager.startUpdatingLocation()
             //print("Current Address")
             //print(addressStringForTxtView)
             currentAddressTxtView.isHidden = false
@@ -180,7 +181,8 @@ extension SelectedAmbulanceVC {
             self.view.layoutIfNeeded()
         }
         
-        
+        registeredAddressLbl.isHidden = true
+        currentAddressTxtView.isHidden = true
         
         self.view.hideToastActivity()
         
@@ -190,6 +192,20 @@ extension SelectedAmbulanceVC {
 
 //MARK: TEXT VIEW IMPLEMENTATION
 extension SelectedAmbulanceVC: UITextViewDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    
+    //Using This Text Field Value Pass It to the Booking Page.
     
 }
 
@@ -206,6 +222,7 @@ extension SelectedAmbulanceVC: CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         getAddressFromLatLon(pdblLatitude: latitudeString, withLongitude: longitudeString)
+        
     }
     
 }

@@ -22,6 +22,8 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
     let patientId = 157
     var ambulanceTypeId: Int!
     
+    var allAmbulanceLocationCoordinates = CLLocationCoordinate2D()
+    
     //Storage Variables
     var ambulanceExceptEmergencyArray = [AmbulanceExceptEmergencyResult]()
     var allAmbulanceLocationsArray = [MultipleUserLocations]()
@@ -32,7 +34,7 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
         ambulanceListTableView.delegate = self
         ambulanceListTableView.dataSource = self
         mapView.delegate = self
-        
+        TrailApi()
     }
 
 }
@@ -106,6 +108,7 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
                 annotation.title = location.ambulanceName
                 annotation.subtitle = location.driverName
                 annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                allAmbulanceLocationCoordinates = annotation.coordinate
                 annotation.charges = location.charges
                 annotation.ambulanceImageUrl = location.ambulanceImageUrl
                 annotation.ambulanceType = location.ambulanceType
@@ -115,6 +118,7 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
                 annotation.ambulanceName = location.ambulanceName
                 annotation.driverName = location.driverName
                 mapView.addAnnotation(annotation)
+                
             }
 
         }
@@ -236,4 +240,11 @@ extension ExceptEmergencyAmbulanceVC {
         }
     }
     
+}
+
+extension ExceptEmergencyAmbulanceVC {
+    
+    func TrailApi() {
+        print("All Ambulance Location Coordinates: Latitude:\(allAmbulanceLocationCoordinates.latitude) & Longitude:\(allAmbulanceLocationCoordinates.longitude)")
+    }
 }
