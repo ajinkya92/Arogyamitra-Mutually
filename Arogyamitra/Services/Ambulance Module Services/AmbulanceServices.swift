@@ -88,4 +88,40 @@ class AmbulanceServices {
         
     }
     
+    //MARK: API FUNCTION TO GET AMBULANCE LOCATION BY AMBULEANCE IDS
+    
+    func getAmbulanceLocation(withMultipleAmbulanceIdsString idString: String, andPatientId patientId: Int, completion: @escaping(_ success: Bool, AmbulanceLocation?) -> ()) {
+        
+        let postData = NSMutableData(data: "multiple_ambulance_id=\(idString)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: GET_AMBULANCE_LOCATION_BY_AMBULANCE_ID_URL) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedAmbulanceLocationResponse = try decoder.decode(AmbulanceLocation.self, from: data)
+                    completion(true, returnedAmbulanceLocationResponse)
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+            }
+            
+        }.resume()
+        
+    }
+    
 }

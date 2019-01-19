@@ -28,3 +28,4 @@ let GET_AROGYAM_NOTIFICATION_LIST_URL = "https://arogyamitra.net/doctor/index.ph
 
 let GET_AMBULANCE_TYPE_LIST = "https://arogyamitra.net/doctor/index.php/Webservice/get_ambulance_type_list"
 let GET_AMBULANCE_LIST_EXCEPT_EMERGENCY = "https://arogyamitra.net/doctor/index.php/Webservice/get_ambulance_list_by_ambulance_type"
+let GET_AMBULANCE_LOCATION_BY_AMBULANCE_ID_URL = "https://arogyamitra.net/doctor/index.php/Webservice/get_ambulance_location_by_ambulance_id"

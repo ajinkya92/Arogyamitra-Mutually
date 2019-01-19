@@ -122,6 +122,7 @@
 		5151B29621E605A60079D45A /* ArogyamTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29521E605A60079D45A /* ArogyamTblCell.swift */; };
 		5151B29921E606E70079D45A /* ArogyamNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29821E606E70079D45A /* ArogyamNotification.swift */; };
 		5151B29B21E609880079D45A /* ArogyamServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5151B29A21E609880079D45A /* ArogyamServices.swift */; };
+		51530B2B21F3477E0055DF6A /* AmbulanceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51530B2A21F3477E0055DF6A /* AmbulanceLocation.swift */; };
 		5160BDC721EDA8C100993ECB /* Ambulance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5160BDC621EDA8C100993ECB /* Ambulance.storyboard */; };
 		5160BDC921EDABA400993ECB /* AmbulanceTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */; };
 		5160BDCB21EDB92D00993ECB /* AmbulanceTypeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */; };
@@ -296,6 +297,7 @@
 		5151B29521E605A60079D45A /* ArogyamTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamTblCell.swift; sourceTree = "<group>"; };
 		5151B29821E606E70079D45A /* ArogyamNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamNotification.swift; sourceTree = "<group>"; };
 		5151B29A21E609880079D45A /* ArogyamServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArogyamServices.swift; sourceTree = "<group>"; };
+		51530B2A21F3477E0055DF6A /* AmbulanceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceLocation.swift; sourceTree = "<group>"; };
 		5160BDC621EDA8C100993ECB /* Ambulance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ambulance.storyboard; sourceTree = "<group>"; };
 		5160BDC821EDABA400993ECB /* AmbulanceTypeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeListVC.swift; sourceTree = "<group>"; };
 		5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceTypeList.swift; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 			children = (
 				5160BDCA21EDB92D00993ECB /* AmbulanceTypeList.swift */,
 				5160BDD021EDF8BD00993ECB /* AmbulanceExceptEmergency.swift */,
+				51530B2A21F3477E0055DF6A /* AmbulanceLocation.swift */,
 			);
 			path = "Ambulance Module Models";
 			sourceTree = "<group>";
@@ -1136,6 +1139,7 @@
 				5160BDCB21EDB92D00993ECB /* AmbulanceTypeList.swift in Sources */,
 				48272AF621C4887000B288F6 /* Alamofire.swift in Sources */,
 				1719A7C421E1269500BD5169 /* RightToLeft.swift in Sources */,
+				51530B2B21F3477E0055DF6A /* AmbulanceLocation.swift in Sources */,
 				487BE21321BE7C6E0076F210 /* CardView.swift in Sources */,
 				48F616CA21D1BA2A0020C32F /* HospitalDetailsModel.swift in Sources */,
 				51FA120C21DA22E800D7E009 /* Constants.swift in Sources */,

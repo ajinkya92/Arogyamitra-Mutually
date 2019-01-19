@@ -17,15 +17,19 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
     @IBOutlet weak var ambulanceListTableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
+    var timer = Timer()
+    
     let usersCurrentLatitude = "19.0659"
     let usersCurrentLongitude = "73.0011"
     let patientId = 157
     var ambulanceTypeId: Int!
+    var multipleAmbulanceIdsToPassArray = [Int]()
     
     var allAmbulanceLocationCoordinates = CLLocationCoordinate2D()
     
     //Storage Variables
     var ambulanceExceptEmergencyArray = [AmbulanceExceptEmergencyResult]()
+    var ambulanceLocationByIdResultArray = [AmbulanceLocationResult]()
     var allAmbulanceLocationsArray = [MultipleUserLocations]()
 
     override func viewDidLoad() {
@@ -34,7 +38,10 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
         ambulanceListTableView.delegate = self
         ambulanceListTableView.dataSource = self
         mapView.delegate = self
-        TrailApi()
+        
+        //Call This api in every 10 seconds
+        //timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ExceptEmergencyAmbulanceVC.getAmbulanceLocationById), userInfo: nil, repeats: true)
+        //timer.fire()
     }
 
 }
@@ -96,7 +103,9 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
         
         for allLocationDetails in self.ambulanceExceptEmergencyArray {
             
-            let allLocations = MultipleUserLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!, charges: allLocationDetails.chargesPerKM, ambulanceImageUrl: allLocationDetails.ambulancePhoto, ambulanceType: allLocationDetails.ambulanceType, contactNumber: allLocationDetails.mobileno, vehicleNumber: allLocationDetails.vehicleNo, outOfServiceValue: allLocationDetails.outOfStationService)
+            multipleAmbulanceIdsToPassArray.append(allLocationDetails.ambulanceID)
+            
+            let allLocations = MultipleUserLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!, charges: allLocationDetails.chargesPerKM, ambulanceImageUrl: allLocationDetails.ambulancePhoto, ambulanceType: allLocationDetails.ambulanceType, contactNumber: allLocationDetails.mobileno, vehicleNumber: allLocationDetails.vehicleNo, outOfServiceValue: allLocationDetails.outOfStationService, bookingStatus: allLocationDetails.bookingStatus, bookingAmount: allLocationDetails.bookingAmount)
             
             allAmbulanceLocationsArray.append(allLocations)
             //print("All Locations Array: \(locations)")
@@ -108,7 +117,6 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
                 annotation.title = location.ambulanceName
                 annotation.subtitle = location.driverName
                 annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                allAmbulanceLocationCoordinates = annotation.coordinate
                 annotation.charges = location.charges
                 annotation.ambulanceImageUrl = location.ambulanceImageUrl
                 annotation.ambulanceType = location.ambulanceType
@@ -144,6 +152,7 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
     @IBAction func btn_plusPressed(_ sender: Any) {
         let region = MKCoordinateRegion(center: self.mapView.region.center, span: MKCoordinateSpan(latitudeDelta: mapView.region.span.latitudeDelta*0.7, longitudeDelta: mapView.region.span.longitudeDelta*0.7))
         mapView.setRegion(region, animated: true)
+        
     }
     
     @IBAction func btn_minusPressed(_ sender: Any) {
@@ -218,12 +227,14 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
 }
 
 
-//MARK: API CALL TO GET AMBULANCE LIST EXCEPT EMERGENCY
+//MARK: API CALLS GO HERE
 extension ExceptEmergencyAmbulanceVC {
+    
+    //MARK: API CALL TO GET AMBULANCE LIST EXCEPT EMERGENCY
     
     func getAmbulanceListExceptEmergency() {
         
-        self.view.makeToastActivity(.center)
+        //self.view.makeToastActivity(.center)
         AmbulanceServices.instance.getAmbulanceListExceptExergency(withAmbulanceTypeId: ambulanceTypeId, userCurrentLatitude: usersCurrentLatitude, userCurrentLongitude: usersCurrentLongitude, patientId: patientId) { (success, returnedAmbulanceResponse) in
             
             if let returnedAmbulanceResponse = returnedAmbulanceResponse {
@@ -233,18 +244,43 @@ extension ExceptEmergencyAmbulanceVC {
             DispatchQueue.main.async {
                 self.ambulanceListTableView.reloadData()
                 self.setMapAnnotationDetails()
-                self.view.hideToastActivity()
+                //self.view.hideToastActivity()
             }
             
             //print("Ambulance List Except Emergency Ambulance: \(self.ambulanceExceptEmergencyArray)")
         }
     }
     
-}
-
-extension ExceptEmergencyAmbulanceVC {
+    //MARK: API CALL TO GET AMBULANCE LOCATION BY ID
     
-    func TrailApi() {
-        print("All Ambulance Location Coordinates: Latitude:\(allAmbulanceLocationCoordinates.latitude) & Longitude:\(allAmbulanceLocationCoordinates.longitude)")
+    @objc func getAmbulanceLocationById() {
+        
+        let multipleAmbulanceIdString = multipleAmbulanceIdsToPassArray.map({String($0)}).joined(separator: ",")
+        AmbulanceServices.instance.getAmbulanceLocation(withMultipleAmbulanceIdsString: multipleAmbulanceIdString, andPatientId: patientId) { (success, returnedAmbulanceLocationData) in
+            
+            if let returnedAmbulanceLocationData = returnedAmbulanceLocationData {
+                self.ambulanceLocationByIdResultArray = returnedAmbulanceLocationData.results
+                
+                for allNewLocationData in self.ambulanceLocationByIdResultArray {
+                    
+                    let allData = MultipleUserLocations.init(ambulanceName: allNewLocationData.ambulanceName, driverName: allNewLocationData.driverName, latitude: Double("\(allNewLocationData.latitude)")!, longitude: Double("\(allNewLocationData.longitude)")!, charges: allNewLocationData.chargesPerKM, ambulanceImageUrl: allNewLocationData.ambulancePhoto, ambulanceType: allNewLocationData.ambulanceType, contactNumber: allNewLocationData.mobileno, vehicleNumber: allNewLocationData.vehicleNo, outOfServiceValue: allNewLocationData.outOfStationService, bookingStatus: allNewLocationData.bookingStatus, bookingAmount: allNewLocationData.bookingAmount)
+                    
+                    self.allAmbulanceLocationsArray.append(allData)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.setMapAnnotationDetails()
+                self.getAmbulanceListExceptEmergency()
+            }
+            
+        }
+        
+        //print("Ambulance Location By Id Array: \(self.ambulanceLocationByIdResultArray)")
+        for allTestLocationData in self.allAmbulanceLocationsArray {
+            print("New Location: Latitude:\(allTestLocationData.latitude) & Longitude:\(allTestLocationData.longitude)")
+        }
+        
     }
+    
 }

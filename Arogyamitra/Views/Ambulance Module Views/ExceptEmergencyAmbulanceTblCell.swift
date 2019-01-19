@@ -38,7 +38,7 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
         self.mobileNumberBtn.setTitle(exceptEmergencyData.mobileno, for: .normal)
         self.feesLbl.text = "Rs. \(exceptEmergencyData.chargesPerKM )/- per km"
         self.bookingLbl.text = "Rs. \(exceptEmergencyData.bookingAmount )/-"
-        //self.availableLbl.text = exceptEmergencyData.ambulanceIsAvailable
+        self.availableLbl.text = exceptEmergencyData.ambulanceIsAvailable
         
         //Out of Service Logic
         
@@ -46,6 +46,16 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
             self.outOfServiceImage.image = UIImage(named: "checked")
         }else {
             self.outOfServiceImage.image = UIImage(named: "cancelRed")
+        }
+        
+        // Ambulance Available Logic
+        
+        if exceptEmergencyData.ambulanceIsAvailable == "" {
+            self.availableLbl.text = "Available"
+        }else if exceptEmergencyData.ambulanceIsAvailable == "booked" {
+            self.availableLbl.text = "Request Pending"
+        }else {
+            self.availableLbl.text = "Accepted"
         }
         
     }

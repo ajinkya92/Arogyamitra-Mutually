@@ -22,6 +22,8 @@ struct MultipleUserLocations {
     let contactNumber: String
     let vehicleNumber: String
     let outOfServiceValue: Int
+    let bookingStatus: String
+    let bookingAmount: Int
 }
 
 import UIKit
@@ -38,5 +40,7 @@ class CustomPointAnnotation: MKPointAnnotation {
     var contactNumber: String!
     var vehicleNumber: String!
     var outOfServiceValue: Int!
+    var bookingStatus: String!
+    var bookingAmount: Int!
     
 }
