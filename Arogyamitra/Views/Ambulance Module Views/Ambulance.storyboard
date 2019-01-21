@@ -583,6 +583,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Book"/>
+                                        <connections>
+                                            <action selector="smallPopupViewBookBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="DI2-6G-5fM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8G-Cv-3PF" userLabel="Close Button">
                                         <rect key="frame" x="8" y="9" width="20" height="20"/>

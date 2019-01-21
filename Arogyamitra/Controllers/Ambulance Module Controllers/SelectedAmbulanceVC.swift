@@ -45,9 +45,20 @@ class SelectedAmbulanceVC: UIViewController {
     var latitudeString = String()
     var longitudeString = String()
     var addressStringForTxtView = String()
+    var currentLatitudeToPass = Double()
+    var currentLongitideToPass = Double()
 
     //Storage Variables
     var requiedValuesDictionary = [String:Any]()
+    
+    //Static Values Passed
+    let paymentMode = 3
+    let paymentGatewayResponse = "sometext"
+    let paymentAmount = 1
+    let paymentGateway = 2
+    let couponId = "someString"
+    let couponAmount = 5
+    let walletAmount = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +127,12 @@ class SelectedAmbulanceVC: UIViewController {
         if sender.tag == 1 {
             //print("Register Address")
             registeredAddressLbl.text = "This Should Have Address Saved in User Defaults"
+            
+            //User Defaults Latitude and Longitude Values To be passed in Below Variables
+            currentLatitudeToPass = 12.898
+            currentLongitideToPass = 12.76876
+            getAddressFromLatLon(pdblLatitude: "\(currentLatitudeToPass)", withLongitude: "\(currentLongitideToPass)")
+            
             currentAddressTxtView.isHidden = true
             registeredAddressLbl.isHidden = false
         }else {
@@ -129,6 +146,33 @@ class SelectedAmbulanceVC: UIViewController {
         }
     }
     
+    @IBAction func smallPopupViewBookBtnTapped(_ sender: UIButton) {
+        //Booking API to be called her
+        var patientIdToPass = Int()
+        var ambulanceIdToPass = Int()
+        
+        let patientId = requiedValuesDictionary["patientId"] as? Int
+        if let patientId = patientId {
+            patientIdToPass = patientId
+        }
+        
+        let ambulanceId = requiedValuesDictionary["ambulanceId"] as? Int
+        if let ambulanceId = ambulanceId {
+            ambulanceIdToPass = ambulanceId
+        }
+        
+        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(currentLatitudeToPass), Longitude:\(currentLongitideToPass), AddressString:\(addressStringForTxtView)")
+        
+        AmbulanceServices.instance.bookNormalAndCardiacAmbulance(patientId: patientIdToPass, ambulanceId: ambulanceIdToPass, pickupAddress: addressStringForTxtView, pickupLatitude: currentLatitudeToPass, pickupLongitude: currentLongitideToPass, paymentMode: paymentMode, paymentGatewayResponse: paymentGatewayResponse, paymentAmount: paymentAmount, paymentGateway: paymentGateway, couponId: couponId, couponAmount: couponAmount, walletAmount: walletAmount) { (success, returnedAmbulanceBookingResponse) in
+            
+            if let returnedAmbulanceBookingResponse = returnedAmbulanceBookingResponse {
+                print(returnedAmbulanceBookingResponse.status)
+            }
+            
+        }
+        
+        
+    }
 
 }
 
@@ -215,10 +259,11 @@ extension SelectedAmbulanceVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         
-        let latitude = location.coordinate.latitude
-        let longitude = location.coordinate.longitude
-        latitudeString = "\(latitude)"
-        longitudeString = "\(longitude)"
+        currentLatitudeToPass = location.coordinate.latitude
+        currentLongitideToPass = location.coordinate.longitude
+        latitudeString = "\(currentLatitudeToPass)"
+        longitudeString = "\(currentLongitideToPass)"
+        
         
         locationManager.stopUpdatingLocation()
         getAddressFromLatLon(pdblLatitude: latitudeString, withLongitude: longitudeString)
@@ -235,9 +280,7 @@ extension SelectedAmbulanceVC {
     func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
         var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
         let lat: Double = Double("\(pdblLatitude)")!
-        //21.228124
         let lon: Double = Double("\(pdblLongitude)")!
-        //72.833770
         let ceo: CLGeocoder = CLGeocoder()
         center.latitude = lat
         center.longitude = lon

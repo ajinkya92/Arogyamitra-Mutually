@@ -25,8 +25,6 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
     var ambulanceTypeId: Int!
     var multipleAmbulanceIdsToPassArray = [Int]()
     
-    var allAmbulanceLocationCoordinates = CLLocationCoordinate2D()
-    
     //Storage Variables
     var ambulanceExceptEmergencyArray = [AmbulanceExceptEmergencyResult]()
     var ambulanceLocationByIdResultArray = [AmbulanceLocationResult]()
@@ -39,9 +37,12 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
         ambulanceListTableView.dataSource = self
         mapView.delegate = self
         
-        //Call This api in every 10 seconds
-        //timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ExceptEmergencyAmbulanceVC.getAmbulanceLocationById), userInfo: nil, repeats: true)
-        //timer.fire()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
+            //Call This api in every 10 seconds
+            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ExceptEmergencyAmbulanceVC.getAmbulanceLocationById), userInfo: nil, repeats: true)
+            self.timer.fire()
+        })
+        
     }
 
 }
@@ -73,7 +74,7 @@ extension ExceptEmergencyAmbulanceVC: UITableViewDelegate,  UITableViewDataSourc
         //print("Index Of TableView Clicked: \(indexPath.row)")
         guard let selectedAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "SelectedAmbulanceVC") as? SelectedAmbulanceVC else {return}
         let individualSelectedValues = ambulanceExceptEmergencyArray[indexPath.row]
-        selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": individualSelectedValues.ambulancePhoto, "ambulanceType":individualSelectedValues.ambulanceType, "ambulanceName":individualSelectedValues.ambulanceName, "mobileNumber":individualSelectedValues.mobileno, "driverName":individualSelectedValues.driverName, "charges":individualSelectedValues.chargesPerKM, "vehicleNumber":individualSelectedValues.vehicleNo, "outOfStationServices":individualSelectedValues.outOfStationService]
+        selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": individualSelectedValues.ambulancePhoto, "ambulanceType":individualSelectedValues.ambulanceType, "ambulanceName":individualSelectedValues.ambulanceName, "mobileNumber":individualSelectedValues.mobileno, "driverName":individualSelectedValues.driverName, "charges":individualSelectedValues.chargesPerKM, "vehicleNumber":individualSelectedValues.vehicleNo, "outOfStationServices":individualSelectedValues.outOfStationService, "patientId": patientId, "ambulanceId": individualSelectedValues.ambulanceID]
         self.navigationController?.present(selectedAmbulanceVc, animated: true, completion: nil)
         
     }
@@ -248,6 +249,7 @@ extension ExceptEmergencyAmbulanceVC {
             }
             
             //print("Ambulance List Except Emergency Ambulance: \(self.ambulanceExceptEmergencyArray)")
+            
         }
     }
     
@@ -260,26 +262,16 @@ extension ExceptEmergencyAmbulanceVC {
             
             if let returnedAmbulanceLocationData = returnedAmbulanceLocationData {
                 self.ambulanceLocationByIdResultArray = returnedAmbulanceLocationData.results
-                
-                for allNewLocationData in self.ambulanceLocationByIdResultArray {
-                    
-                    let allData = MultipleUserLocations.init(ambulanceName: allNewLocationData.ambulanceName, driverName: allNewLocationData.driverName, latitude: Double("\(allNewLocationData.latitude)")!, longitude: Double("\(allNewLocationData.longitude)")!, charges: allNewLocationData.chargesPerKM, ambulanceImageUrl: allNewLocationData.ambulancePhoto, ambulanceType: allNewLocationData.ambulanceType, contactNumber: allNewLocationData.mobileno, vehicleNumber: allNewLocationData.vehicleNo, outOfServiceValue: allNewLocationData.outOfStationService, bookingStatus: allNewLocationData.bookingStatus, bookingAmount: allNewLocationData.bookingAmount)
-                    
-                    self.allAmbulanceLocationsArray.append(allData)
-                }
             }
             
             DispatchQueue.main.async {
-                self.setMapAnnotationDetails()
                 self.getAmbulanceListExceptEmergency()
             }
             
         }
         
         //print("Ambulance Location By Id Array: \(self.ambulanceLocationByIdResultArray)")
-        for allTestLocationData in self.allAmbulanceLocationsArray {
-            print("New Location: Latitude:\(allTestLocationData.latitude) & Longitude:\(allTestLocationData.longitude)")
-        }
+        
         
     }
     

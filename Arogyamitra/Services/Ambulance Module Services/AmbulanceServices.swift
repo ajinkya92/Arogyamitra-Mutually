@@ -124,4 +124,51 @@ class AmbulanceServices {
         
     }
     
+    //MARK: API Function To book Normal And Cardiac Ambulance
+    
+    func bookNormalAndCardiacAmbulance(patientId:Int, ambulanceId:Int, pickupAddress:String, pickupLatitude:Double, pickupLongitude:Double, paymentMode:Int, paymentGatewayResponse:String, paymentAmount:Int, paymentGateway:Int, couponId:String, couponAmount:Int, walletAmount:Int, completion:@escaping(_ success: Bool, AmbulanceBooking?) -> ()) {
+        
+        let postData = NSMutableData(data: "patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        postData.append("&ambulance_id=\(ambulanceId)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_address=\(pickupAddress)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_latitude=\(pickupLatitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_longitude=\(pickupLongitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&payment_mode=\(paymentMode)".data(using: String.Encoding.utf8)!)
+        postData.append("&payment_gateway_response=\(paymentGatewayResponse)".data(using: String.Encoding.utf8)!)
+        postData.append("&amount=\(paymentAmount)".data(using: String.Encoding.utf8)!)
+        postData.append("&payment_gateway=\(paymentGateway)".data(using: String.Encoding.utf8)!)
+        postData.append("&coupon_id=\(couponId)".data(using: String.Encoding.utf8)!)
+        postData.append("&coupon_amount=\(couponAmount)".data(using: String.Encoding.utf8)!)
+        postData.append("&wallet_amount=\(walletAmount)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: AMBULANCE_BOOKING_URL) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedBookingresponse = try decoder.decode(AmbulanceBooking.self, from: data)
+                    completion(true, returnedBookingresponse)
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+                
+            }
+            
+        }.resume()
+        
+    }
+    
 }
