@@ -41,12 +41,10 @@ class SelectedAmbulanceVC: UIViewController {
     
     //Location Variables
     var locationManager = CLLocationManager()
-    var currentLocation: CLLocation!
-    var latitudeString = String()
-    var longitudeString = String()
-    var addressStringForTxtView = String()
-    var currentLatitudeToPass = Double()
-    var currentLongitideToPass = Double()
+    var currentLocation = CLLocationCoordinate2D()
+    var addressStringForBooking = String()
+    var latitudeStringForBooking = String()
+    var longitudeStringForBooking = String()
 
     //Storage Variables
     var requiedValuesDictionary = [String:Any]()
@@ -124,26 +122,50 @@ class SelectedAmbulanceVC: UIViewController {
     
     @IBAction func radioButtonActions(_ sender: DLRadioButton) {
         //Tag 1 for Registered Address and 2 for Current Address
-        if sender.tag == 1 {
-            //print("Register Address")
-            registeredAddressLbl.text = "This Should Have Address Saved in User Defaults"
-            
-            //User Defaults Latitude and Longitude Values To be passed in Below Variables
-            currentLatitudeToPass = 12.898
-            currentLongitideToPass = 12.76876
-            getAddressFromLatLon(pdblLatitude: "\(currentLatitudeToPass)", withLongitude: "\(currentLongitideToPass)")
-            
-            currentAddressTxtView.isHidden = true
+        
+        switch sender.tag {
+        case 1:
+            print("Register Button Tag: \(sender.tag)")
+            let registeredLatitude = 12.898
+            let registeredLongitude = 12.76876
             registeredAddressLbl.isHidden = false
-        }else {
+            currentAddressTxtView.isHidden = true
+            getAddressFromLatLon(pdblLatitude: "\(registeredLatitude)", withLongitude: "\(registeredLongitude)")
+            currentAddressTxtView.text = ""
+            registeredAddressLbl.text = addressStringForBooking
+        case 2:
+            print("Current Address Tag: \(sender.tag)")
             locationManager.startUpdatingLocation()
-            //print("Current Address")
-            //print(addressStringForTxtView)
             currentAddressTxtView.isHidden = false
             registeredAddressLbl.isHidden = true
-            currentAddressTxtView.text = addressStringForTxtView
-            
+            registeredAddressLbl.text = ""
+            currentAddressTxtView.text = addressStringForBooking
+        default:
+            return
         }
+        
+        
+//        if sender.tag == 1 {
+//            print("Register Button Tag: \(sender.tag)")
+//            let registeredLatitude = 12.898
+//            let registeredLongitude = 12.76876
+//            registeredAddressLbl.isHidden = false
+//            currentAddressTxtView.isHidden = true
+//            getAddressFromLatLon(pdblLatitude: "\(registeredLatitude)", withLongitude: "\(registeredLongitude)")
+//            currentAddressTxtView.text = ""
+//            registeredAddressLbl.text = addressStringForBooking
+//
+//
+//        }else {
+//            print("Current Address Tag: \(sender.tag)")
+//            locationManager.startUpdatingLocation()
+//            currentAddressTxtView.isHidden = false
+//            registeredAddressLbl.isHidden = true
+//            registeredAddressLbl.text = ""
+//            currentAddressTxtView.text = addressStringForBooking
+//
+//        }
+        
     }
     
     @IBAction func smallPopupViewBookBtnTapped(_ sender: UIButton) {
@@ -161,15 +183,7 @@ class SelectedAmbulanceVC: UIViewController {
             ambulanceIdToPass = ambulanceId
         }
         
-        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(currentLatitudeToPass), Longitude:\(currentLongitideToPass), AddressString:\(addressStringForTxtView)")
-        
-        AmbulanceServices.instance.bookNormalAndCardiacAmbulance(patientId: patientIdToPass, ambulanceId: ambulanceIdToPass, pickupAddress: addressStringForTxtView, pickupLatitude: currentLatitudeToPass, pickupLongitude: currentLongitideToPass, paymentMode: paymentMode, paymentGatewayResponse: paymentGatewayResponse, paymentAmount: paymentAmount, paymentGateway: paymentGateway, couponId: couponId, couponAmount: couponAmount, walletAmount: walletAmount) { (success, returnedAmbulanceBookingResponse) in
-            
-            if let returnedAmbulanceBookingResponse = returnedAmbulanceBookingResponse {
-                print(returnedAmbulanceBookingResponse.status)
-            }
-            
-        }
+        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(latitudeStringForBooking), Longitude:\(longitudeStringForBooking), Addess String For Booking: \(addressStringForBooking)")
         
         
     }
@@ -257,16 +271,12 @@ extension SelectedAmbulanceVC: UITextViewDelegate {
 extension SelectedAmbulanceVC: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
         
-        currentLatitudeToPass = location.coordinate.latitude
-        currentLongitideToPass = location.coordinate.longitude
-        latitudeString = "\(currentLatitudeToPass)"
-        longitudeString = "\(currentLongitideToPass)"
-        
-        
-        locationManager.stopUpdatingLocation()
-        getAddressFromLatLon(pdblLatitude: latitudeString, withLongitude: longitudeString)
+        if let location = locations.last {
+            currentLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
+        }
+        manager.stopUpdatingLocation()
+        getAddressFromLatLon(pdblLatitude: "\(currentLocation.latitude)", withLongitude: "\(currentLocation.longitude)")
         
     }
     
@@ -316,7 +326,7 @@ extension SelectedAmbulanceVC {
                         addressString = addressString + pm.postalCode! + " "
                     }
                     
-                    self.addressStringForTxtView = addressString
+                    self.addressStringForBooking = addressString
                     //print(addressString)
                 }
         })
