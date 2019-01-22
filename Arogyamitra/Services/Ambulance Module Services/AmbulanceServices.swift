@@ -126,7 +126,7 @@ class AmbulanceServices {
     
     //MARK: API Function To book Normal And Cardiac Ambulance
     
-    func bookNormalAndCardiacAmbulance(patientId:Int, ambulanceId:Int, pickupAddress:String, pickupLatitude:Double, pickupLongitude:Double, paymentMode:Int, paymentGatewayResponse:String, paymentAmount:Int, paymentGateway:Int, couponId:String, couponAmount:Int, walletAmount:Int, completion:@escaping(_ success: Bool, AmbulanceBooking?) -> ()) {
+    func bookNormalAndCardiacAmbulance(patientId:Int, ambulanceId:Int, pickupAddress:String, pickupLatitude:String, pickupLongitude:String, paymentMode:Int, paymentGatewayResponse:String, paymentAmount:Int, paymentGateway:Int, couponId:String, couponAmount:Int, walletAmount:Int, completion:@escaping(_ success: Bool, AmbulanceBooking?) -> ()) {
         
         let postData = NSMutableData(data: "patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
         postData.append("&ambulance_id=\(ambulanceId)".data(using: String.Encoding.utf8)!)

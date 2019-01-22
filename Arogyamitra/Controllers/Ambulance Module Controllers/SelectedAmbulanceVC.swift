@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import DLRadioButton
 import CoreLocation
+import Toast_Swift
 
 class SelectedAmbulanceVC: UIViewController {
     
@@ -25,6 +26,7 @@ class SelectedAmbulanceVC: UIViewController {
     @IBOutlet weak var outStationServiceImage: UIImageView!
     @IBOutlet weak var innerContentViewBookBtn: UIButton!
     @IBOutlet weak var innerContentViewCloseBtn: UIButton!
+    @IBOutlet weak var innerContentviewRequestInPrecesslbl: UILabel!
     @IBOutlet weak var radioBtn: DLRadioButton!
     
     
@@ -57,7 +59,7 @@ class SelectedAmbulanceVC: UIViewController {
     let paymentGatewayResponse = "sometext"
     let paymentAmount = 1
     let paymentGateway = 2
-    let couponId = "someString"
+    let couponId = ""
     let couponAmount = 5
     let walletAmount = 1
     
@@ -96,12 +98,21 @@ class SelectedAmbulanceVC: UIViewController {
     
     @IBAction func innerContentViewBookBtnTapped(_ sender: UIButton) {
         
-        smallPopupViewCenterShiftConstraint.constant = 0
-        innerContentViewBookBtn.setTitle("Processing", for: .normal)
-        innerContentViewCloseBtn.isHidden = true
-        UIView.animate(withDuration: 1.0) {
-            self.view.layoutIfNeeded()
+        let buttonTitle = sender.titleLabel?.text
+        if let buttonTitle = buttonTitle {
+            if buttonTitle == "Book" {
+                smallPopupViewCenterShiftConstraint.constant = 0
+                innerContentViewBookBtn.setTitle("Processing", for: .normal)
+                innerContentViewCloseBtn.isHidden = true
+                UIView.animate(withDuration: 1.0) {
+                    self.view.layoutIfNeeded()
+                }
+            }else {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
+        
+        
     }
     
     //MARK: SMALL POPUP VIEW ACTIONS
@@ -142,6 +153,7 @@ class SelectedAmbulanceVC: UIViewController {
             if let registeredLongitude = registeredLongitudeValue {
                 longitudeStringForBooking = registeredLongitude
             }
+            smallPopupBookBtn.tag = 3
             
         case 2:
             //print("Current Address Tag: \(sender.tag)")
@@ -149,9 +161,11 @@ class SelectedAmbulanceVC: UIViewController {
             currentAddressTxtView.isHidden = false
             registeredAddressLbl.isHidden = true
             currentAddressTxtView.text = currentAddressStringForBooking
-            addressStringToPassForBooking = currentAddressStringForBooking
+            addressStringToPassForBooking = currentAddressTxtView.text
             latitudeStringForBooking = "\(currentLocation.latitude)"
             longitudeStringForBooking = "\(currentLocation.longitude)"
+            
+            smallPopupBookBtn.tag = 3
             
         default:
             return
@@ -160,26 +174,57 @@ class SelectedAmbulanceVC: UIViewController {
     }
     
     @IBAction func smallPopupViewBookBtnTapped(_ sender: UIButton) {
-        //Booking API to be called her
-        var patientIdToPass = Int()
-        var ambulanceIdToPass = Int()
         
-        
-        let patientId = requiedValuesDictionary["patientId"] as? Int
-        if let patientId = patientId {
-            patientIdToPass = patientId
+        if sender.tag == 3 {
+            
+            //Booking API to be called her
+            var patientIdToPass = Int()
+            var ambulanceIdToPass = Int()
+            
+            
+            let patientId = requiedValuesDictionary["patientId"] as? Int
+            if let patientId = patientId {
+                patientIdToPass = patientId
+            }
+            
+            let ambulanceId = requiedValuesDictionary["ambulanceId"] as? Int
+            if let ambulanceId = ambulanceId {
+                ambulanceIdToPass = ambulanceId
+            }
+            
+            print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(latitudeStringForBooking), Longitude:\(longitudeStringForBooking), Address String For Booking: \(addressStringToPassForBooking)")
+            
+            AmbulanceServices.instance.bookNormalAndCardiacAmbulance(patientId: patientIdToPass, ambulanceId: ambulanceIdToPass, pickupAddress: addressStringToPassForBooking, pickupLatitude: latitudeStringForBooking, pickupLongitude: longitudeStringForBooking, paymentMode: paymentMode, paymentGatewayResponse: paymentGatewayResponse, paymentAmount: paymentAmount, paymentGateway: paymentGateway, couponId: couponId, couponAmount: couponAmount, walletAmount: walletAmount) { (success, returnedBookingResponse) in
+                
+                if let returnedBookingResponse = returnedBookingResponse {
+                    print(returnedBookingResponse.message)
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    //Check If Iphone or Ipad and hide the smallPopupView
+                    if UIDevice.current.userInterfaceIdiom == .phone {
+                        self.smallPopupViewCenterShiftConstraint.constant = -500
+                        self.view.layoutIfNeeded()
+                    }else {
+                        self.smallPopupViewCenterShiftConstraint.constant = -1200
+                        self.view.layoutIfNeeded()
+                    }
+                    self.innerContentViewBookBtn.setTitle("Go Back", for: .normal)
+                    self.innerContentviewRequestInPrecesslbl.isHidden = false
+                    
+                    
+                }
+                
+            }
+            
+        }else {
+            
+            //print("Put Alert Here")
         }
-        
-        let ambulanceId = requiedValuesDictionary["ambulanceId"] as? Int
-        if let ambulanceId = ambulanceId {
-            ambulanceIdToPass = ambulanceId
-        }
-        
-        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(latitudeStringForBooking), Longitude:\(longitudeStringForBooking), Addess String For Booking: \(addressStringToPassForBooking)")
-        
         
     }
-
+    
 }
 
 //MARK: Set Display Elements on View Did Load
@@ -221,6 +266,8 @@ extension SelectedAmbulanceVC {
         if let registeredAddressValue = registeredAddressString {
             self.registeredAddressLbl.text = registeredAddressValue
         }
+        
+        innerContentviewRequestInPrecesslbl.isHidden = true
         
         smallPopupView.layer.borderWidth = 1.0
         smallPopupView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

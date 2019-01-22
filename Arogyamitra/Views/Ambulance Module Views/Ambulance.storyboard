@@ -147,7 +147,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay4-Mp-Le1">
-                                                    <rect key="frame" x="93" y="22" width="217" height="20.666666666666671"/>
+                                                    <rect key="frame" x="93" y="22" width="197" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -204,13 +204,13 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-3F-A4j">
-                                                    <rect key="frame" x="320" y="30" width="80" height="30"/>
+                                                    <rect key="frame" x="300" y="30" width="100" height="30"/>
                                                     <color key="backgroundColor" red="0.01176470588" green="0.62745098040000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="N8L-Ct-3yw"/>
-                                                        <constraint firstAttribute="width" constant="80" id="eCw-yi-SB6"/>
+                                                        <constraint firstAttribute="width" constant="100" id="eCw-yi-SB6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -348,7 +348,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFQ-wx-HTM" userLabel="Inner Content View">
-                                <rect key="frame" x="10" y="93" width="394" height="550"/>
+                                <rect key="frame" x="10" y="78" width="394" height="580"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yet-te-Gw5" userLabel="Close Button">
                                         <rect key="frame" x="8" y="8" width="40" height="40"/>
@@ -482,7 +482,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzL-oE-uxl">
-                                        <rect key="frame" x="122" y="479" width="150" height="40"/>
+                                        <rect key="frame" x="122" y="530" width="150" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="52l-F8-C5G"/>
@@ -494,22 +494,31 @@
                                             <action selector="innerContentViewBookBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="c9X-hk-Z46"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request in process" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K80-Hr-JK3">
+                                        <rect key="frame" x="86.000000000000014" y="492" width="222.33333333333337" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="4uz-1b-GFV" firstAttribute="top" secondItem="yet-te-Gw5" secondAttribute="bottom" id="20b-Tt-DMQ"/>
                                     <constraint firstAttribute="trailing" secondItem="4uz-1b-GFV" secondAttribute="trailing" id="CbQ-Jm-IvL"/>
-                                    <constraint firstItem="EzL-oE-uxl" firstAttribute="top" secondItem="phJ-ZN-5hb" secondAttribute="bottom" constant="20" id="ETT-MH-sUB"/>
                                     <constraint firstItem="VXd-HI-vsT" firstAttribute="top" secondItem="sFQ-wx-HTM" secondAttribute="top" constant="207" id="FQ3-Iy-i8u"/>
                                     <constraint firstItem="phJ-ZN-5hb" firstAttribute="top" secondItem="7xh-qU-Dny" secondAttribute="bottom" constant="20" id="Nc2-d0-Qxg"/>
                                     <constraint firstItem="yet-te-Gw5" firstAttribute="top" secondItem="sFQ-wx-HTM" secondAttribute="top" constant="8" id="NsA-6T-Ekw"/>
+                                    <constraint firstItem="K80-Hr-JK3" firstAttribute="top" secondItem="phJ-ZN-5hb" secondAttribute="bottom" constant="33" id="Okn-uK-RH7"/>
                                     <constraint firstItem="7xh-qU-Dny" firstAttribute="top" secondItem="4uz-1b-GFV" secondAttribute="bottom" constant="8" id="PSN-92-Q4j"/>
+                                    <constraint firstAttribute="bottom" secondItem="EzL-oE-uxl" secondAttribute="bottom" constant="10" id="QPB-is-0Q6"/>
+                                    <constraint firstItem="K80-Hr-JK3" firstAttribute="centerX" secondItem="sFQ-wx-HTM" secondAttribute="centerX" id="QUK-lu-UIH"/>
                                     <constraint firstItem="phJ-ZN-5hb" firstAttribute="centerX" secondItem="sFQ-wx-HTM" secondAttribute="centerX" id="S4u-O8-nuf"/>
                                     <constraint firstItem="4uz-1b-GFV" firstAttribute="leading" secondItem="sFQ-wx-HTM" secondAttribute="leading" id="SUB-N0-lMS"/>
+                                    <constraint firstItem="EzL-oE-uxl" firstAttribute="top" secondItem="K80-Hr-JK3" secondAttribute="bottom" constant="8" id="WTY-my-4oZ"/>
                                     <constraint firstAttribute="trailing" secondItem="7xh-qU-Dny" secondAttribute="trailing" constant="8" id="aDe-vN-rNe"/>
                                     <constraint firstItem="EzL-oE-uxl" firstAttribute="centerX" secondItem="sFQ-wx-HTM" secondAttribute="centerX" id="cgN-Sn-dnX"/>
                                     <constraint firstItem="yet-te-Gw5" firstAttribute="leading" secondItem="sFQ-wx-HTM" secondAttribute="leading" constant="8" id="ekO-zW-81p"/>
-                                    <constraint firstAttribute="height" constant="550" id="mZS-Za-V66"/>
+                                    <constraint firstAttribute="height" constant="580" id="mZS-Za-V66"/>
                                     <constraint firstAttribute="trailing" secondItem="VXd-HI-vsT" secondAttribute="trailing" id="t5Z-Tx-ZCY"/>
                                     <constraint firstItem="7xh-qU-Dny" firstAttribute="leading" secondItem="sFQ-wx-HTM" secondAttribute="leading" constant="8" id="wLf-Tl-T52"/>
                                 </constraints>
@@ -671,6 +680,7 @@
                         <outlet property="innerContentView" destination="sFQ-wx-HTM" id="8TV-eY-yGg"/>
                         <outlet property="innerContentViewBookBtn" destination="EzL-oE-uxl" id="MHf-77-mMo"/>
                         <outlet property="innerContentViewCloseBtn" destination="yet-te-Gw5" id="0eh-cm-9Bw"/>
+                        <outlet property="innerContentviewRequestInPrecesslbl" destination="K80-Hr-JK3" id="7qh-Zj-3ab"/>
                         <outlet property="outStationServiceImage" destination="kwS-xN-t6m" id="OfB-SA-NlW"/>
                         <outlet property="radioBtn" destination="hGx-bd-y2Q" id="LUK-ht-Dfs"/>
                         <outlet property="registeredAddressLbl" destination="lrT-lQ-vhv" id="STq-3A-nCu"/>

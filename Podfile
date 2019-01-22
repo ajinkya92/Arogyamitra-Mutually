@@ -7,8 +7,9 @@ target 'Arogyamitra' do
 
   # Pods for Arogyamitra
   	pod 'Kingfisher', '~> 4.8.1'
-    pod 'GoogleMaps'
-  	pod 'GooglePlaces'
-    pod 'DLRadioButton', '~> 1.4'
+    	pod 'GoogleMaps'
+    	pod 'GooglePlaces'
+    	pod 'DLRadioButton', '~> 1.4'
+	pod 'Toast-Swift', '~> 4.0.0'
 
 end
