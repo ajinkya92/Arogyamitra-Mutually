@@ -42,9 +42,12 @@ class SelectedAmbulanceVC: UIViewController {
     //Location Variables
     var locationManager = CLLocationManager()
     var currentLocation = CLLocationCoordinate2D()
-    var addressStringForBooking = String()
+    var currentAddressStringForBooking = String()
+    var registeredAddressStringForBooking = String()
+    var addressStringToPassForBooking = String()
     var latitudeStringForBooking = String()
     var longitudeStringForBooking = String()
+    
 
     //Storage Variables
     var requiedValuesDictionary = [String:Any]()
@@ -125,46 +128,34 @@ class SelectedAmbulanceVC: UIViewController {
         
         switch sender.tag {
         case 1:
-            print("Register Button Tag: \(sender.tag)")
-            let registeredLatitude = 12.898
-            let registeredLongitude = 12.76876
-            registeredAddressLbl.isHidden = false
+            //print("Register Button Tag: \(sender.tag)")
             currentAddressTxtView.isHidden = true
-            getAddressFromLatLon(pdblLatitude: "\(registeredLatitude)", withLongitude: "\(registeredLongitude)")
-            currentAddressTxtView.text = ""
-            registeredAddressLbl.text = addressStringForBooking
+            registeredAddressLbl.isHidden = false
+            addressStringToPassForBooking = registeredAddressLbl.text ?? ""
+            
+            let registeredLatitudeValue = requiedValuesDictionary["registeredUserLatitude"] as? String
+            if let registeredLatitude = registeredLatitudeValue {
+                latitudeStringForBooking = registeredLatitude
+            }
+            
+            let registeredLongitudeValue = requiedValuesDictionary["registeredUserLongitude"] as? String
+            if let registeredLongitude = registeredLongitudeValue {
+                longitudeStringForBooking = registeredLongitude
+            }
+            
         case 2:
-            print("Current Address Tag: \(sender.tag)")
+            //print("Current Address Tag: \(sender.tag)")
             locationManager.startUpdatingLocation()
             currentAddressTxtView.isHidden = false
             registeredAddressLbl.isHidden = true
-            registeredAddressLbl.text = ""
-            currentAddressTxtView.text = addressStringForBooking
+            currentAddressTxtView.text = currentAddressStringForBooking
+            addressStringToPassForBooking = currentAddressStringForBooking
+            latitudeStringForBooking = "\(currentLocation.latitude)"
+            longitudeStringForBooking = "\(currentLocation.longitude)"
+            
         default:
             return
         }
-        
-        
-//        if sender.tag == 1 {
-//            print("Register Button Tag: \(sender.tag)")
-//            let registeredLatitude = 12.898
-//            let registeredLongitude = 12.76876
-//            registeredAddressLbl.isHidden = false
-//            currentAddressTxtView.isHidden = true
-//            getAddressFromLatLon(pdblLatitude: "\(registeredLatitude)", withLongitude: "\(registeredLongitude)")
-//            currentAddressTxtView.text = ""
-//            registeredAddressLbl.text = addressStringForBooking
-//
-//
-//        }else {
-//            print("Current Address Tag: \(sender.tag)")
-//            locationManager.startUpdatingLocation()
-//            currentAddressTxtView.isHidden = false
-//            registeredAddressLbl.isHidden = true
-//            registeredAddressLbl.text = ""
-//            currentAddressTxtView.text = addressStringForBooking
-//
-//        }
         
     }
     
@@ -172,6 +163,7 @@ class SelectedAmbulanceVC: UIViewController {
         //Booking API to be called her
         var patientIdToPass = Int()
         var ambulanceIdToPass = Int()
+        
         
         let patientId = requiedValuesDictionary["patientId"] as? Int
         if let patientId = patientId {
@@ -183,7 +175,7 @@ class SelectedAmbulanceVC: UIViewController {
             ambulanceIdToPass = ambulanceId
         }
         
-        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(latitudeStringForBooking), Longitude:\(longitudeStringForBooking), Addess String For Booking: \(addressStringForBooking)")
+        print("Patient Id: \(patientIdToPass), AmbulanceId:\(ambulanceIdToPass), Latitude:\(latitudeStringForBooking), Longitude:\(longitudeStringForBooking), Addess String For Booking: \(addressStringToPassForBooking)")
         
         
     }
@@ -223,6 +215,11 @@ extension SelectedAmbulanceVC {
                 outStationServiceImage.image = UIImage(named: "checked")
             }else {outStationServiceImage.image = UIImage(named: "cancelRed")}
             
+        }
+        
+       let registeredAddressString = requiedValuesDictionary["registeredAddressStringToPass"] as? String
+        if let registeredAddressValue = registeredAddressString {
+            self.registeredAddressLbl.text = registeredAddressValue
         }
         
         smallPopupView.layer.borderWidth = 1.0
@@ -326,7 +323,7 @@ extension SelectedAmbulanceVC {
                         addressString = addressString + pm.postalCode! + " "
                     }
                     
-                    self.addressStringForBooking = addressString
+                    self.currentAddressStringForBooking = addressString
                     //print(addressString)
                 }
         })

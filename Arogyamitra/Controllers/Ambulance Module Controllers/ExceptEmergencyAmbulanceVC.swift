@@ -19,11 +19,15 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
     
     var timer = Timer()
     
+    //Static Values To be changed
     let usersCurrentLatitude = "19.0659"
     let usersCurrentLongitude = "73.0011"
     let patientId = 157
+    
+    
     var ambulanceTypeId: Int!
     var multipleAmbulanceIdsToPassArray = [Int]()
+    var registeredAddressStringToPass = String()
     
     //Storage Variables
     var ambulanceExceptEmergencyArray = [AmbulanceExceptEmergencyResult]()
@@ -36,6 +40,8 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
         ambulanceListTableView.delegate = self
         ambulanceListTableView.dataSource = self
         mapView.delegate = self
+        
+        getAddressFromLatLon(pdblLatitude: "\(19.0659)", withLongitude: "\(73.0011)")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
             //Call This api in every 10 seconds
@@ -74,7 +80,8 @@ extension ExceptEmergencyAmbulanceVC: UITableViewDelegate,  UITableViewDataSourc
         //print("Index Of TableView Clicked: \(indexPath.row)")
         guard let selectedAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "SelectedAmbulanceVC") as? SelectedAmbulanceVC else {return}
         let individualSelectedValues = ambulanceExceptEmergencyArray[indexPath.row]
-        selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": individualSelectedValues.ambulancePhoto, "ambulanceType":individualSelectedValues.ambulanceType, "ambulanceName":individualSelectedValues.ambulanceName, "mobileNumber":individualSelectedValues.mobileno, "driverName":individualSelectedValues.driverName, "charges":individualSelectedValues.chargesPerKM, "vehicleNumber":individualSelectedValues.vehicleNo, "outOfStationServices":individualSelectedValues.outOfStationService, "patientId": patientId, "ambulanceId": individualSelectedValues.ambulanceID]
+        selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": individualSelectedValues.ambulancePhoto, "ambulanceType":individualSelectedValues.ambulanceType, "ambulanceName":individualSelectedValues.ambulanceName, "mobileNumber":individualSelectedValues.mobileno, "driverName":individualSelectedValues.driverName, "charges":individualSelectedValues.chargesPerKM, "vehicleNumber":individualSelectedValues.vehicleNo, "outOfStationServices":individualSelectedValues.outOfStationService, "patientId": patientId, "ambulanceId": individualSelectedValues.ambulanceID, "registeredAddressStringToPass":self.registeredAddressStringToPass, "registeredUserLatitude": usersCurrentLatitude, "registeredUserLongitude": usersCurrentLongitude]
+        
         self.navigationController?.present(selectedAmbulanceVc, animated: true, completion: nil)
         
     }
@@ -216,7 +223,7 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
             if let customAnnotation = view.annotation as? CustomPointAnnotation {
                 
                 guard let selectedAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "SelectedAmbulanceVC") as? SelectedAmbulanceVC else {return}
-                selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": customAnnotation.ambulanceImageUrl, "ambulanceType":customAnnotation.ambulanceType, "ambulanceName":customAnnotation.ambulanceName, "mobileNumber":customAnnotation.contactNumber, "driverName":customAnnotation.driverName, "charges":customAnnotation.charges, "vehicleNumber":customAnnotation.vehicleNumber, "outOfStationServices":customAnnotation.outOfServiceValue]
+                selectedAmbulanceVc.requiedValuesDictionary = ["ambulanceImage": customAnnotation.ambulanceImageUrl, "ambulanceType":customAnnotation.ambulanceType, "ambulanceName":customAnnotation.ambulanceName, "mobileNumber":customAnnotation.contactNumber, "driverName":customAnnotation.driverName, "charges":customAnnotation.charges, "vehicleNumber":customAnnotation.vehicleNumber, "outOfStationServices":customAnnotation.outOfServiceValue, "registeredAddressStringToPass":self.registeredAddressStringToPass,"registeredUserLatitude": usersCurrentLatitude, "registeredUserLongitude": usersCurrentLongitude]
                 self.navigationController?.present(selectedAmbulanceVc, animated: true, completion: nil)
                 
                 
@@ -239,6 +246,13 @@ extension ExceptEmergencyAmbulanceVC {
         AmbulanceServices.instance.getAmbulanceListExceptExergency(withAmbulanceTypeId: ambulanceTypeId, userCurrentLatitude: usersCurrentLatitude, userCurrentLongitude: usersCurrentLongitude, patientId: patientId) { (success, returnedAmbulanceResponse) in
             
             if let returnedAmbulanceResponse = returnedAmbulanceResponse {
+                
+                if returnedAmbulanceResponse.code == 1 {
+                    DispatchQueue.main.async {
+                        self.view.makeToast("\(returnedAmbulanceResponse.message)", duration: 3.0, position: .center)
+                    }
+                }
+                
                 self.ambulanceExceptEmergencyArray = returnedAmbulanceResponse.results
             }
             
@@ -266,12 +280,66 @@ extension ExceptEmergencyAmbulanceVC {
             
             DispatchQueue.main.async {
                 self.getAmbulanceListExceptEmergency()
+                self.view.hideAllToasts()
+                
             }
             
         }
         
         //print("Ambulance Location By Id Array: \(self.ambulanceLocationByIdResultArray)")
         
+        
+    }
+    
+}
+
+extension ExceptEmergencyAmbulanceVC {
+    
+    //Reverse Geo Coding Function
+    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        let lon: Double = Double("\(pdblLongitude)")!
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    self.registeredAddressStringToPass = addressString
+                    //print(addressString)
+                }
+        })
         
     }
     

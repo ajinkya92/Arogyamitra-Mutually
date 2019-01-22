@@ -50,9 +50,9 @@ class ExceptEmergencyAmbulanceTblCell: UITableViewCell {
         
         // Ambulance Available Logic
         
-        if exceptEmergencyData.ambulanceIsAvailable == "" {
+        if exceptEmergencyData.bookingStatus == "" {
             self.availableLbl.text = "Available"
-        }else if exceptEmergencyData.ambulanceIsAvailable == "booked" {
+        }else if exceptEmergencyData.bookingStatus == "Booked" {
             self.availableLbl.text = "Request Pending"
         }else {
             self.availableLbl.text = "Accepted"
