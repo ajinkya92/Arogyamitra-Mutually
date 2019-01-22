@@ -10,6 +10,5 @@ target 'Arogyamitra' do
     	pod 'GoogleMaps'
     	pod 'GooglePlaces'
     	pod 'DLRadioButton', '~> 1.4'
-	pod 'Toast-Swift', '~> 4.0.0'
 
 end

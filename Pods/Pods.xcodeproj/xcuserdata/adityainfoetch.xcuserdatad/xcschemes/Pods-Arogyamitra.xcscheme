@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DA355EF0DEF3E965A13ECD50036851F7"
+               BlueprintIdentifier = "539B71C2706068C258E270835EAA37DB"
                BuildableName = "Pods_Arogyamitra.framework"
                BlueprintName = "Pods-Arogyamitra"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DA355EF0DEF3E965A13ECD50036851F7"
+            BlueprintIdentifier = "539B71C2706068C258E270835EAA37DB"
             BuildableName = "Pods_Arogyamitra.framework"
             BlueprintName = "Pods-Arogyamitra"
             ReferencedContainer = "container:Pods.xcodeproj">
