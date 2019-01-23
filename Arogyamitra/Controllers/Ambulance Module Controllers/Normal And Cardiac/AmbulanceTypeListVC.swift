@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AmbulanceTypeListVC: UIViewController {
     
@@ -23,6 +24,7 @@ class AmbulanceTypeListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAddressFromLatLon(pdblLatitude: usersCurrentLatitude, withLongitude: usersCurrentLongitude)
         getAmbulanceTypeList()
         ambulanceTypeListCollectionView.delegate = self
         ambulanceTypeListCollectionView.dataSource = self
@@ -75,6 +77,10 @@ extension AmbulanceTypeListVC: AmbulanceTypeListCollCellDelegate {
             guard let exceptEmergencyAmbulanceVc = storyboard?.instantiateViewController(withIdentifier: "ExceptEmergencyAmbulanceVC") as? ExceptEmergencyAmbulanceVC else {return}
             exceptEmergencyAmbulanceVc.ambulanceTypeId = ambulaceTypeListArray[tag].ambulanceTypeID
             exceptEmergencyAmbulanceVc.title = ambulaceTypeListArray[tag].name
+            let registeredAddress = UserDefaults.standard.string(forKey: USER_REGISTERED_ADDRESS)
+            if let registeredAddress = registeredAddress {
+              exceptEmergencyAmbulanceVc.registeredAddressStringToPass = registeredAddress
+            }
             exceptEmergencyAmbulanceVc.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             self.navigationController?.pushViewController(exceptEmergencyAmbulanceVc, animated: true)
         }else {
@@ -83,6 +89,11 @@ extension AmbulanceTypeListVC: AmbulanceTypeListCollCellDelegate {
             let okAction = UIAlertAction(title: "YES", style: .default) { (action) in
                 //perform Ok Action here...
                 guard let emergenyAmbulanceBookingVc = self.storyboard?.instantiateViewController(withIdentifier: "EmergencyAmbulanceRequestVC") as? EmergencyAmbulanceRequestVC else {return}
+                emergenyAmbulanceBookingVc.title = self.ambulaceTypeListArray[tag].name
+                let registeredAddress = UserDefaults.standard.string(forKey: USER_REGISTERED_ADDRESS)
+                if let registeredAddress = registeredAddress {
+                    emergenyAmbulanceBookingVc.registeredAddressString = registeredAddress
+                }
                 self.navigationController?.pushViewController(emergenyAmbulanceBookingVc, animated: true)
                 
             }
@@ -122,6 +133,59 @@ extension AmbulanceTypeListVC {
             
             //print("Ambulance Type Array: \(self.ambulaceTypeListArray)")
         }
+        
+    }
+    
+}
+
+extension AmbulanceTypeListVC {
+    
+    //Reverse Geo Coding Function
+    
+    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
+        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
+        let lat: Double = Double("\(pdblLatitude)")!
+        let lon: Double = Double("\(pdblLongitude)")!
+        let ceo: CLGeocoder = CLGeocoder()
+        center.latitude = lat
+        center.longitude = lon
+        
+        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
+        
+        
+        ceo.reverseGeocodeLocation(loc, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+                
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    
+                    var addressString : String = ""
+                    if pm.subLocality != nil {
+                        addressString = addressString + pm.subLocality! + ", "
+                    }
+                    if pm.thoroughfare != nil {
+                        addressString = addressString + pm.thoroughfare! + ", "
+                    }
+                    if pm.locality != nil {
+                        addressString = addressString + pm.locality! + ", "
+                    }
+                    if pm.country != nil {
+                        addressString = addressString + pm.country! + ", "
+                    }
+                    if pm.postalCode != nil {
+                        addressString = addressString + pm.postalCode! + " "
+                    }
+                    
+                    //print(addressString)
+                    //Saving Registered Address to User Defaults Here..
+                    UserDefaults.standard.set(addressString, forKey: USER_REGISTERED_ADDRESS)
+                }
+        })
         
     }
     

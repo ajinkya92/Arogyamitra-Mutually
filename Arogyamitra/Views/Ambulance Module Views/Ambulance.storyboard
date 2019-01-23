@@ -348,10 +348,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-Pe-Ymu" userLabel="Emergency Booking Popup">
-                                <rect key="frame" x="22" y="193" width="370" height="350"/>
+                                <rect key="frame" x="42" y="193" width="330" height="350"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQg-fZ-wGh" userLabel="Close Button">
-                                        <rect key="frame" x="10" y="17" width="20" height="20"/>
+                                        <rect key="frame" x="10" y="16" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="4xM-7a-otj"/>
                                             <constraint firstAttribute="height" constant="20" id="P6m-ac-Ag5"/>
@@ -359,19 +359,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="close"/>
                                         <connections>
-                                            <action selector="smallPopupViewCloseBtnTapped:" destination="Hag-4A-2PA" eventType="touchUpInside" id="UpL-RY-3cF"/>
+                                            <action selector="emergencyBookingPopupCloseBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="FfR-Rt-DQJ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVB-Et-aGM">
-                                        <rect key="frame" x="119.66666666666667" y="16" width="130.66666666666663" height="21.666666666666671"/>
+                                        <rect key="frame" x="99.666666666666671" y="16" width="130.66666666666663" height="19.666666666666671"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nZe-aw-YzY" userLabel="Radio Stack View">
-                                        <rect key="frame" x="10" y="52.666666666666657" width="200" height="80"/>
+                                        <rect key="frame" x="10" y="50.666666666666657" width="200" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOo-gd-D08" customClass="DLRadioButton">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOo-gd-D08" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="   Register Address">
@@ -388,8 +388,12 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="emergencyPopupRadioBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="HW3-JN-I8C"/>
+                                                    <outletCollection property="otherButtons" destination="7iz-Re-VPc" id="fft-ZI-4QN"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iz-Re-VPc" customClass="DLRadioButton">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iz-Re-VPc" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="50.000000000000028" width="200" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                 <state key="normal" title="   Current Address">
@@ -406,6 +410,9 @@
                                                         <real key="value" value="22"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="emergencyPopupRadioBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="k7d-f4-HR0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -414,47 +421,50 @@
                                         </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-8N-tdU">
-                                        <rect key="frame" x="10" y="140.66666666666669" width="350" height="150"/>
+                                        <rect key="frame" x="10" y="150.66666666666669" width="310" height="130"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="fw4-Pe-Nc4"/>
-                                            <constraint firstAttribute="height" constant="150" id="quW-8R-wBh"/>
+                                            <constraint firstAttribute="height" constant="130" id="quW-8R-wBh"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luT-Yf-ELS">
-                                        <rect key="frame" x="10" y="290.66666666666669" width="350" height="1"/>
+                                        <rect key="frame" x="10" y="280.66666666666669" width="310" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fcm-t1-y1o"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1v-s9-Leh">
-                                        <rect key="frame" x="125" y="310" width="120" height="30"/>
+                                        <rect key="frame" x="90" y="300" width="150" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="TnP-Bv-TEJ"/>
-                                            <constraint firstAttribute="width" constant="120" id="idK-5u-lDj"/>
+                                            <constraint firstAttribute="height" constant="40" id="TnP-Bv-TEJ"/>
+                                            <constraint firstAttribute="width" constant="150" id="idK-5u-lDj"/>
                                         </constraints>
                                         <state key="normal" title="Book"/>
+                                        <connections>
+                                            <action selector="emergencyPopupBookBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="eHC-Yo-Ae0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="qQg-fZ-wGh" firstAttribute="leading" secondItem="oNh-Pe-Ymu" secondAttribute="leading" constant="10" id="2vw-GO-HMk"/>
                                     <constraint firstItem="Q1v-s9-Leh" firstAttribute="centerX" secondItem="oNh-Pe-Ymu" secondAttribute="centerX" id="9Il-Cr-k6q"/>
                                     <constraint firstItem="luT-Yf-ELS" firstAttribute="top" secondItem="mgO-8N-tdU" secondAttribute="bottom" id="IlB-Zs-VR2"/>
                                     <constraint firstAttribute="trailing" secondItem="mgO-8N-tdU" secondAttribute="trailing" constant="10" id="O08-Pf-nHF"/>
-                                    <constraint firstAttribute="width" constant="370" id="PlC-Um-dOQ"/>
+                                    <constraint firstAttribute="width" constant="330" id="PlC-Um-dOQ"/>
                                     <constraint firstItem="nZe-aw-YzY" firstAttribute="leading" secondItem="oNh-Pe-Ymu" secondAttribute="leading" constant="10" id="ZGT-s6-Wot"/>
                                     <constraint firstItem="aVB-Et-aGM" firstAttribute="top" secondItem="oNh-Pe-Ymu" secondAttribute="top" constant="16" id="bhL-jM-XDs"/>
                                     <constraint firstItem="qQg-fZ-wGh" firstAttribute="centerY" secondItem="aVB-Et-aGM" secondAttribute="centerY" id="eRl-En-s5H"/>
                                     <constraint firstItem="luT-Yf-ELS" firstAttribute="leading" secondItem="mgO-8N-tdU" secondAttribute="leading" id="ez1-0B-uUP"/>
                                     <constraint firstItem="aVB-Et-aGM" firstAttribute="centerX" secondItem="oNh-Pe-Ymu" secondAttribute="centerX" id="gOI-Ai-YmH"/>
                                     <constraint firstAttribute="height" constant="350" id="i8f-su-doW"/>
-                                    <constraint firstItem="mgO-8N-tdU" firstAttribute="top" secondItem="nZe-aw-YzY" secondAttribute="bottom" constant="8" id="kSX-Ge-FAg"/>
+                                    <constraint firstItem="mgO-8N-tdU" firstAttribute="top" secondItem="nZe-aw-YzY" secondAttribute="bottom" constant="20" id="kSX-Ge-FAg"/>
                                     <constraint firstItem="luT-Yf-ELS" firstAttribute="trailing" secondItem="mgO-8N-tdU" secondAttribute="trailing" id="kkS-Hv-TwX"/>
                                     <constraint firstAttribute="bottom" secondItem="Q1v-s9-Leh" secondAttribute="bottom" constant="10" id="lug-QN-ufV"/>
                                     <constraint firstItem="nZe-aw-YzY" firstAttribute="top" secondItem="aVB-Et-aGM" secondAttribute="bottom" constant="15" id="nqO-ZC-mut"/>
@@ -462,14 +472,74 @@
                                     <constraint firstItem="Q1v-s9-Leh" firstAttribute="top" secondItem="luT-Yf-ELS" secondAttribute="bottom" constant="18.329999999999998" id="yR9-CE-yqN"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alD-kP-ada">
+                                <rect key="frame" x="107" y="670" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.62745098040000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="3Nt-Oj-Q8A"/>
+                                    <constraint firstAttribute="height" constant="50" id="4VA-Dh-8TS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="CANCEL REQUEST">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelRequestBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="1lw-ph-G41"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-1s-vkU">
+                                <rect key="frame" x="20" y="638.33333333333337" width="374" height="2.6666666666666288"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlo-wc-Dam" userLabel="Progress Bar Progress Label">
+                                <rect key="frame" x="186.33333333333334" y="593" width="41.666666666666657" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xWd-dE-McT" userLabel="Activity And Sending Req Stack">
+                                <rect key="frame" x="118.00000000000001" y="332.66666666666669" width="178.33333333333337" height="71"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Cp6-gQ-Uvx">
+                                        <rect key="frame" x="70.666666666666657" y="0.0" width="37" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="color" red="0.19215686269999999" green="0.5450980392" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sending Request..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-6u-Gqw">
+                                        <rect key="frame" x="0.0" y="47" width="178.33333333333334" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.19215686269999999" green="0.5450980392" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kTY-1s-vkU" firstAttribute="top" secondItem="dlo-wc-Dam" secondAttribute="bottom" constant="25" id="4EX-PG-Xqz"/>
+                            <constraint firstItem="kTY-1s-vkU" firstAttribute="leading" secondItem="bLc-OS-TEP" secondAttribute="leading" constant="20" id="7Sz-5i-Bkv"/>
+                            <constraint firstItem="alD-kP-ada" firstAttribute="centerX" secondItem="bLc-OS-TEP" secondAttribute="centerX" id="88P-pm-c6d"/>
+                            <constraint firstAttribute="trailing" secondItem="kTY-1s-vkU" secondAttribute="trailing" constant="20" id="AIa-2d-7in"/>
+                            <constraint firstItem="alD-kP-ada" firstAttribute="top" secondItem="kTY-1s-vkU" secondAttribute="bottom" constant="30" id="Bq7-p1-Dgq"/>
+                            <constraint firstItem="xWd-dE-McT" firstAttribute="centerX" secondItem="bLc-OS-TEP" secondAttribute="centerX" id="Mi6-SI-cgm"/>
+                            <constraint firstItem="dlo-wc-Dam" firstAttribute="centerX" secondItem="kTY-1s-vkU" secondAttribute="centerX" id="bF2-2y-vHx"/>
+                            <constraint firstItem="Rht-Kx-6B5" firstAttribute="bottom" secondItem="alD-kP-ada" secondAttribute="bottom" constant="16" id="j1d-2w-h3O"/>
                             <constraint firstItem="oNh-Pe-Ymu" firstAttribute="centerX" secondItem="bLc-OS-TEP" secondAttribute="centerX" id="kzC-Yf-7nr"/>
+                            <constraint firstItem="xWd-dE-McT" firstAttribute="centerY" secondItem="bLc-OS-TEP" secondAttribute="centerY" id="vpM-rG-zKA"/>
                             <constraint firstItem="oNh-Pe-Ymu" firstAttribute="centerY" secondItem="bLc-OS-TEP" secondAttribute="centerY" id="yxQ-Ie-dEY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rht-Kx-6B5"/>
                     </view>
+                    <connections>
+                        <outlet property="activityAndSendingRequestStack" destination="xWd-dE-McT" id="n4f-nf-EXG"/>
+                        <outlet property="emergencyAmbulanceBookRequestActivity" destination="Cp6-gQ-Uvx" id="H8P-ss-fMJ"/>
+                        <outlet property="emergencyBookingPopupBookBtn" destination="Q1v-s9-Leh" id="3KD-GI-bK2"/>
+                        <outlet property="emergencyBookingPopupCenterXConstraint" destination="kzC-Yf-7nr" id="wLz-Hl-5Eq"/>
+                        <outlet property="emergencyBookingPopupCloseBtn" destination="qQg-fZ-wGh" id="kRh-cy-53z"/>
+                        <outlet property="emergencyBookingPopupRadioBtn" destination="HOo-gd-D08" id="w8N-lw-F2g"/>
+                        <outlet property="emergencyBookingPopupTextView" destination="mgO-8N-tdU" id="h98-EF-rgz"/>
+                        <outlet property="progressView" destination="kTY-1s-vkU" id="RQF-en-UgT"/>
+                        <outlet property="progressbarProgressLbl" destination="dlo-wc-Dam" id="twS-GI-eht"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDV-RR-h7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

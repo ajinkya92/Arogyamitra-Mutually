@@ -14,7 +14,7 @@ enum UIUserInterfaceIdiom : Int {
     case pad // iPad style UI
 }
 
-
+let USER_REGISTERED_ADDRESS = String()
 
 //MARK: Stay Healthy Module URLS
 

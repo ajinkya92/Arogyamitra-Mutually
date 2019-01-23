@@ -41,13 +41,12 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
         ambulanceListTableView.dataSource = self
         mapView.delegate = self
         
-        getAddressFromLatLon(pdblLatitude: "\(19.0659)", withLongitude: "\(73.0011)")
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 10.0, execute: {
             //Call This api in every 10 seconds
             self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(ExceptEmergencyAmbulanceVC.getAmbulanceLocationById), userInfo: nil, repeats: true)
             self.timer.fire()
         })
+        
         
     }
 
@@ -288,58 +287,6 @@ extension ExceptEmergencyAmbulanceVC {
         
         //print("Ambulance Location By Id Array: \(self.ambulanceLocationByIdResultArray)")
         
-        
-    }
-    
-}
-
-extension ExceptEmergencyAmbulanceVC {
-    
-    //Reverse Geo Coding Function
-    
-    func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String) {
-        var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
-        let lat: Double = Double("\(pdblLatitude)")!
-        let lon: Double = Double("\(pdblLongitude)")!
-        let ceo: CLGeocoder = CLGeocoder()
-        center.latitude = lat
-        center.longitude = lon
-        
-        let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
-        
-        
-        ceo.reverseGeocodeLocation(loc, completionHandler:
-            {(placemarks, error) in
-                if (error != nil)
-                {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
-                }
-                let pm = placemarks! as [CLPlacemark]
-                
-                if pm.count > 0 {
-                    let pm = placemarks![0]
-                    
-                    var addressString : String = ""
-                    if pm.subLocality != nil {
-                        addressString = addressString + pm.subLocality! + ", "
-                    }
-                    if pm.thoroughfare != nil {
-                        addressString = addressString + pm.thoroughfare! + ", "
-                    }
-                    if pm.locality != nil {
-                        addressString = addressString + pm.locality! + ", "
-                    }
-                    if pm.country != nil {
-                        addressString = addressString + pm.country! + ", "
-                    }
-                    if pm.postalCode != nil {
-                        addressString = addressString + pm.postalCode! + " "
-                    }
-                    
-                    self.registeredAddressStringToPass = addressString
-                    //print(addressString)
-                }
-        })
         
     }
     
