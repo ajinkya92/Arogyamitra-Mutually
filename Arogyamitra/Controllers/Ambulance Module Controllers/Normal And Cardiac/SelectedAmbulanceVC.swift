@@ -219,10 +219,10 @@ class SelectedAmbulanceVC: UIViewController {
             
         }else {
             //print("Put Alert Here")
-            let alert = UIAlertController(title: "Please Enter Address", message: "Please Enter Address", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Please Enter Address", message: "", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(action)
-            self.navigationController?.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
         
     }

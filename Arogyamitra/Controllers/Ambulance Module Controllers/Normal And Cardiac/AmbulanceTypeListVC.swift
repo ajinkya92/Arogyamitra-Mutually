@@ -77,7 +77,25 @@ extension AmbulanceTypeListVC: AmbulanceTypeListCollCellDelegate {
             exceptEmergencyAmbulanceVc.title = ambulaceTypeListArray[tag].name
             exceptEmergencyAmbulanceVc.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             self.navigationController?.pushViewController(exceptEmergencyAmbulanceVc, animated: true)
-        }else {return}
+        }else {
+            //Here is the code for emergency ambulance booking start process.
+            let bookingConfirmationAlert = UIAlertController(title: "Book Ambulance", message: "Do you really want to book emergency ambulance?", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "YES", style: .default) { (action) in
+                //perform Ok Action here...
+                guard let emergenyAmbulanceBookingVc = self.storyboard?.instantiateViewController(withIdentifier: "EmergencyAmbulanceRequestVC") as? EmergencyAmbulanceRequestVC else {return}
+                self.navigationController?.pushViewController(emergenyAmbulanceBookingVc, animated: true)
+                
+            }
+            let cancelAction = UIAlertAction(title: "NO", style: .cancel) { (action) in
+                //Dismiss Alert Here
+                print("Dismiss Action Performed Here...")
+                self.dismiss(animated: true, completion: nil)
+            }
+            bookingConfirmationAlert.addAction(okAction)
+            bookingConfirmationAlert.addAction(cancelAction)
+            
+            self.present(bookingConfirmationAlert, animated: true, completion: nil)
+        }
         
         
         
