@@ -83,7 +83,7 @@ class WebserviceHelper: NSObject
         else
         {
             //            failureMessage(NoInternetConnectionMessage)
-            showAlertMessage(message: noInternetConnectionMessage, title: "")
+            showCustomAlertMessage(message: noInternetConnectionMessage, title: "")
         }
     }
 }

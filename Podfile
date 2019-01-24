@@ -10,5 +10,6 @@ target 'Arogyamitra' do
     	pod 'GoogleMaps'
     	pod 'GooglePlaces'
     	pod 'DLRadioButton', '~> 1.4'
+      pod 'SVProgressHUD'
 
 end

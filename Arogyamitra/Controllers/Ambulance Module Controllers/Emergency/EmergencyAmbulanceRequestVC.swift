@@ -9,6 +9,7 @@
 import UIKit
 import DLRadioButton
 import CoreLocation
+import SVProgressHUD
 
 class EmergencyAmbulanceRequestVC: UIViewController {
     
@@ -28,6 +29,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     @IBOutlet weak var emergencyBookingPopupTextView: UITextView!
     @IBOutlet weak var emergencyBookingPopupBookBtn: UIButton!
     
+    
     //Prev Variables
     var registeredAddressString = String()
     var emergencyAmbulanceTypeId = Int()
@@ -45,9 +47,13 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     var time : Float = 0.0
     var timer: Timer?
     
+    //Ambulance Booking Variables
+    var emergencyAmbulanceRequestNumber = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialViewSetup()
+        
         
     }
     
@@ -267,8 +273,25 @@ extension EmergencyAmbulanceRequestVC {
         AmbulanceServices.instance.emergencyAmbulanceBookingWith(ambulanceTypeId: emergencyAmbulanceTypeId, patientId: staticPatientId, userCurrentLatitude: currentLocationCoordinates.latitude, userCurrentLongitude: currentLocationCoordinates.longitude, pickupLatitude: staticPickupLatitude, pickupLongitude: staticPickupLongitude, pickupAddressString: locationStringToPassForBooking) { (success, returnedResponseForEmergencyAmbulanceBooking) in
             
             if let returnedResponseForEmergencyAmbulanceBooking = returnedResponseForEmergencyAmbulanceBooking {
-                print(returnedResponseForEmergencyAmbulanceBooking.message)
+                
+                for values in returnedResponseForEmergencyAmbulanceBooking.results {
+                    self.emergencyAmbulanceRequestNumber = values.requestNo
+                }
             }
+            
+            DispatchQueue.main.async {
+                print("Start The Indication Here")
+                SVProgressHUD.show(withStatus: "Booking Process Started")
+                
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 60.0, execute: {
+                print("This is Called After One Minute")
+                print("Stop The Indication Here...")
+                SVProgressHUD.dismiss()
+            })
+            
+            //Booking 2nd Api call after 1 min using request Number
             
         }
         

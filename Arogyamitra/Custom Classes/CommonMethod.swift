@@ -15,7 +15,7 @@ var arr_days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
 
 //Common Alert View
-func showAlertMessage(message : String, title: String)
+func showCustomAlertMessage(message : String, title: String)
 {
     let alert = UIAlertView()
     alert.title = "Alert"

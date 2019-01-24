@@ -105,6 +105,7 @@
 		512CF0F921DE4394007A470A /* GymnasiumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512CF0F821DE4394007A470A /* GymnasiumDetails.swift */; };
 		513990BF21F5A242000FFE52 /* AmbulanceBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513990BE21F5A242000FFE52 /* AmbulanceBooking.swift */; };
 		5144D4E521F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144D4E421F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift */; };
+		5144D4E721F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144D4E621F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift */; };
 		5147A68021EF129E000E12CE /* MultipleUserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */; };
 		5147A68221EF5320000E12CE /* SelectedAmbulanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */; };
 		5148155A21E32BE300503050 /* YogaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155921E32BE300503050 /* YogaVC.swift */; };
@@ -283,6 +284,7 @@
 		512CF0F821DE4394007A470A /* GymnasiumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetails.swift; sourceTree = "<group>"; };
 		513990BE21F5A242000FFE52 /* AmbulanceBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceBooking.swift; sourceTree = "<group>"; };
 		5144D4E421F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceBooking.swift; sourceTree = "<group>"; };
+		5144D4E621F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceByRequestNumber.swift; sourceTree = "<group>"; };
 		5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUserLocations.swift; sourceTree = "<group>"; };
 		5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAmbulanceVC.swift; sourceTree = "<group>"; };
 		5148155921E32BE300503050 /* YogaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaVC.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				5144D4E421F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift */,
+				5144D4E621F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift */,
 			);
 			path = EmergencyAmbulanceModels;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Arogyamitra/Pods-Arogyamitra-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1090,6 +1094,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1181,6 +1186,7 @@
 				1719A7CB21E1269500BD5169 /* CosmosDefaultSettings.swift in Sources */,
 				48272B0C21C5167600B288F6 /* DoctorModel.swift in Sources */,
 				48DCD2E921C5E32E00215B86 /* HospitalListTableViewCell.swift in Sources */,
+				5144D4E721F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift in Sources */,
 				48A58ABF21D4651C009F8736 /* LaboratoryTableViewCell.swift in Sources */,
 				48272AE721C4887000B288F6 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */,
