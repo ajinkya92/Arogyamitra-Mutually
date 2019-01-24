@@ -94,6 +94,7 @@ extension AmbulanceTypeListVC: AmbulanceTypeListCollCellDelegate {
                 if let registeredAddress = registeredAddress {
                     emergenyAmbulanceBookingVc.registeredAddressString = registeredAddress
                 }
+                emergenyAmbulanceBookingVc.emergencyAmbulanceTypeId = self.ambulaceTypeListArray[tag].ambulanceTypeID
                 self.navigationController?.pushViewController(emergenyAmbulanceBookingVc, animated: true)
                 
             }

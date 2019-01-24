@@ -176,7 +176,45 @@ class AmbulanceServices {
     
     //MARK: API CALLS FOR EMERGENCY AMBULANCES
     
-    
+    //Emergency Ambulance Booking API
+    func emergencyAmbulanceBookingWith(ambulanceTypeId: Int, patientId: Int, userCurrentLatitude: Double, userCurrentLongitude: Double, pickupLatitude: Double, pickupLongitude: Double, pickupAddressString: String, completion:@escaping(_ success:Bool, EmergencyAmbulanceBooking?) -> ()) {
+        
+        let postData = NSMutableData(data: "ambulance_type_id=\(ambulanceTypeId)".data(using: String.Encoding.utf8)!)
+        postData.append("&user_current_latitude=\(userCurrentLatitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&user_current_longitude=\(userCurrentLongitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_address=\(pickupAddressString)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_latitude=\(pickupLatitude)".data(using: String.Encoding.utf8)!)
+        postData.append("&pickup_longitude=\(pickupLongitude)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: REQUEST_EMERGENCY_AMBULANCE_BOOKING) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedEmergencyAmbulanceBookingResponse = try decoder.decode(EmergencyAmbulanceBooking.self, from: data)
+                    completion(true, returnedEmergencyAmbulanceBookingResponse)
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+            }
+            
+        }.resume()
+        
+    }
     
     
     

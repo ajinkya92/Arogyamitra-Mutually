@@ -30,3 +30,8 @@ let GET_AMBULANCE_TYPE_LIST = "https://arogyamitra.net/doctor/index.php/Webservi
 let GET_AMBULANCE_LIST_EXCEPT_EMERGENCY = "https://arogyamitra.net/doctor/index.php/Webservice/get_ambulance_list_by_ambulance_type"
 let GET_AMBULANCE_LOCATION_BY_AMBULANCE_ID_URL = "https://arogyamitra.net/doctor/index.php/Webservice/get_ambulance_location_by_ambulance_id"
 let AMBULANCE_BOOKING_URL = "https://arogyamitra.net/doctor/index.php/Webservice/ambulancebooking"
+
+
+//MARK: EMERGENCY AMBULANCE MODULE URLS
+
+let REQUEST_EMERGENCY_AMBULANCE_BOOKING = "https://arogyamitra.net/doctor/index.php/Webservice/send_request_to_emergency_ambulance"

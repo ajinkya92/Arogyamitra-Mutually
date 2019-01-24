@@ -30,16 +30,18 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     
     //Prev Variables
     var registeredAddressString = String()
+    var emergencyAmbulanceTypeId = Int()
+    var staticPatientId = 157
+    var staticPickupLatitude = 19.032803 //Which Comes From Registered Address Latitude
+    var staticPickupLongitude = 73.10121529999999 // Which Comes From Registered Longitude
     
     //Location Variables
     let locationManager = CLLocationManager()
     var currentLocationCoordinates = CLLocationCoordinate2D()
     var currentLocationString = String()
+    var locationStringToPassForBooking = String()
     
     //ProgressView Variables
-    let maxTime: Float = 10.0
-    var currentTime: Float = 0.0
-    
     var time : Float = 0.0
     var timer: Timer?
     
@@ -69,11 +71,13 @@ class EmergencyAmbulanceRequestVC: UIViewController {
         switch sender.tag {
         case 4:
             emergencyBookingPopupTextView.text = registeredAddressString
+            locationStringToPassForBooking = emergencyBookingPopupTextView.text
             emergencyBookingPopupTextView.isEditable = false
             emergencyBookingPopupBookBtn.tag = 6
         case 5:
             locationManager.startUpdatingLocation()
             emergencyBookingPopupTextView.text = currentLocationString
+            locationStringToPassForBooking = emergencyBookingPopupTextView.text
             emergencyBookingPopupTextView.isEditable = true
             emergencyBookingPopupBookBtn.tag = 6
         default:
@@ -105,7 +109,6 @@ class EmergencyAmbulanceRequestVC: UIViewController {
             
             time = 0.0
             progressView.setProgress(0.0, animated: true)
-            
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateProgress), userInfo: nil, repeats: true)
             
         }else {
@@ -133,6 +136,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
             progressbarProgressLbl.text = ""
             emergencyAmbulanceCancelRequestBtn.isHidden = true
             //EMERGENCY AMBULANCE BOOKING API CALL HERE...
+            sendBookingRequest()
             
         }
         
@@ -154,6 +158,7 @@ extension EmergencyAmbulanceRequestVC {
         emergencyBookingPopupCenterXConstraint.constant = 0
         emergencyBookingPopupTextView.delegate = self
         locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
         emergencyBookingPopupTextView.text = ""
         locationManager.startUpdatingLocation()
         activityAndSendingRequestStack.isHidden = true
@@ -248,6 +253,24 @@ extension EmergencyAmbulanceRequestVC {
                     //print(addressString)
                 }
         })
+        
+    }
+    
+}
+
+extension EmergencyAmbulanceRequestVC {
+    
+    func sendBookingRequest() {
+        
+        print("\(staticPatientId), \(emergencyAmbulanceTypeId), \(currentLocationCoordinates.latitude), \(currentLocationCoordinates.longitude), \(staticPickupLatitude), \(staticPickupLongitude), \(locationStringToPassForBooking)")
+        
+        AmbulanceServices.instance.emergencyAmbulanceBookingWith(ambulanceTypeId: emergencyAmbulanceTypeId, patientId: staticPatientId, userCurrentLatitude: currentLocationCoordinates.latitude, userCurrentLongitude: currentLocationCoordinates.longitude, pickupLatitude: staticPickupLatitude, pickupLongitude: staticPickupLongitude, pickupAddressString: locationStringToPassForBooking) { (success, returnedResponseForEmergencyAmbulanceBooking) in
+            
+            if let returnedResponseForEmergencyAmbulanceBooking = returnedResponseForEmergencyAmbulanceBooking {
+                print(returnedResponseForEmergencyAmbulanceBooking.message)
+            }
+            
+        }
         
     }
     
