@@ -17,6 +17,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     @IBOutlet weak var activityAndSendingRequestStack: UIStackView!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var progressbarProgressLbl: UILabel!
+    @IBOutlet weak var emergencyAmbulanceCancelRequestBtn: UIButton!
     
     
     
@@ -39,6 +40,8 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     let maxTime: Float = 10.0
     var currentTime: Float = 0.0
     
+    var time : Float = 0.0
+    var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,31 +91,50 @@ class EmergencyAmbulanceRequestVC: UIViewController {
                 emergencyBookingPopupCenterXConstraint.constant = 500
             }else {emergencyBookingPopupCenterXConstraint.constant = 1500}
             
-            UIView.animate(withDuration: 1.0) {
+            UIView.animate(withDuration: 0.2) {
                 self.view.layoutIfNeeded()
             }
             activityAndSendingRequestStack.isHidden = false
-            emergencyAmbulanceBookRequestActivity.startAnimating()
-            progressView.setProgress(currentTime, animated: true)
-            perform(#selector(updateProgress), with: nil, afterDelay: 1.0)
+            progressView.isHidden = false
+            emergencyAmbulanceCancelRequestBtn.isHidden = false
             
-        }else {return}
+            //Invalid timer if it is valid
+            if (timer?.isValid == true) {
+                timer?.invalidate()
+            }
+            
+            time = 0.0
+            progressView.setProgress(0.0, animated: true)
+            
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateProgress), userInfo: nil, repeats: true)
+            
+        }else {
+            
+            let alert = UIAlertController(title: "Please Enter Address", message: "", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
     
     @objc func updateProgress() {
+    
+        emergencyAmbulanceBookRequestActivity.startAnimating()
+        time += 20.0
+        progressView.setProgress(time/100, animated: true)
+        progressbarProgressLbl.text = "\(Int(progressView.progress*100))%"
         
-        currentTime += 1.0
-        progressView.progress = currentTime/maxTime
-        progressbarProgressLbl.text = "\(currentTime)"
-        
-        if currentTime < maxTime {
-            perform(#selector(updateProgress), with: nil, afterDelay: 1.5)
-        }else {
-            print("STOP")
-            currentTime = 0.0
+        if time >= 100 {
+            timer!.invalidate()
+            emergencyAmbulanceBookRequestActivity.stopAnimating()
+            activityAndSendingRequestStack.isHidden = true
+            progressView.isHidden = true
+            progressbarProgressLbl.text = ""
+            emergencyAmbulanceCancelRequestBtn.isHidden = true
+            //EMERGENCY AMBULANCE BOOKING API CALL HERE...
+            
         }
-        
         
         
     }
@@ -135,7 +157,12 @@ extension EmergencyAmbulanceRequestVC {
         emergencyBookingPopupTextView.text = ""
         locationManager.startUpdatingLocation()
         activityAndSendingRequestStack.isHidden = true
+        emergencyAmbulanceBookRequestActivity.hidesWhenStopped = true
         progressView.progress = 0.0
+        progressView.layer.cornerRadius = 10.0
+        progressbarProgressLbl.text = ""
+        progressView.isHidden = true
+        emergencyAmbulanceCancelRequestBtn.isHidden = true
         
     }
     

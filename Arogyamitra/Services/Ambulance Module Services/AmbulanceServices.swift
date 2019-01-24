@@ -171,4 +171,16 @@ class AmbulanceServices {
         
     }
     
+    
+    //----------------------------------------------------------------------------------
+    
+    //MARK: API CALLS FOR EMERGENCY AMBULANCES
+    
+    
+    
+    
+    
+    
+    
+    
 }

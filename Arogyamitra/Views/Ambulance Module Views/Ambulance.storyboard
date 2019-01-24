@@ -433,7 +433,7 @@
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luT-Yf-ELS">
                                         <rect key="frame" x="10" y="280.66666666666669" width="310" height="1"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fcm-t1-y1o"/>
                                         </constraints>
@@ -487,11 +487,8 @@
                                     <action selector="cancelRequestBtnTapped:" destination="bpm-QL-lFE" eventType="touchUpInside" id="1lw-ph-G41"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-1s-vkU">
-                                <rect key="frame" x="20" y="638.33333333333337" width="374" height="2.6666666666666288"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlo-wc-Dam" userLabel="Progress Bar Progress Label">
-                                <rect key="frame" x="186.33333333333334" y="593" width="41.666666666666657" height="20.333333333333371"/>
+                                <rect key="frame" x="186.33333333333334" y="604.66666666666663" width="41.666666666666657" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -512,10 +509,16 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-1s-vkU">
+                                <rect key="frame" x="20" y="630" width="374" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="pKR-9k-ogl"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kTY-1s-vkU" firstAttribute="top" secondItem="dlo-wc-Dam" secondAttribute="bottom" constant="25" id="4EX-PG-Xqz"/>
+                            <constraint firstItem="kTY-1s-vkU" firstAttribute="top" secondItem="dlo-wc-Dam" secondAttribute="bottom" constant="5" id="4EX-PG-Xqz"/>
                             <constraint firstItem="kTY-1s-vkU" firstAttribute="leading" secondItem="bLc-OS-TEP" secondAttribute="leading" constant="20" id="7Sz-5i-Bkv"/>
                             <constraint firstItem="alD-kP-ada" firstAttribute="centerX" secondItem="bLc-OS-TEP" secondAttribute="centerX" id="88P-pm-c6d"/>
                             <constraint firstAttribute="trailing" secondItem="kTY-1s-vkU" secondAttribute="trailing" constant="20" id="AIa-2d-7in"/>
@@ -532,6 +535,7 @@
                     <connections>
                         <outlet property="activityAndSendingRequestStack" destination="xWd-dE-McT" id="n4f-nf-EXG"/>
                         <outlet property="emergencyAmbulanceBookRequestActivity" destination="Cp6-gQ-Uvx" id="H8P-ss-fMJ"/>
+                        <outlet property="emergencyAmbulanceCancelRequestBtn" destination="alD-kP-ada" id="6Pg-KB-NvK"/>
                         <outlet property="emergencyBookingPopupBookBtn" destination="Q1v-s9-Leh" id="3KD-GI-bK2"/>
                         <outlet property="emergencyBookingPopupCenterXConstraint" destination="kzC-Yf-7nr" id="wLz-Hl-5Eq"/>
                         <outlet property="emergencyBookingPopupCloseBtn" destination="qQg-fZ-wGh" id="kRh-cy-53z"/>
