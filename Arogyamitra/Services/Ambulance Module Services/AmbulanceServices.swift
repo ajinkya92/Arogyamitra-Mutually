@@ -217,7 +217,44 @@ class AmbulanceServices {
     }
     
     
+    //MARK: GET AMBULANCE LIST BY REQUEST NUMBER API
     
+    func getEmergencyAmbulanceListByRequestNumber(withPatientId patientId: Int, andRequestNumber requestNumber: String, completion: @escaping(_ success: Bool, EmergencyAmbulanceByRequestNumber?) -> ()) {
+        
+        let postData = NSMutableData(data: "request_no=\(requestNumber)".data(using: String.Encoding.utf8)!)
+        postData.append("&patient_id=\(patientId)".data(using: String.Encoding.utf8)!)
+        
+        guard let url = URL(string: GET_EMERGENCY_AMBULANCE_LIST_BY_REQUEST_NUMBER) else {return}
+        var urlrequest = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 30)
+        urlrequest.httpMethod = "POST"
+        urlrequest.httpBody = postData as Data
+        
+        URLSession.shared.dataTask(with: urlrequest) { (data, response, error) in
+            
+            if error != nil {
+                debugPrint(error?.localizedDescription ?? "")
+                completion(false, nil)
+                return
+            }else {
+                
+                guard let data = data else {return completion(false, nil)}
+                let decoder = JSONDecoder()
+                
+                do{
+                    let returnedAmbulanceResponse = try decoder.decode(EmergencyAmbulanceByRequestNumber.self, from: data)
+                    completion(true, returnedAmbulanceResponse)
+                    
+                }catch{
+                    debugPrint(error.localizedDescription)
+                    completion(false, nil)
+                    return
+                }
+                
+            }
+            
+        }.resume()
+        
+    }
     
     
     

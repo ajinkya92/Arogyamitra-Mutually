@@ -49,6 +49,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     
     //Ambulance Booking Variables
     var emergencyAmbulanceRequestNumber = String()
+    var emergencyAmbulanceResultWithRequestNumberArray = [EmergencyAmbulanceByRequestNumberResult]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +97,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
         //Here Dismiss the popup and the Start the Progress Bar
         
         if sender.tag == 6 {
-           
+            
             if UIDevice.current.userInterfaceIdiom == .phone {
                 emergencyBookingPopupCenterXConstraint.constant = 500
             }else {emergencyBookingPopupCenterXConstraint.constant = 1500}
@@ -128,7 +129,7 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     }
     
     @objc func updateProgress() {
-    
+        
         emergencyAmbulanceBookRequestActivity.startAnimating()
         time += 20.0
         progressView.setProgress(time/100, animated: true)
@@ -153,9 +154,10 @@ class EmergencyAmbulanceRequestVC: UIViewController {
     //Actions
     
     @IBAction func cancelRequestBtnTapped(_ sender: UIButton) {
+        timer?.invalidate()
         self.navigationController?.popViewController(animated: true)
     }
-
+    
 }
 
 extension EmergencyAmbulanceRequestVC {
@@ -181,18 +183,18 @@ extension EmergencyAmbulanceRequestVC {
 
 //MARK: EMERGENCY BOOKING POPUP TEXT VIEW DELEGATE IMPLEMENTATION
 extension EmergencyAmbulanceRequestVC: UITextViewDelegate {
-        
-        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
         }
-        
-        func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-            if(text == "\n") {
-                textView.resignFirstResponder()
-                return false
-            }
-            return true
-        }
+        return true
+    }
     
 }
 
@@ -281,17 +283,47 @@ extension EmergencyAmbulanceRequestVC {
             
             DispatchQueue.main.async {
                 print("Start The Indication Here")
-                SVProgressHUD.show(withStatus: "Booking Process Started")
+                SVProgressHUD.show(withStatus: "Please Wait...We are searching for ambulance")
+                self.navigationItem.hidesBackButton = true
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 60.0, execute: {
+                    print("This is Called After One Minute")
+                    
+                    //Booking 2nd Api call after 1 min using request Number
+                    
+                    AmbulanceServices.instance.getEmergencyAmbulanceListByRequestNumber(withPatientId: self.staticPatientId, andRequestNumber: self.emergencyAmbulanceRequestNumber, completion: { (success, returnedAmbulanceResponse) in
+                        
+                        if let returnedAmbulanceResponse = returnedAmbulanceResponse {
+                            if returnedAmbulanceResponse.code == 1 {
+                                
+                                DispatchQueue.main.async {
+                                    self.view.makeToast("No ambulance accepted your request", duration: 2.0, position: .bottom)
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+                                        self.navigationController?.popViewController(animated: true)
+                                    })
+                                }
+                                
+                            }else {
+                                self.emergencyAmbulanceResultWithRequestNumberArray = returnedAmbulanceResponse.results
+                                //Go to Next View Controller Process of Emergency Ambulance
+                                DispatchQueue.main.async {
+                                    guard let bookedEmergencyAmbulanceDetailsVc = self.storyboard?.instantiateViewController(withIdentifier: "BookedEmergencyAmbulanceDetailsVC") as? BookedEmergencyAmbulanceDetailsVC else {return}
+                                    bookedEmergencyAmbulanceDetailsVc.emergencyAmbulanceResultWithRequestNumberArray = self.emergencyAmbulanceResultWithRequestNumberArray
+                                    self.navigationController?.pushViewController(bookedEmergencyAmbulanceDetailsVc, animated: true)
+                                }
+                                
+                            }
+                        }
+                        
+                        //print(self.emergencyAmbulanceResultWithRequestNumberArray)
+                    })
+                    
+                    //print("Stop The Indication Here...")
+                    SVProgressHUD.dismiss()
+                    
+                })
                 
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 60.0, execute: {
-                print("This is Called After One Minute")
-                print("Stop The Indication Here...")
-                SVProgressHUD.dismiss()
-            })
-            
-            //Booking 2nd Api call after 1 min using request Number
             
         }
         

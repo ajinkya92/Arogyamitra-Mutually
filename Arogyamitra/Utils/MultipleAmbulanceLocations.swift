@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-struct MultipleUserLocations {
+struct MultipleAmbulanceLocations {
     
     let ambulanceName: String
     let driverName: String

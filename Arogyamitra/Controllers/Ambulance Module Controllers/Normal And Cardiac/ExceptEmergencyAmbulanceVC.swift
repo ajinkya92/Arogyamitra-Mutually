@@ -32,7 +32,7 @@ class ExceptEmergencyAmbulanceVC: UIViewController {
     //Storage Variables
     var ambulanceExceptEmergencyArray = [AmbulanceExceptEmergencyResult]()
     var ambulanceLocationByIdResultArray = [AmbulanceLocationResult]()
-    var allAmbulanceLocationsArray = [MultipleUserLocations]()
+    var allAmbulanceLocationsArray = [MultipleAmbulanceLocations]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +112,7 @@ extension ExceptEmergencyAmbulanceVC: MKMapViewDelegate {
             
             multipleAmbulanceIdsToPassArray.append(allLocationDetails.ambulanceID)
             
-            let allLocations = MultipleUserLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!, charges: allLocationDetails.chargesPerKM, ambulanceImageUrl: allLocationDetails.ambulancePhoto, ambulanceType: allLocationDetails.ambulanceType, contactNumber: allLocationDetails.mobileno, vehicleNumber: allLocationDetails.vehicleNo, outOfServiceValue: allLocationDetails.outOfStationService, bookingStatus: allLocationDetails.bookingStatus, bookingAmount: allLocationDetails.bookingAmount)
+            let allLocations = MultipleAmbulanceLocations.init(ambulanceName: allLocationDetails.ambulanceName, driverName: allLocationDetails.driverName, latitude: Double("\(allLocationDetails.latitude)")!, longitude: Double("\(allLocationDetails.longitude)")!, charges: allLocationDetails.chargesPerKM, ambulanceImageUrl: allLocationDetails.ambulancePhoto, ambulanceType: allLocationDetails.ambulanceType, contactNumber: allLocationDetails.mobileno, vehicleNumber: allLocationDetails.vehicleNo, outOfServiceValue: allLocationDetails.outOfStationService, bookingStatus: allLocationDetails.bookingStatus, bookingAmount: allLocationDetails.bookingAmount)
             
             allAmbulanceLocationsArray.append(allLocations)
             //print("All Locations Array: \(locations)")

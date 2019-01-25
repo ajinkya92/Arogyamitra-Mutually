@@ -106,7 +106,7 @@
 		513990BF21F5A242000FFE52 /* AmbulanceBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513990BE21F5A242000FFE52 /* AmbulanceBooking.swift */; };
 		5144D4E521F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144D4E421F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift */; };
 		5144D4E721F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144D4E621F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift */; };
-		5147A68021EF129E000E12CE /* MultipleUserLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */; };
+		5147A68021EF129E000E12CE /* MultipleAmbulanceLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A67F21EF129E000E12CE /* MultipleAmbulanceLocations.swift */; };
 		5147A68221EF5320000E12CE /* SelectedAmbulanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */; };
 		5148155A21E32BE300503050 /* YogaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155921E32BE300503050 /* YogaVC.swift */; };
 		5148155E21E33E0700503050 /* YogaListTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148155D21E33E0700503050 /* YogaListTblCell.swift */; };
@@ -117,6 +117,7 @@
 		5148156A21E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156921E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift */; };
 		5148156C21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */; };
 		514AE2B521F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514AE2B421F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift */; };
+		514F86BA21FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F86B921FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift */; };
 		51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */; };
 		51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */; };
 		51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */; };
@@ -285,7 +286,7 @@
 		513990BE21F5A242000FFE52 /* AmbulanceBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmbulanceBooking.swift; sourceTree = "<group>"; };
 		5144D4E421F9C9EE007A8733 /* EmergencyAmbulanceBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceBooking.swift; sourceTree = "<group>"; };
 		5144D4E621F9EDAC007A8733 /* EmergencyAmbulanceByRequestNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceByRequestNumber.swift; sourceTree = "<group>"; };
-		5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUserLocations.swift; sourceTree = "<group>"; };
+		5147A67F21EF129E000E12CE /* MultipleAmbulanceLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAmbulanceLocations.swift; sourceTree = "<group>"; };
 		5147A68121EF5320000E12CE /* SelectedAmbulanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAmbulanceVC.swift; sourceTree = "<group>"; };
 		5148155921E32BE300503050 /* YogaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaVC.swift; sourceTree = "<group>"; };
 		5148155D21E33E0700503050 /* YogaListTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaListTblCell.swift; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 		5148156921E38C9F00503050 /* YogaCentreDetailsSeeServicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsSeeServicesTblCell.swift; sourceTree = "<group>"; };
 		5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
 		514AE2B421F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceRequestVC.swift; sourceTree = "<group>"; };
+		514F86B921FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedEmergencyAmbulanceDetailsVC.swift; sourceTree = "<group>"; };
 		51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumPhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
 		51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeSevicesTblCell.swift; sourceTree = "<group>"; };
 		51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
@@ -759,6 +761,7 @@
 			isa = PBXGroup;
 			children = (
 				514AE2B421F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift */,
+				514F86B921FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift */,
 			);
 			path = Emergency;
 			sourceTree = "<group>";
@@ -910,7 +913,7 @@
 			isa = PBXGroup;
 			children = (
 				51FA120B21DA22E800D7E009 /* Constants.swift */,
-				5147A67F21EF129E000E12CE /* MultipleUserLocations.swift */,
+				5147A67F21EF129E000E12CE /* MultipleAmbulanceLocations.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1154,6 +1157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514F86BA21FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift in Sources */,
 				48272AEE21C4887000B288F6 /* Timeline.swift in Sources */,
 				1719A7CA21E1269500BD5169 /* CosmosSettings.swift in Sources */,
 				48272AEA21C4887000B288F6 /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -1235,7 +1239,7 @@
 				487BE1F021BABBC10076F210 /* SlideMenuController.swift in Sources */,
 				48414F0521CBC5C500A49605 /* DoctorDetailsModel.swift in Sources */,
 				48272AED21C4887000B288F6 /* NetworkReachabilityManager.swift in Sources */,
-				5147A68021EF129E000E12CE /* MultipleUserLocations.swift in Sources */,
+				5147A68021EF129E000E12CE /* MultipleAmbulanceLocations.swift in Sources */,
 				5160BDCD21EDB9B200993ECB /* AmbulanceServices.swift in Sources */,
 				483F105C21C3406700181AB3 /* RatingAndReviewViewController.swift in Sources */,
 				51DC9E0621E48181005D6784 /* TrainerListTblCell.swift in Sources */,
