@@ -168,6 +168,7 @@ extension EmergencyAmbulanceRequestVC {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         emergencyBookingPopupTextView.text = ""
+        emergencyBookingPopupTextView.isEditable = false
         locationManager.startUpdatingLocation()
         activityAndSendingRequestStack.isHidden = true
         emergencyAmbulanceBookRequestActivity.hidesWhenStopped = true

@@ -118,6 +118,7 @@
 		5148156C21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */; };
 		514AE2B521F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514AE2B421F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift */; };
 		514F86BA21FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F86B921FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift */; };
+		514F86BC21FB2031004B088A /* EmergencyAmbulanceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F86BB21FB2031004B088A /* EmergencyAmbulanceAnnotation.swift */; };
 		51504D7D21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */; };
 		51504DDC21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */; };
 		51504DDE21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */; };
@@ -298,6 +299,7 @@
 		5148156B21E38E1900503050 /* YogaCentreDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YogaCentreDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
 		514AE2B421F8563A003A9A4A /* EmergencyAmbulanceRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceRequestVC.swift; sourceTree = "<group>"; };
 		514F86B921FAF74B004B088A /* BookedEmergencyAmbulanceDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookedEmergencyAmbulanceDetailsVC.swift; sourceTree = "<group>"; };
+		514F86BB21FB2031004B088A /* EmergencyAmbulanceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyAmbulanceAnnotation.swift; sourceTree = "<group>"; };
 		51504D7C21E095E1001E6790 /* GymnasiumPhotoGalleryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumPhotoGalleryCollectionCell.swift; sourceTree = "<group>"; };
 		51504DDB21E0CFCC001E6790 /* GymnasiumDetailsSeeSevicesTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeSevicesTblCell.swift; sourceTree = "<group>"; };
 		51504DDD21E0E7C1001E6790 /* GymnasiumDetailsSeeReviewsTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymnasiumDetailsSeeReviewsTblCell.swift; sourceTree = "<group>"; };
@@ -914,6 +916,7 @@
 			children = (
 				51FA120B21DA22E800D7E009 /* Constants.swift */,
 				5147A67F21EF129E000E12CE /* MultipleAmbulanceLocations.swift */,
+				514F86BB21FB2031004B088A /* EmergencyAmbulanceAnnotation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1216,6 +1219,7 @@
 				51FBEAE821DCEC6F00F69264 /* CustomCircularImage.swift in Sources */,
 				48272AE921C4887000B288F6 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				51FA121221DA27BF00D7E009 /* GymnasiumVC.swift in Sources */,
+				514F86BC21FB2031004B088A /* EmergencyAmbulanceAnnotation.swift in Sources */,
 				48A58ABC21D464CA009F8736 /* LaboratoryViewController.swift in Sources */,
 				48414F0C21CF5B1C00A49605 /* PhysicalFitnessViewController.swift in Sources */,
 				4846A27A21C7385900B47AB2 /* DoctorSearchTableViewCell.swift in Sources */,

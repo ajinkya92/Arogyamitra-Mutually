@@ -556,13 +556,166 @@
                     <view key="view" contentMode="scaleToFill" id="F7e-Qz-CNB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZFh-36-3xA">
+                                <rect key="frame" x="20" y="20" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="WXV-RI-kuB"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7eX-KF-KIo" userLabel="AMD Stack View">
+                                <rect key="frame" x="20" y="250" width="374" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ambulance Service Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7h-yF-aRg">
+                                        <rect key="frame" x="0.0" y="0.0" width="221.33333333333334" height="21.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1w-tg-BG8">
+                                        <rect key="frame" x="0.0" y="26.666666666666686" width="105" height="30"/>
+                                        <state key="normal" title="Mobile Number"/>
+                                        <connections>
+                                            <action selector="mobileNumberBtnTapped:" destination="JEE-mm-Jfc" eventType="touchUpInside" id="U9e-tR-IcP"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AWy-wp-pLc" userLabel="Driver Name Stack View">
+                                        <rect key="frame" x="0.0" y="61.666666666666693" width="148.66666666666666" height="20.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-rg-aRq">
+                                                <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0v-k7-Dc7">
+                                                <rect key="frame" x="103.66666666666667" y="0.0" width="45.000000000000014" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xUg-2O-7Lv" userLabel="CV Stack View">
+                                <rect key="frame" x="20" y="352" width="374" height="18"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-S0-sjD" userLabel="Charge Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charges:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGx-Po-Lio">
+                                                <rect key="frame" x="0.0" y="0.0" width="76.333333333333329" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="76.329999999999998" id="GNU-jx-XpY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcQ-Zq-v37">
+                                                <rect key="frame" x="81.333333333333329" y="0.0" width="58.666666666666671" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="EcY-xQ-q94"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-2H-nsS" userLabel="Vehicle Num Stack View">
+                                        <rect key="frame" x="160" y="0.0" width="214" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle No:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F25-pf-xXc">
+                                                <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="92.329999999999998" id="lIP-N7-IEL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmf-a7-FmE">
+                                                <rect key="frame" x="97.333333333333314" y="0.0" width="116.66666666666669" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BTe-ih-mdd">
+                                <rect key="frame" x="0.0" y="380" width="414" height="356"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Gig-RD-jGm" userLabel="Map Buttons Stack">
+                                <rect key="frame" x="364" y="659" width="50" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VL-IL-iGq">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="su5-K2-BBZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_plusPressed:" destination="JEE-mm-Jfc" eventType="touchUpInside" id="saW-mw-pgt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbI-aM-ZEE">
+                                        <rect key="frame" x="0.0" y="36" width="50" height="41"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_minusPressed:" destination="JEE-mm-Jfc" eventType="touchUpInside" id="e6S-a0-bE5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="eRL-rZ-6QJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZFh-36-3xA" firstAttribute="top" secondItem="TSH-aX-fmw" secondAttribute="top" id="2Gd-Ru-gts"/>
+                            <constraint firstItem="ZFh-36-3xA" firstAttribute="leading" secondItem="TSH-aX-fmw" secondAttribute="leading" constant="20" id="5bH-7l-yVh"/>
+                            <constraint firstItem="7eX-KF-KIo" firstAttribute="top" secondItem="ZFh-36-3xA" secondAttribute="bottom" constant="30" id="8j7-5r-oUz"/>
+                            <constraint firstItem="BTe-ih-mdd" firstAttribute="leading" secondItem="TSH-aX-fmw" secondAttribute="leading" id="CdD-rY-qUS"/>
+                            <constraint firstItem="xUg-2O-7Lv" firstAttribute="top" secondItem="7eX-KF-KIo" secondAttribute="bottom" constant="20" id="FFI-9N-LeM"/>
+                            <constraint firstItem="7eX-KF-KIo" firstAttribute="leading" secondItem="TSH-aX-fmw" secondAttribute="leading" constant="20" id="H9l-6V-oMy"/>
+                            <constraint firstItem="TSH-aX-fmw" firstAttribute="trailing" secondItem="xUg-2O-7Lv" secondAttribute="trailing" constant="20" id="KRU-3B-O83"/>
+                            <constraint firstItem="TSH-aX-fmw" firstAttribute="trailing" secondItem="7eX-KF-KIo" secondAttribute="trailing" constant="20" id="NSU-ed-LHq"/>
+                            <constraint firstItem="TSH-aX-fmw" firstAttribute="trailing" secondItem="ZFh-36-3xA" secondAttribute="trailing" constant="20" id="NSy-d0-WL0"/>
+                            <constraint firstItem="BTe-ih-mdd" firstAttribute="top" secondItem="xUg-2O-7Lv" secondAttribute="bottom" constant="10" id="Nj1-5O-ZEk"/>
+                            <constraint firstItem="BTe-ih-mdd" firstAttribute="trailing" secondItem="TSH-aX-fmw" secondAttribute="trailing" id="SLB-E9-gZo"/>
+                            <constraint firstItem="Gig-RD-jGm" firstAttribute="bottom" secondItem="TSH-aX-fmw" secondAttribute="bottom" id="j4J-36-WKs"/>
+                            <constraint firstItem="BTe-ih-mdd" firstAttribute="bottom" secondItem="TSH-aX-fmw" secondAttribute="bottom" id="u1i-0M-Ck0"/>
+                            <constraint firstItem="Gig-RD-jGm" firstAttribute="trailing" secondItem="TSH-aX-fmw" secondAttribute="trailing" id="xt9-8t-wc7"/>
+                            <constraint firstItem="xUg-2O-7Lv" firstAttribute="leading" secondItem="TSH-aX-fmw" secondAttribute="leading" constant="20" id="znp-hv-PUU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TSH-aX-fmw"/>
                     </view>
+                    <connections>
+                        <outlet property="ambulanceImage" destination="ZFh-36-3xA" id="wrn-ff-tlJ"/>
+                        <outlet property="ambulanceNameLbl" destination="M7h-yF-aRg" id="TDt-KM-kEf"/>
+                        <outlet property="chargesLbl" destination="fcQ-Zq-v37" id="Exs-qw-c1h"/>
+                        <outlet property="drivarMobileNumberBtn" destination="v1w-tg-BG8" id="9p8-qY-9GE"/>
+                        <outlet property="driverNameLbl" destination="F0v-k7-Dc7" id="yS7-Hn-nq2"/>
+                        <outlet property="mapView" destination="BTe-ih-mdd" id="WfV-m6-UxU"/>
+                        <outlet property="vehicleNumberLbl" destination="jmf-a7-FmE" id="KNy-3m-oZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQE-bl-ae5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="-134"/>
+            <point key="canvasLocation" x="314.49275362318843" y="-134.5108695652174"/>
         </scene>
         <!--Selected AmbulanceVC-->
         <scene sceneID="8li-t2-dla">
